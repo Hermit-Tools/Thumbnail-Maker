@@ -3,7 +3,7 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const output = document.getElementById('output');
 const getImage = document.getElementById('getImage');
-const epNumEnter = document.getElementById('epNumSelector');
+const epNumSelector = document.getElementById('epNumSelector');
 
 getImage.addEventListener('click', finishEditing.bind())
 
@@ -17,7 +17,7 @@ function editOnCanvas(event) {
 }
 
 function episodeNum() {
-    let epNum = epNumEnter.value;
+    let epNum = epNumSelector.value;
 
     ctx.fillStyle = '#fff';
     ctx.strokeStyle = '#000';
