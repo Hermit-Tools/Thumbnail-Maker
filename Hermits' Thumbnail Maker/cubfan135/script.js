@@ -10,7 +10,6 @@ function editOnCanvas(event) {
     let bgImage = new Image();
     bgImage.addEventListener('load', () => {
         ctx.drawImage(bgImage, 0, 0, 1920, 1280);
-        episodeNum();
     }, false);
 
     bgImage.src = URL.createObjectURL(event.target.files[0]);
