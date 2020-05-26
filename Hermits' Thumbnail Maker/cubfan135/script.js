@@ -4,6 +4,7 @@ const ctx = canvas.getContext('2d');
 const output = document.getElementById('output');
 const getImage = document.getElementById('getImage');
 const epNumSelector = document.getElementById('epNumSelector');
+const hcLogoToggler = document.getElementById('hcLogoToggler');
 
 getImage.addEventListener('click', finishEditing.bind())
 
@@ -29,6 +30,17 @@ function episodeNum() {
     ctx.strokeText(epNum, 20, 1270);
     ctx.fill();
     ctx.stroke();
+}
+
+function hcLogo() {
+    if (hcLogoToggler.checked) {
+        let hc7Logo = new Image()
+        hc7Logo.addEventListener('load', () => {
+            ctx.drawImage(hc7Logo, 40, 10, 1800, 230)
+        })
+        //hc7Logo.src = ("https://raw.githubusercontent.com/mmaismma/mmaismma.github.io/master/Hermits'%20Thumbnail%20Maker/cubfan135/hc7dnatorlogo.png")
+        hc7Logo.src = ("C:/Users/Default.DESKTOP-MA0BUE7/Documents/hc7dnatorlogo.png")
+    }
 }
 
 function finishEditing() {
