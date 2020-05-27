@@ -38,7 +38,7 @@ function hcLogo() {
         hc7Logo.addEventListener('load', () => {
             ctx.drawImage(hc7Logo, 40, 10, 1800, 230)
         })
-        //hc7Logo.src = ("https://raw.githubusercontent.com/mmaismma/mmaismma.github.io/master/Hermits'%20Thumbnail%20Maker/cubfan135/hc7dnatorlogo.png")
+        //hc7Logo.src = ("https://raw.githubusercontent.com/mmaismma/mmaismma.github.io/master/Hermits'%20Thumbnail%20Maker/cubfan135/hc7logobydnator.png")
         hc7Logo.src = ("https://mmaismma.github.io/Hermits'%20Thumbnail%20Maker/hc7dnatorlogo.png")
         hc7Logo.crossOrigin = 'Anonymous';
     }
