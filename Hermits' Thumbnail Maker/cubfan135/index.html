@@ -9,11 +9,13 @@
     <canvas width="1920" height="1280" id="canvas">
         Your browser does not support the &#60canvas&#62 element. Consider upgrading to a newer browser.
     </canvas><br>
-    <input type="file" accept="image/*" onchange="editOnCanvas(event)" id="bgInput"><br>
-    <input type="text" onchange="episodeNum()" id="epNumSelector">
-    <input type="checkbox" onchange="hcLogo()" id="hcLogoToggler">
+    <label for="bgInput">1. Choose Background Image: </label><input type="file" accept="image/*" onchange="editOnCanvas(event)" id="bgInput"><br>
+    <label for="epNumSelector">2. Insert Episode Number: </label><input type="text" onchange="episodeNum()" id="epNumSelector"><br>
+    <label for="hcLogoToggler">3. Show HermitCraft Logo: </label><input type="checkbox" onchange="hcLogo()" id="hcLogoToggler"><br>
     <button id="getImage">Finish</button><br>
+    
     <img src="" alt="output" id="output">
+
     <script src="./script.js"></script>
 </body>
 
