@@ -22,8 +22,8 @@ function episodeNum() {
 
     ctx.fillStyle = '#fff';
     ctx.strokeStyle = '#000';
-    ctx.lineWidth = 4;
-    ctx.font = '300px Verdana';
+    ctx.lineWidth = 7;
+    ctx.font = 'bold 300px Tahoma';
     ctx.textBaseline = 'bottom';
 
     ctx.fillText(epNum, 20, 1270);
