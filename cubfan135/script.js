@@ -8,13 +8,15 @@ const hcLogoToggler = document.getElementById('hcLogoToggler');
 
 getImage.addEventListener('click', finishEditing.bind())
 
-function editOnCanvas(event) {
+function editOnCanvas() {
     let bgImage = new Image();
     bgImage.addEventListener('load', () => {
         ctx.drawImage(bgImage, 0, 0, 1920, 1280);
+        hcLogo();
+        episodeNum();
     }, false);
 
-    bgImage.src = URL.createObjectURL(event.target.files[0]);
+    bgImage.src = URL.createObjectURL(bgInput.files[0]);
 }
 
 function episodeNum() {
@@ -49,9 +51,7 @@ function finishEditing() {
     output.src = image;
 }
 
-function process(event) {
+function process() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-//    editOnCanvas(event);
-    hcLogo();
-    episodeNum();
+    editOnCanvas();
 }
