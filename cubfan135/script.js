@@ -39,7 +39,7 @@ function hcLogo() {
             ctx.drawImage(hc7Logo, 40, 10, 1800, 230)
         })
         //hc7Logo.src = ("https://raw.githubusercontent.com/mmaismma/mmaismma.github.io/master/Hermits'%20Thumbnail%20Maker/cubfan135/hc7logobydnator.png")
-        hc7Logo.src = ("https://mmaismma.github.io/Hermits'%20Thumbnail%20Maker/hc7logobydnator.png")
+        hc7Logo.src = ("https://hermit-tools.github.io/Thumbnail-Maker/hc7logobydnator.png")
         hc7Logo.crossOrigin = 'Anonymous';
     }
 }
@@ -47,4 +47,11 @@ function hcLogo() {
 function finishEditing() {
     let image = canvas.toDataURL();
     output.src = image;
+}
+
+function process(event) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+//    editOnCanvas(event);
+    hcLogo();
+    episodeNum();
 }

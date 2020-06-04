@@ -9,9 +9,9 @@
     <canvas width="1920" height="1280" id="canvas">
         Your browser does not support the &#60canvas&#62 element. Consider upgrading to a newer browser.
     </canvas><br>
-    <label for="bgInput"><span title="Choose background image or nothing.">1. Choose Background Image: </span></label><input type="file" accept="image/*" onchange="editOnCanvas(event)" id="bgInput"><br>
-    <label for="epNumSelector"><span title="Enter episode number here. It can accept number, text or nothing.">2. Insert Episode Number: </span></label><input type="text" onchange="episodeNum()" id="epNumSelector"><br>
-    <label for="hcLogoToggler"><span title="Yes&#9745;/No&#72224;.">3. Show HermitCraft Logo: </span></label><input type="checkbox" onchange="hcLogo()" id="hcLogoToggler"><br>
+    <label for="bgInput"><span title="Choose background image or nothing.">1. Choose Background Image: </span></label><input type="file" accept="image/*" onchange="process(event)" id="bgInput"><br>
+    <label for="epNumSelector"><span title="Enter episode number here. It can accept number, text or nothing.">2. Insert Episode Number: </span></label><input type="text" onchange="process()" id="epNumSelector"><br>
+    <label for="hcLogoToggler"><span title="Yes&#9745;/No&#72224;.">3. Show HermitCraft Logo: </span></label><input type="checkbox" onchange="process()" id="hcLogoToggler"><br>
     <button title="Finish editing image and export it." id="getImage">Finish</button><br>
     
     <img src="" alt="output" id="output">
