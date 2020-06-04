@@ -8,13 +8,15 @@ const hcLogoToggler = document.getElementById('hcLogoToggler');
 
 getImage.addEventListener('click', finishEditing.bind())
 
-function editOnCanvas(event) {
+function editOnCanvas() {
     let bgImage = new Image();
     bgImage.addEventListener('load', () => {
         ctx.drawImage(bgImage, 0, 0, 1920, 1280);
+        hcLogo();
+        episodeNum();
     }, false);
 
-    bgImage.src = URL.createObjectURL(event.target.files[0]);
+    bgImage.src = URL.createObjectURL(bgInput.files[0]);
 }
 
 function episodeNum() {
@@ -38,8 +40,7 @@ function hcLogo() {
         hc7Logo.addEventListener('load', () => {
             ctx.drawImage(hc7Logo, 40, 10, 1800, 230)
         })
-        //hc7Logo.src = ("https://raw.githubusercontent.com/mmaismma/mmaismma.github.io/master/Hermits'%20Thumbnail%20Maker/cubfan135/hc7logobydnator.png")
-        hc7Logo.src = ("https://hermit-tools.github.io/Thumbnail%20Maker/hc7logobydnator.png")
+        hc7Logo.src = ("https://hermit-tools.github.io/Thumbnail-Maker/hc7logobydnator.png");
         hc7Logo.crossOrigin = 'Anonymous';
     }
 }
@@ -47,4 +48,9 @@ function hcLogo() {
 function finishEditing() {
     let image = canvas.toDataURL();
     output.src = image;
+}
+
+function process() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    editOnCanvas();
 }
