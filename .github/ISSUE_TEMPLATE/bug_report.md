@@ -1,36 +1,44 @@
-Please use this format for submitting a bug. We reccomand you to copy and paste the template to your bug report and replace the examples (preceeded with a **//**) with your own scenario. Please note that sections marked with **~** are mandatory. Optional sectiona are respectively marked.
+---
+name: Bug report
+about: Create a report to help us improve
+title: ''
+labels: ''
+assignees: ''
 
-**Describe the bug**~
-// A clear and concise description of what the bug is.
+---
 
-**To Reproduce**~
-// Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+This is the bug report template for this repo. Before creating a new issue please do a search to find if the issue already exists. If not follow. We recommend you to copy everything after this line, create a bug report, paste and replace every line starting with **$** symbol with the required information.
 
-**Expected behaviour**~
+**Describe the bug**
+$ A clear and concise description of what the bug is.
 
-// A clear and concise description of what you expected to happen.
+**To Reproduce**
+Steps to reproduce the behaviour:
+$ All the steps one needs to take to reproduce the bug.
 
-**Screenshots**(Optional)
+**Expected behaviour**
+$ A clear and concise description of what you expected to happen.
 
-// If applicable, add screenshots to help explain your problem.
+**Screenshots**
+$ If applicable, add screenshots to help explain your problem.
 
-**Desktop (please complete the following information):**~(optional if filling **Smartphone**)
+**Desktop (please complete the following information):**
+ - OS
+$ [e.g. iOS]
+ - Browser
+$ [e.g. chrome, safari]
+ - Version
+$ [e.g. 22]
 
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+**Smartphone (please complete the following information):**
+ - Device
+$ [e.g. iPhone6]
+ - OS
+$ [e.g. iOS8.1]
+ - Browser
+$ [e.g. stock browser, safari]
+ - Version
+$ [e.g. 22]
 
-**Smartphone (please complete the following information):**~(optional if filling **Smartphone**)
-
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
-
-**Additional context**(optional)
-
-Add any other context about the problem here.
+**Additional context**
+$ Add any other context about the problem here.
