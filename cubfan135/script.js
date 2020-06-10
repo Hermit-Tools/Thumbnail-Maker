@@ -47,6 +47,7 @@ function hcLogo() {
 
 function finishEditing() {
     let image = canvas.toDataURL();
+    output.style.display = "unset";
     output.src = image;
 }
 
