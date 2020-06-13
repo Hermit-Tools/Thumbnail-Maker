@@ -1,12 +1,12 @@
 const bgInput = document.getElementById('bgInput');
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-const output = document.getElementById('output');
-const getImage = document.getElementById('getImage');
+//const getImage = document.getElementById('getImage');
 const epNumSelector = document.getElementById('epNumSelector');
 const hcLogoToggler = document.getElementById('hcLogoToggler');
+const previewText = document.getElementById('preview-text');
 
-getImage.addEventListener('click', finishEditing.bind())
+//getImage.addEventListener('click', finishEditing.bind())
 
 function editOnCanvas() {
     let bgImage = new Image();
@@ -46,13 +46,12 @@ function hcLogo() {
 }
 
 function finishEditing() {
-    let image = canvas.toDataURL();
-    output.style.display = "unset";
-    output.src = image;
+    document.getElementById("downloader").href = canvas.toDataURL("image/png").replace('data:image/png', 'data:concorp>sahara');
 }
 
 function process() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#fff'
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     if (bgInput.files.length != 0) {
         editOnCanvas();
     } else {
