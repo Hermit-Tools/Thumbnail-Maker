@@ -20,13 +20,11 @@
     <form id="form">
         <label for="bgInput"><span title="Choose background image or nothing.">1. Choose Background Image:
             </span></label><input type="file" accept="image/*" onchange="process()" id="bgInput"><br>
-        <label for="epNumSelector"><span title="Enter episode number here. It can accept number, text or nothing.">2.
-                Insert Episode Number: </span></label><input type="text" onchange="process()" id="epNumSelector"><br>
-        <label for="hcLogoToggler"><span title="Yes&#9745;/No&#72224;.">3. Show HermitCraft Logo: </span></label><input
-            type="checkbox" checked onchange="process()" id="hcLogoToggler"><br>
+        <label for="epNumSelector"><span title="Enter episode number here. It can accept number, text or nothing.">2.</span></label><input type="text" onchange="process()" id="epNumSelector" placeholder="Enter Episode Number" autocomplete="off"><br>
+        <label for="hcLogoToggler"><span title="Yes&#9745;/No&#72224;.">3. Show HermitCraft Logo: </span></label><input type="checkbox" checked onchange="process()" id="hcLogoToggler"><br>
         <!--<button title="Finish editing image and export it." id="getImage" class="primary" onclick="finishEditing()" download="image.png"><i
                 class="material-icons">get_app</i>Get Image</button><br>-->
-        <a href="#" id="downloader" onclick="finishEditing()" download="image.png">Get Image</a>
+        <a class="button" style="text-decoration: none" href="#" id="downloader" onclick="finishEditing()" download="image.png"><i class="material-icons md-18">get_app</i>Get Image</a>
     </form>
 
     <script src="./script.js"></script>

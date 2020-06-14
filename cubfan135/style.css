@@ -13,7 +13,8 @@ body {
     grid-template-columns: 70% 30%;
 }
 
-button {
+button,
+a.button {
     background-color: #fff;
     color: #3740ff;
     -webkit-box-align: center;
@@ -37,12 +38,15 @@ button {
     width: fit-content;
 }
 
-button:hover {
+button:hover,
+a.button:hover {
     background: #0000000a;
 }
 
 button:active,
-button:focus {
+button:focus,
+a.button:active,
+a.button:focus {
     outline: none;
     text-decoration: none;
     background-color: #0000000a;
@@ -81,7 +85,7 @@ button.primary:active {
     width: 640px;
     height: 360px;
     border-radius: 5px;
-    box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, .132), 0 1.2px 3.6px 0 rgba(0, 0, 0, .108);
+    box-shadow: 0 0 14.4px 0 rgba(0, 0, 0, .132), 0 2.2px 3.6px 0 rgba(0, 0, 0, .108);
 }
 
 #output {
@@ -96,8 +100,8 @@ button.primary:active {
     width: 640px;
     height: 360px;
     z-index: -1;
-    background: #f6f6f6;
-    color: #aaa;
+    background: #fff;
+    color: #ccf;
     text-transform: uppercase;
     text-align: center;
     font-size: 48px;
@@ -133,7 +137,7 @@ button.primary:active {
     align-items: center;
     justify-content: center;
     height: 100%;
-    background-color: #f7f7ff;
+    background-color: #efefff;
     z-index: -2;
 }
 
