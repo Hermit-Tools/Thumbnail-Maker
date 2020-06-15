@@ -2,6 +2,28 @@
   "short_name": "Cub's Contraption",
   "name": "Cub's Contraption by Hermit-Tools",
   "description": "YT thumbnail maker for cubfan135's HermitCraft videos.",
+  "icons": [
+    {
+        "src": "icons/htlogo36.png",
+        "sizes": "47x36",
+        "type": "image/png"
+    },
+    {
+        "src": "icons/htlogo72.png",
+        "sizes": "94x72",
+        "type": "image/png"
+    },
+    {
+        "src": "icons/htlogo144.png",
+        "sizes": "188x144",
+        "type": "image/png"
+    },
+    {
+        "src": "icons/htlogo256.png",
+        "sizes": "335x256",
+        "type": "image/png"
+    }
+  ],
   "start_url": "/",
   "background_color": "#FFD500",
   "display": "standalone",
