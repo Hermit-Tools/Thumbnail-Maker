@@ -152,6 +152,27 @@ footer p a {
     color: white;
 }
 
+a:hover {
+    background-color: #ff3c00;
+    color: #fff;
+    text-shadow: none;
+    border-bottom: none;
+}
+
+a:active {
+    background: none;
+    color: inherit;
+    text-shadow: inherit;
+}
+
+button:hover {
+    background-color: #9f2626;
+    background: linear-gradient(#ff2200, #ff4400);
+    background-position: -.5em;
+    border: transparent !important;
+    border-color: rgba(27, 31, 35, .5);
+}
+
 @media print,
 screen and (max-width: 740px) {
     body {
