@@ -6,5 +6,5 @@
   "background_color": "#FFD500",
   "display": "standalone",
   "scope": "/",
-  "theme_color": "#FFD500",
+  "theme_color": "#FFD500"
 }
