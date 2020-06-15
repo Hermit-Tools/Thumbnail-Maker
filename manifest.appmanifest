@@ -1,0 +1,10 @@
+{
+  "short_name": "Cub's Contraption",
+  "name": "Cub's Contraption by Hermit-Tools",
+  "description": "YT thumbnail maker for cubfan135's HermitCraft videos.",
+  "start_url": "/",
+  "background_color": "#FFD500",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#FFD500",
+}
