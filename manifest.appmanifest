@@ -6,22 +6,26 @@
     {
         "src": "icons/htlogo36.png",
         "sizes": "47x36",
-        "type": "image/png"
+        "type": "image/png",
+        "purpose": "maskable"
     },
     {
         "src": "icons/htlogo72.png",
         "sizes": "94x72",
-        "type": "image/png"
+        "type": "image/png",
+        "purpose": "maskable"
     },
     {
         "src": "icons/htlogo144.png",
         "sizes": "188x144",
-        "type": "image/png"
+        "type": "image/png",
+        "purpose": "maskable"
     },
     {
         "src": "icons/htlogo256.png",
         "sizes": "335x256",
-        "type": "image/png"
+        "type": "image/png",
+        "purpose": "maskable"
     }
   ],
   "start_url": "/",
