@@ -15,7 +15,7 @@ header {
     padding: 15px 20px;
     border-radius: 8px;
     background: linear-gradient(#ffe561, #ffd500);
-    border-bottom: 1px solid #B2D2E1;
+    border-bottom: 1px solid #ffe561;
 }
 
 h1 {
@@ -183,6 +183,10 @@ screen and (max-width: 740px) {
     body {
         padding: 0
     }
+    
+    header {
+        border-radius: 0;
+    }
 
     footer {
         border-radius: 0;
@@ -209,6 +213,10 @@ screen and (max-width: 740px) {
 
 @media print,
 screen and (max-width: 580px) {
+    header {
+        border-radius: 0;
+    }
+
     header p {
         width: 100%
     }
