@@ -8,26 +8,38 @@
   "theme_color": "#FFD500",
   "description": "YouTube thumbnail maker for cubfan135's HermitCraft videos.",
   "icons": [{
-          "src": "icons/htlogo36.png",
-          "sizes": "47x36",
+          "src": "icons/htlogo64.png",
+          "sizes": "64x64",
           "type": "image/png",
           "purpose": "maskable"
       },
       {
-          "src": "icons/htlogo72.png",
-          "sizes": "94x72",
+          "src": "icons/htlogo80.png",
+          "sizes": "80x80",
           "type": "image/png",
           "purpose": "maskable"
       },
       {
           "src": "icons/htlogo144.png",
-          "sizes": "188x144",
+          "sizes": "144x144",
+          "type": "image/png",
+          "purpose": "maskable"
+      },
+      {
+          "src": "icons/htlogo180.png",
+          "sizes": "180x180",
           "type": "image/png",
           "purpose": "maskable"
       },
       {
           "src": "icons/htlogo256.png",
-          "sizes": "335x256",
+          "sizes": "256x256",
+          "type": "image/png",
+          "purpose": "maskable"
+      },
+      {
+          "src": "icons/htlogo512.png",
+          "sizes": "512x512",
           "type": "image/png",
           "purpose": "maskable"
       }
