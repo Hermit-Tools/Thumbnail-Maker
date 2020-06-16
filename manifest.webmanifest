@@ -3,7 +3,7 @@
   "short_name": "Cub's Contraption",
   "start_url": "/",
   "display": "standalone",
-  "orientation": "potrait",
+  "orientation": "portrait",
   "background_color": "#FFD500",
   "theme_color": "#FFD500",
   "description": "YouTube thumbnail maker for cubfan135's HermitCraft videos.",
