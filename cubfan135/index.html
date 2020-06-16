@@ -3,10 +3,9 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="./style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preload" href="../hc7logobydnator.png">
 </head>
 
 <body>
@@ -22,8 +21,6 @@
             </span></label><input type="file" accept="image/*" onchange="process()" id="bgInput"><br>
         <label for="epNumSelector"><span title="Enter episode number here. It can accept number, text or nothing.">2.</span></label><input type="text" onchange="process()" id="epNumSelector" placeholder="Enter Episode Number" autocomplete="off"><br>
         <label for="hcLogoToggler"><span title="Yes&#9745;/No&#72224;.">3. Show HermitCraft Logo: </span></label><input type="checkbox" checked onchange="process()" id="hcLogoToggler"><br>
-        <!--<button title="Finish editing image and export it." id="getImage" class="primary" onclick="finishEditing()" download="image.png"><i
-                class="material-icons">get_app</i>Get Image</button><br>-->
         <a class="button" style="text-decoration: none" href="#" id="downloader" onclick="finishEditing()" download="image.png"><i class="material-icons md-18">get_app</i>Get Image</a>
     </form>
 
