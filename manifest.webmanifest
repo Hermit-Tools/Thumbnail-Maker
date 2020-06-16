@@ -6,7 +6,7 @@
   "orientation": "portrait",
   "background_color": "#FFD500",
   "theme_color": "#FFD500",
-  "description": "YouTube thumbnail maker for cubfan135's HermitCraft videos.",
+  "description": "YouTube thumbnail maker for HermitCraft videos.",
   "icons": [{
           "src": "icons/htlogo64.png",
           "sizes": "64x64",
