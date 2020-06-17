@@ -1,7 +1,7 @@
 {
   "name": "Thumbnail Maker by Hermit-Tools",
-  "short_name": "Thumbnail  Maker",
-  "start_url": "/",
+  "short_name": "Thumbnail Maker",
+  "start_url": "/Thumbnail-Maker/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#FFD500",
