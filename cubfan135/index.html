@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="preload" href="../hc7logobydnator.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -17,11 +17,19 @@
     </div>
 
     <form id="form">
-        <label for="bgInput"><span title="Choose background image or nothing.">1. Choose Background Image:
-            </span></label><input type="file" accept="image/*" onchange="process()" id="bgInput"><br>
-        <label for="epNumSelector"><span title="Enter episode number here. It can accept number, text or nothing.">2.</span></label><input type="text" onchange="process()" id="epNumSelector" placeholder="Enter Episode Number" autocomplete="off"><br>
-        <label for="hcLogoToggler"><span title="Yes&#9745;/No&#72224;.">3. Show HermitCraft Logo: </span></label><input type="checkbox" checked onchange="process()" id="hcLogoToggler"><br>
-        <a class="button" style="text-decoration: none" href="#" id="downloader" onclick="finishEditing()" download="image.png"><i class="material-icons md-18">get_app</i>Get Image</a>
+        <hr id="line">
+
+        <label id="bgInputLabel" for="bgInput" title="Choose background image or nothing."><i class="material-icons md-18">publish</i> Choose Background Image</label>
+        <input type="file" accept="image/*" onchange="process()" id="bgInput"><br>
+
+        <input type="text" title="Enter episode number here. It can accept number, text or nothing." onchange="process()" id="epNumSelector" placeholder="Enter Episode Number" autocomplete="off"><br>
+
+        <div id="show-hc-logo">Show HC7 Logo:
+            <input type="checkbox" checked onchange="process()" id="hcLogoToggler" class="mdc-switch-input">
+            <label class="mdc-switch-label" for="hcLogoToggler"></label>
+        </div>
+
+        <a class="button secondary" style="text-decoration: none; margin: 20px" href="#" id="downloader" onclick="finishEditing()" download="image.png"><i class="material-icons md-18">get_app</i>Download Thumbnail</a>
     </form>
 
     <script src="./script.js"></script>
