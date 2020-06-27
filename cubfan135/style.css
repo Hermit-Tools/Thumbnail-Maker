@@ -3,7 +3,6 @@ html {
 }
 
 body {
-    /*font: 400 14px/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', "Helvetica Neue", Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji!important;*/
     font: 400 14px/1.5 Roboto, sans-serif !important;
     width: 100%;
     height: 100%;
@@ -55,13 +54,14 @@ label#bgInputLabel,
     user-select: none;
     justify-content: center;
     width: 80%;
+    transition: all 0.1s ease;
 }
 
 button:hover,
 a.button:hover,
 label#bgInputLabel:hover,
 #epNumSelector:hover {
-    background: #f5f5f5;
+    transform: scale(1.01);
 }
 
 button:active,
@@ -74,7 +74,7 @@ label#bgInputLabel:active,
 #epNumSelector:focus, #show-hc-logo:hover {
     outline: none;
     text-decoration: none;
-    background-color: #f5f5f5;
+        transform: scale(0.99);
 }
 
 button.secondary {
