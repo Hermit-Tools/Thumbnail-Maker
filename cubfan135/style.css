@@ -60,7 +60,7 @@ label#bgInputLabel,
 button:hover,
 a.button:hover,
 label#bgInputLabel:hover,
-#epNumSelector:hover {
+#epNumSelector:hover, #show-hc-logo:hover {
     transform: scale(1.01);
 }
 
@@ -71,7 +71,7 @@ a.button:focus,
 label#bgInputLabel:focus,
 label#bgInputLabel:active,
 #epNumSelector:active,
-#epNumSelector:focus, #show-hc-logo:hover {
+#epNumSelector:focus {
     outline: none;
     text-decoration: none;
         transform: scale(0.99);
