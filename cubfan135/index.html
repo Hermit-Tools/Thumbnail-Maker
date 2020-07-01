@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <title>Cub's Contraption by Hermit Tools</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="manifest" href="./manifest.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An automated and smart thumbnail maker for cubfan135's HermitCraft videos. Crafted with love from Hermit Tools.">
+    <meta name="og:description" content="An automated and smart thumbnail maker for cubfan135's HermitCraft videos. Crafted with love from Hermit Tools.">
+    <meta charset="utf-8">
+    <meta property="og:title" content="Cub's Contraption" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://hermit-tools.github.io/Thumbnail-Maker/cubfan135" />
+    <meta property="og:site_name" content="Cub's Contraption by Hermit Tools" />
+    <meta name="theme-color" content="#3740FF" />
+    <link rel="icon" type="image/png" href="/icons/htlogo144.png">
+    <link rel="apple-touch-icon" href="/icons/htlogo180.png">
 </head>
 
 <body>
@@ -16,7 +28,7 @@
         </canvas>
     </div>
 
-    <form id="form">
+    <main id="form">
         <hr id="line">
 
         <label id="bgInputLabel" for="bgInput" title="Choose background image or nothing."><i class="material-icons md-18">publish</i> Choose Background Image</label>
@@ -30,7 +42,7 @@
         </div>
 
         <a class="button secondary" style="text-decoration: none; margin: 20px" href="#" id="downloader" onclick="finishEditing()" download="image.png"><i class="material-icons md-18">get_app</i>Download Thumbnail</a>
-    </form>
+    </main>
 
     <script src="./script.js"></script>
 </body>
