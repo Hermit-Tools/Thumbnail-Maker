@@ -1,12 +1,9 @@
 const bgInput = document.getElementById('bgInput');
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-//const getImage = document.getElementById('getImage');
 const epNumSelector = document.getElementById('epNumSelector');
 const hcLogoToggler = document.getElementById('hcLogoToggler');
 const previewText = document.getElementById('preview-text');
-
-//getImage.addEventListener('click', finishEditing.bind())
 
 function editOnCanvas() {
     let bgImage = new Image();
@@ -58,4 +55,17 @@ function process() {
         hcLogo();
         episodeNum();
     }
+}
+//cookies stuff
+let epNumValueFromCookie;
+
+downloader.addEventListener("click", () => {
+  document.cookie = `epNumCookie=${epNumSelector.value}`;
+});
+
+if (document.cookie.length === 0) {
+  epNumValueFromCookie = "";
+} else {
+  epNumValueFromCookie = document.cookie.split("=")[1];
+  epNumSelector.value = Number(epNumValueFromCookie) + 1;
 }
