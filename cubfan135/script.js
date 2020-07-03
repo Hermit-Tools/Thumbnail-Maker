@@ -56,15 +56,16 @@ function process() {
         episodeNum();
     }
 }
-//Cookies stuff start here
-document.getElementById('set-cookie').addEventListener('click', () => {
-    console.log(`setting cookies started`);
-    document.cookie = "epNumCookie=2";
-    console.log(`setting cookies done`);
-    console.log(document.cookie);
-    
-    //const preepNumCookie = document.cookie.split('=');
-    //const epNumCookie = preepNumCookie[1].split(';');
-    //console.log(preepNumCookie);
-    //console.log(epNumCookie[0]);
-})
+//cookies stuff
+let epNumValueFromCookie;
+
+downloader.addEventListener("click", () => {
+  document.cookie = `epNumCookie=${epNumSelector.value}`;
+});
+
+if (document.cookie.length === 0) {
+  epNumValueFromCookie = "";
+} else {
+  epNumValueFromCookie = document.cookie.split("=")[1];
+  epNumSelector.value = Number(epNumValueFromCookie) + 1;
+}
