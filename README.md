@@ -1,4 +1,4 @@
-<img src="https://repository-images.githubusercontent.com/267630735/bdea6080-b7e1-11ea-99d5-b00431ed9442">
+<img src="https://repository-images.githubusercontent.com/267630735/303cd280-bd05-11ea-8373-fecde5e8006d">
 
 # Hermit-Tools/Thumbnail-Maker
 Minecraft is the best-selling game on Earth. HermitCraft is one of the most popular Minecraft whitelisted server. Hermit Tools is an open source GitHub repository which aims to provide the Hermits with helpful tools. This repository is directed towards making each and every Hermit an automated thumbnail maker webpage. We will start with one of them and slowly, but flawlessly, cover all of them. We recommend checking the wiki for more information.

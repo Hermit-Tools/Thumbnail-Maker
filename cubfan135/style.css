@@ -54,14 +54,17 @@ label#bgInputLabel,
     user-select: none;
     justify-content: center;
     width: 80%;
-    transition: all 0.1s ease;
 }
 
 button:hover,
 a.button:hover,
 label#bgInputLabel:hover,
-#epNumSelector:hover {
+#epNumSelector:hover, #show-hc-logo:hover {
     transform: scale(1.01);
+}
+
+label#bgInputLabel,#epNumSelector, #show-hc-logo {
+    transition: all 0.1s ease;
 }
 
 button:active,
@@ -71,7 +74,7 @@ a.button:focus,
 label#bgInputLabel:focus,
 label#bgInputLabel:active,
 #epNumSelector:active,
-#epNumSelector:focus, #show-hc-logo:hover {
+#epNumSelector:focus {
     outline: none;
     text-decoration: none;
         transform: scale(0.99);
