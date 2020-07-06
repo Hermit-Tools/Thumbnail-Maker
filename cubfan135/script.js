@@ -43,6 +43,7 @@ function hcLogo() {
 }
 
 function finishEditing() {
+    document.getElementById("downloader").download = `HC7-Ep${epNumSelector.value}-CubsContraptionByHermitTools`;
     document.getElementById("downloader").href = canvas.toDataURL("image/png").replace('data:image/png', 'data:concorp>sahara');
 }
 
