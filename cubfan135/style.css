@@ -239,6 +239,7 @@ a.button.secondary:active {
 #epNumSelector {
     cursor: auto;
     text-align: center;
+    text-transform: none;
 }
 
 #line {
