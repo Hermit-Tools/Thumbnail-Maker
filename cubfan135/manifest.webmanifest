@@ -1,7 +1,7 @@
 {
     "name": "Cub's Contraption by Hermit Tools",
     "short_name": "Cub's Contraption",
-    "start_url": "/Thumbnail-Maker/cubfan135",
+    "start_url": ".",
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "#3740FF",
@@ -44,5 +44,5 @@
             "purpose": "any"
         }
     ],
-    "scope": "/Thumbnail-Maker/cubfan135"
+    "scope": "."
   }
