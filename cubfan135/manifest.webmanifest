@@ -44,5 +44,5 @@
             "purpose": "any"
         }
     ],
-    "scope": "/Thumbnail-Maker/cubfan135"
+    "scope": "."
   }
