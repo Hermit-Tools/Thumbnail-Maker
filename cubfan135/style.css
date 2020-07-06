@@ -54,7 +54,6 @@ label#bgInputLabel,
     user-select: none;
     justify-content: center;
     width: 80%;
-    transition: all 0.1s ease;
 }
 
 button:hover,
@@ -62,6 +61,10 @@ a.button:hover,
 label#bgInputLabel:hover,
 #epNumSelector:hover, #show-hc-logo:hover {
     transform: scale(1.01);
+}
+
+label#bgInputLabel,#epNumSelector, #show-hc-logo {
+    transition: all 0.1s ease;
 }
 
 button:active,

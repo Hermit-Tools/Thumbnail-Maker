@@ -1,48 +1,48 @@
 {
     "name": "Cub's Contraption by Hermit Tools",
     "short_name": "Cub's Contraption",
-    "start_url": "/cubfan135",
+    "start_url": "/Thumbnail-Maker/cubfan135",
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "#3740FF",
     "theme_color": "#3740FF",
     "description": "Smart thumbnail maker for cubfan135's HermitCraft videos.",
     "icons": [{
-            "src": "/icons/htlogo64.png",
+            "src": "/Thumbnail-Maker/icons/htlogo64.png",
             "sizes": "64x64",
             "type": "image/png",
             "purpose": "any"
         },
         {
-            "src": "/icons/htlogo80.png",
+            "src": "/Thumbnail-Maker/icons/htlogo80.png",
             "sizes": "80x80",
             "type": "image/png",
             "purpose": "any"
         },
         {
-            "src": "/icons/htlogo144.png",
+            "src": "/Thumbnail-Maker/icons/htlogo144.png",
             "sizes": "144x144",
             "type": "image/png",
             "purpose": "any"
         },
         {
-            "src": "/icons/htlogo180.png",
+            "src": "/Thumbnail-Maker/icons/htlogo180.png",
             "sizes": "180x180",
             "type": "image/png",
             "purpose": "any"
         },
         {
-            "src": "/icons/htlogo256.png",
+            "src": "/Thumbnail-Maker/icons/htlogo256.png",
             "sizes": "256x256",
             "type": "image/png",
             "purpose": "any"
         },
         {
-            "src": "/icons/htlogo512.png",
+            "src": "/Thumbnail-Maker/icons/htlogo512.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any"
         }
     ],
-    "scope": "/cubfan135"
+    "scope": "/Thumbnail-Maker/cubfan135"
   }
