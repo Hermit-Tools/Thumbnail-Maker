@@ -68,4 +68,14 @@ if (document.cookie.length === 0) {
 } else {
   epNumValueFromCookie = document.cookie.split("=")[1];
   epNumSelector.value = Number(epNumValueFromCookie) + 1;
-}
+};
+// Service Worker
+console.log('wonder');
+if('serviceWorker' in navigator) {
+    console.log('sw register 1');
+    window.addEventListener('load', () => {
+        console.log('sw register 2');
+        navigator.serviceWorker.register('service-worker.js');
+        console.log('sw registered');
+    })
+};
