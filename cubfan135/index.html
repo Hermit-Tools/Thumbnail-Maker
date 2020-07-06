@@ -34,7 +34,7 @@
         <label id="bgInputLabel" for="bgInput" title="Choose background image or nothing."><i class="material-icons md-18">publish</i> Choose Background Image</label>
         <input type="file" accept="image/*" onchange="process()" id="bgInput"><br>
 
-        <input type="text" title="Enter episode number here. It can accept number, text or nothing." onchange="process()" id="epNumSelector" placeholder="Enter Episode Number" autocomplete="off"><br>
+        <input type="text" title="Enter episode number here. It can accept number, text or nothing." onchange="process()" onclick="this.focus();this.select();" id="epNumSelector" placeholder="Enter Episode Number" autocomplete="off"><br>
 
         <div id="show-hc-logo">Show HC7 Logo:
             <input type="checkbox" checked onchange="process()" id="hcLogoToggler" class="mdc-switch-input">
