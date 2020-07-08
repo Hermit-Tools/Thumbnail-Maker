@@ -26,7 +26,7 @@ function episodeNum() {
 
   ctx.fillStyle = "#fff";
   ctx.strokeStyle = "#000";
-  ctx.lineWidth = 15;
+  ctx.lineWidth = 12;
   ctx.font = "1000 401px Tahoma";
   ctx.textBaseline = "bottom";
 
