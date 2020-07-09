@@ -49,6 +49,11 @@ function hcLogo() {
 }
 
 function finishEditing() {
+  const downloadShow = document.getElementById("downloadShow");
+  downloadShow.style.opacity = "1";
+  setTimeout(() => {
+    downloadShow.style.opacity = "0";
+  }, 5000);
   downloader.download = `HC7-Ep${epNumSelector.value}-CubsContraptionByHermitTools.jpg`;
   downloader.href = canvas
     .toDataURL("image/png")
