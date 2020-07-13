@@ -6,7 +6,28 @@ const hcLogoToggler = document.getElementById("hcLogoToggler");
 const previewText = document.getElementById("preview-text");
 const downloader = document.getElementById("downloader");
 
-function editOnCanvas() {
+// Cookies Stuff
+let epNumValueFromCookie;
+
+downloader.addEventListener("click", () => {
+  document.cookie = `epNumCookie=${epNumSelector.value}`;
+});
+
+if (document.cookie.length === 0) {
+  epNumValueFromCookie = "";
+} else {
+  epNumValueFromCookie = document.cookie.split("=")[1];
+  epNumSelector.value = Number(epNumValueFromCookie) + 1;
+}
+
+// Service Worker
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("service-worker.js");
+  });
+}
+
+function addBgImage() {
   let bgImage = new Image();
   bgImage.addEventListener(
     "load",
@@ -17,7 +38,6 @@ function editOnCanvas() {
     },
     false
   );
-
   bgImage.src = URL.createObjectURL(bgInput.files[0]);
 }
 
@@ -48,44 +68,25 @@ function hcLogo() {
   }
 }
 
+function process() {
+  ctx.fillStyle = "#fff";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  if (bgInput.files.length != 0) {
+    addBgImage();
+  } else {
+    hcLogo();
+    episodeNum();
+  }
+}
+
 function finishEditing() {
   const downloadShow = document.getElementById("downloadShow");
   downloadShow.style.opacity = "1";
   setTimeout(() => {
     downloadShow.style.opacity = "0";
   }, 5000);
-  downloader.download = `HC7-Ep${epNumSelector.value}-CubsContraptionByHermitTools.jpg`;
+  downloader.download = `Ep${epNumSelector.value}-HC7-CubsContraptionByHermitTools.jpg`;
   downloader.href = canvas
     .toDataURL("image/png")
     .replace("data:image/png", "data:concorp>sahara");
-}
-
-function process() {
-  ctx.fillStyle = "#fff";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  if (bgInput.files.length != 0) {
-    editOnCanvas();
-  } else {
-    hcLogo();
-    episodeNum();
-  }
-}
-// Cookies Stuff
-let epNumValueFromCookie;
-
-downloader.addEventListener("click", () => {
-  document.cookie = `epNumCookie=${epNumSelector.value}`;
-});
-
-if (document.cookie.length === 0) {
-  epNumValueFromCookie = "";
-} else {
-  epNumValueFromCookie = document.cookie.split("=")[1];
-  epNumSelector.value = Number(epNumValueFromCookie) + 1;
-}
-// Service Worker
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("service-worker.js");
-  });
 }
