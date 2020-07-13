@@ -63,7 +63,7 @@ function hcLogo() {
       ctx.drawImage(hc7Logo, 15.7, 40, 1887.5, 244);
     });
     hc7Logo.src =
-      "https://hermit-tools.github.io/Thumbnail-Maker/hc7logobydnator.png";
+      "../Resources/Icons/HC7-Logo.png";
     hc7Logo.crossOrigin = "Anonymous";
   }
 }
@@ -85,7 +85,7 @@ function finishEditing() {
   setTimeout(() => {
     downloadShow.style.opacity = "0";
   }, 5000);
-  downloader.download = `Ep${epNumSelector.value}-HC7-CubsContraptionByHermitTools.jpg`;
+  downloader.download = `Ep${epNumSelector.value} HC7 Cub's Contraption.jpg`;
   downloader.href = canvas
     .toDataURL("image/png")
     .replace("data:image/png", "data:concorp>sahara");
