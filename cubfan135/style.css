@@ -1,259 +1,82 @@
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    font: 400 14px/1.5 Roboto, sans-serif !important;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 70% 30%;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font: 400 14px/1.5 Roboto, sans-serif !important;
 }
 
 *::placeholder {
-    transition: all ease 0.2s;
-    text-align: center;
-}
-
-input:focus::placeholder {
-    font-size: 0px;
-    opacity: 0;
-}
-
-*::focus {
-    outline: none;
-}
-
-button,
-a.button,
-label#bgInputLabel,
-#epNumSelector {
-    background-color: #fff;
-    color: #3740ff;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    cursor: pointer;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    border-style: solid;
-    padding: 10px 15px;
-    border-width: 1px;
-    border-color: #3740ff;
-    border-radius: 5px;
-    font-size: .9em;
-    font-weight: 600;
-    letter-spacing: 1px;
-    overflow: hidden;
-    text-overflow: initial;
-    text-transform: uppercase;
-    width: fit-content;
-    user-select: none;
-    justify-content: center;
-    width: 80%;
-}
-
-button:hover,
-a.button:hover,
-label#bgInputLabel:hover,
-#epNumSelector:hover, #show-hc-logo:hover {
-    transform: scale(1.01);
-}
-
-label#bgInputLabel,#epNumSelector, #show-hc-logo {
-    transition: all 0.1s ease;
-}
-
-button:active,
-button:focus,
-a.button:active,
-a.button:focus,
-label#bgInputLabel:focus,
-label#bgInputLabel:active,
-#epNumSelector:active,
-#epNumSelector:focus {
-    outline: none;
-    text-decoration: none;
-        transform: scale(0.99);
-}
-
-button.secondary {
-    -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
-    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
-    border: 0;
-    border-radius: 28px;
-    padding: 0 20px;
-    height: 56px;
-}
-
-button.primary,
-a.button.secondary {
-    -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
-    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
-    border: 0;
-    border-radius: 28px;
-    padding: 0 20px;
-    height: 56px;
-    background: #2930ff;
-    color: #fff;
-}
-
-button.primary:hover,
-a.button.secondary:hover {
-    background-color: #0032d6;
-}
-
-button.primary:focus,
-button.primary:active,
-a.button.secondary:focus,
-a.button.secondary:active {
-    background: #053fff;
-}
-
-#canvas {
-    width: 640px;
-    height: 360px;
-    border-radius: 5px;
-    box-shadow: 0 0 14.4px 0 #00000022, 0 2.2px 3.6px 0 #0000001c;
-}
-
-#preview-text {
-    position: absolute;
-    width: 640px;
-    height: 360px;
-    z-index: -1;
-    background: #fff;
-    color: #ccf;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 48px;
-    font-weight: 900;
-    line-height: 360px;
-    border-radius: 5px;
-}
-
-.material-icons {
-    display: none;
-    margin-right: 10px;
-    position: relative;
-}
-
-.material-icons.md-18 {
-    font-size: 18px;
-}
-
-.material-icons.md-24 {
-    font-size: 24px;
-}
-
-.material-icons.md-36 {
-    font-size: 36px;
-}
-
-.material-icons.md-48 {
-    font-size: 48px;
-}
-
-#preview-area {
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    background-color: #f7f7ff;
-    z-index: -2;
-}
-
-#preview-area .material-icons {
-    position: relative;
-    bottom: -7px;
-}
-
-#show-hc-logo {
-    display: flex;
-    align-items: center;
-    width: 80%;
-    justify-content: center;
-    border: 1px solid #053fff;
-    padding: 5px 15px;
-    border-radius: 5px;
-    background: #fff;
-    letter-spacing: 1px;
-}
-
-.mdc-switch-input {
-    display: none;
-}
-
-.mdc-switch-label {
-    background: #ddd;
-    width: 32px;
-    height: 14px;
-    display: flex;
-    align-items: center;
-    border-radius: 20px;
-    position: relative;
-    transition: background-color 90ms cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    float: right;
-    margin: 5px;
-}
-
-.mdc-switch-label::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    background: #eef;
-    height: 20px;
-    width: 20px;
-    border-radius: 20px;
-    transition: left 400ms cubic-bezier(0.4, 0, 0.2, 1), background-color 90ms cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, .12);
-}
-
-.mdc-switch-input:checked+.mdc-switch-label {
-    background: #5f66ee;
-}
-
-.mdc-switch-input:checked+.mdc-switch-label::after {
-    left: 14px;
-    background: #053fff;
-}
-
-#form {
-    padding: 10px;
-    box-sizing: border-box;
-    height: 100%;
-    box-shadow: 30px 0 50px #0005;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-#epNumSelector {
-    cursor: auto;
-    text-align: center;
-    text-transform: none;
-}
-
-#line {
-    width: 180px;
-    transform: rotate(90deg);
-    border: 1px solid #00f;
-    z-index: -1;
-    position: relative;
-    left: -30%;
-    top: 100px;
+  text-align: center;
+  transition: all ease 0.2s;
 }
 
 input[type="file"] {
-    display: none;
+  display: none;
+}
+
+#downloader,
+label#bgInputLabel,
+#epNumSelector {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  padding: 10px 15px;
+  background-color: #fff;
+  color: #3740ff;
+  border: 1px solid #3740ff;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-overflow: initial;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+}
+
+label#bgInputLabel,
+#epNumSelector,
+#show-hc-logo,
+#downloader {
+  transition: all 0.1s ease;
+}
+
+#downloader {
+  height: 56px;
+  padding: 0 20px;
+  background: #2930ff;
+  color: #fff;
+  border: 0;
+  border-radius: 28px;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+#show-hc-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  background: #fff;
+  padding: 5px 15px;
+  border: 1px solid #053fff;
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+
+#epNumSelector {
+  cursor: auto;
+  text-align: center;
+  text-transform: none;
 }
 
 #downloadShow {
@@ -265,93 +88,238 @@ input[type="file"] {
   color: #fff;
   overflow: hidden;
   padding: 10px;
-  transition: opacity .1s ease-in;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+}
+
+#line {
+  position: relative;
+  left: -30%;
+  top: 100px;
+  width: 180px;
+  transform: rotate(90deg);
+  border: 1px solid #00f;
+  z-index: -1;
+}
+
+#canvas {
+  width: 640px;
+  height: 360px;
+  border-radius: 5px;
+  box-shadow: 0 0 14.4px 0 #00000022, 0 2.2px 3.6px 0 #0000001c;
+}
+
+#preview-text {
+  position: absolute;
+  width: 640px;
+  height: 360px;
+  background: #fff;
+  color: #ccf;
+  border-radius: 5px;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 360px;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: -1;
+}
+
+#preview-area {
+  background-color: #f7f7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
+}
+
+#preview-area .material-icons {
+  position: relative;
+  bottom: -7px;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 30px 0 50px #0005;
+}
+
+.mdc-switch {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.mdc-switch::after {
+  content: "";
+  background: #ddd;
+  position: absolute;
+  width: 32px;
+  height: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 90ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mdc-switch::before {
+  content: "";
+  background: #eef;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 90ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mdc-switch:checked::before {
+  background: #053fff;
+  transform: translateX(12px);
+}
+
+.mdc-switch:checked::after {
+  background: #a1a6ff;
+}
+
+.material-icons {
+  position: relative;
+  margin-right: 10px;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+input:focus::placeholder {
+  font-size: 0px;
   opacity: 0;
 }
 
-@media print,
-screen and (max-width: 920px) {
-    body {
-        grid-template-columns: none;
-        grid-template-rows: 50% 50%;
-    }
-
-    #canvas,
-    #preview-text {
-        width: 480px;
-        height: 270px;
-    }
-
-    #preview-text {
-        font-size: 40px;
-        line-height: 270px;
-    }
-
-    #preview-text .material-icons {
-        font-size: 40px;
-        line-height: 270px;
-        bottom: -3px;
-    }
-
-    #form {
-        box-shadow: 0px 30px 50px #0005;
-    }
+*::focus {
+  outline: none;
 }
-@media print,
-screen and (max-width: 480px) {
-    body {
-        grid-template-columns: none;
-        grid-template-rows: 50% 50%;
-    }
 
-    #canvas,
-    #preview-text {
-        width: 360px;
-        height: 202.5px;
-    }
-
-    #preview-text {
-        font-size: 30px;
-        line-height: 202.5px;
-    }
-
-    #preview-text .material-icons {
-        font-size: 30px;
-        line-height: 202.5px;
-        bottom: -3px;
-    }
-
-    #form {
-        box-shadow: 0px 30px 50px #0005;
-    }
+label#bgInputLabel:hover,
+#epNumSelector:hover,
+#show-hc-logo:hover,
+#downloader:hover {
+  transform: scale(1.01);
 }
-@media print,
-screen and (max-width: 360px) {
-    body {
-        grid-template-columns: none;
-        grid-template-rows: 50% 50%;
-    }
 
-    #canvas,
-    #preview-text {
-        width: 300px;
-        height: 168.75px;
-        box-shadow: none;
-        border: 0.1px solid #ccf;
-    }
+#downloader:active,
+#downloader:focus,
+label#bgInputLabel:focus,
+label#bgInputLabel:active,
+#epNumSelector:active,
+#epNumSelector:focus {
+  text-decoration: none;
+  transform: scale(0.99);
+}
 
-    #preview-text {
-        font-size: 30px;
-        line-height: 168.75px;
-    }
+#downloader:hover {
+  background-color: #0032d6;
+}
 
-    #preview-text .material-icons {
-        font-size: 30px;
-        line-height: 168.75px;
-        bottom: -3px;
-    }
+#downloader:focus,
+#downloader:active {
+  background: #053fff;
+}
 
-    #form {
-        box-shadow: 0px 30px 50px #0005;
-    }
+@media print, screen and (max-width: 920px) {
+  body {
+    grid-template-columns: none;
+    grid-template-rows: 50% 50%;
+  }
+
+  #canvas,
+  #preview-text {
+    width: 480px;
+    height: 270px;
+  }
+
+  #preview-text {
+    font-size: 40px;
+    line-height: 270px;
+  }
+
+  #preview-text .material-icons {
+    font-size: 40px;
+    line-height: 270px;
+    bottom: -3px;
+  }
+
+  #form {
+    box-shadow: 0px 30px 50px #0005;
+  }
+}
+@media print, screen and (max-width: 480px) {
+  body {
+    grid-template-columns: none;
+    grid-template-rows: 50% 50%;
+  }
+
+  #canvas,
+  #preview-text {
+    width: 360px;
+    height: 202.5px;
+  }
+
+  #preview-text {
+    font-size: 30px;
+    line-height: 202.5px;
+  }
+
+  #preview-text .material-icons {
+    font-size: 30px;
+    line-height: 202.5px;
+    bottom: -3px;
+  }
+
+  #form {
+    box-shadow: 0px 30px 50px #0005;
+  }
+}
+@media print, screen and (max-width: 360px) {
+  body {
+    grid-template-columns: none;
+    grid-template-rows: 50% 50%;
+  }
+
+  #canvas,
+  #preview-text {
+    width: 300px;
+    height: 168.75px;
+    box-shadow: none;
+    border: 0.1px solid #ccf;
+  }
+
+  #preview-text {
+    font-size: 30px;
+    line-height: 168.75px;
+  }
+
+  #preview-text .material-icons {
+    font-size: 30px;
+    line-height: 168.75px;
+    bottom: -3px;
+  }
+
+  #form {
+    box-shadow: 0px 30px 50px #0005;
+  }
 }
