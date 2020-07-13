@@ -155,6 +155,7 @@ label#bgInputLabel,
   display: flex;
   align-items: center;
   position: relative;
+  width: 0px;
 }
 
 .mdc-switch::after {

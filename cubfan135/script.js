@@ -63,8 +63,8 @@ function hcLogo() {
       ctx.drawImage(hc7Logo, 15.7, 40, 1887.5, 244);
     });
     hc7Logo.src =
-      "../Resources/Icons/HC7-Logo.png";
-    hc7Logo.crossOrigin = "Anonymous";
+      "../Resources/Hermitcraft Logos/HC7 Logo.png";
+    //hc7Logo.crossOrigin = "Anonymous";
   }
 }
 
