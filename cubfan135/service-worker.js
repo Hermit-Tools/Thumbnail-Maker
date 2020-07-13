@@ -4,8 +4,7 @@ self.addEventListener("install", function(event) {
       return cache.addAll([
         "./style.css",
         "./script.js",
-        "../hc7logobydnator.png",
-        "./index.html",
+        "../Resources/Hermitcraft Logos/HC7 Logo.png",
         "https://fonts.googleapis.com/icon?family=Material+Icons"
       ]);
     })

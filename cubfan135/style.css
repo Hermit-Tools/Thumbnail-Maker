@@ -15,6 +15,7 @@ body {
 *::placeholder {
   text-align: center;
   transition: all ease 0.2s;
+  text-transform: uppercase;
 }
 
 input[type="file"] {
@@ -211,7 +212,7 @@ input:focus::placeholder {
   opacity: 0;
 }
 
-*::focus {
+*:focus {
   outline: none;
 }
 
