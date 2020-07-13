@@ -8,41 +8,10 @@
     "theme_color": "#3740FF",
     "description": "Smart thumbnail maker for cubfan135's HermitCraft videos.",
     "icons": [{
-            "src": "/Thumbnail-Maker/icons/htlogo64.png",
+            "src": "../Resources/Icons/Cub's Head",
             "sizes": "64x64",
             "type": "image/png",
             "purpose": "any"
-        },
-        {
-            "src": "/Thumbnail-Maker/icons/htlogo80.png",
-            "sizes": "80x80",
-            "type": "image/png",
-            "purpose": "any"
-        },
-        {
-            "src": "/Thumbnail-Maker/icons/htlogo144.png",
-            "sizes": "144x144",
-            "type": "image/png",
-            "purpose": "any"
-        },
-        {
-            "src": "/Thumbnail-Maker/icons/htlogo180.png",
-            "sizes": "180x180",
-            "type": "image/png",
-            "purpose": "any"
-        },
-        {
-            "src": "/Thumbnail-Maker/icons/htlogo256.png",
-            "sizes": "256x256",
-            "type": "image/png",
-            "purpose": "any"
-        },
-        {
-            "src": "/Thumbnail-Maker/icons/htlogo512.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "any"
-        }
-    ],
+        }],
     "scope": "."
   }

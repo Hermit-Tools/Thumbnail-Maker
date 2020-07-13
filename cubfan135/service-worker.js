@@ -1,23 +1,21 @@
-self.addEventListener('install', function(event) {
-  console.log('installed', event);
-    event.waitUntil(
-      caches.open("Cub'sContraption").then(function(cache) {
-        return cache.addAll([
-          './style.css',
-          './script.js',
-          '../hc7logobydnator.png',
-          './index.html',
-          'https://fonts.googleapis.com/icon?family=Material+Icons'
-        ]),
-        console.log('cached');        
-      })
-    );
-  });
+self.addEventListener("install", function(event) {
+  event.waitUntil(
+    caches.open("Cub'sContraption").then(function(cache) {
+      return cache.addAll([
+        "./style.css",
+        "./script.js",
+        "../hc7logobydnator.png",
+        "./index.html",
+        "https://fonts.googleapis.com/icon?family=Material+Icons"
+      ]);
+    })
+  );
+});
 
-  self.addEventListener('activate', (event) => {
-    console.log('Inside the activate handler:', event);
-  });
-  
-  self.addEventListener('fetch', (event) => {
-    console.log('Inside the fetch handler:', event);
-  });
+self.addEventListener("activate", event => {
+  console.log("Inside the activate handler:", event);
+});
+
+self.addEventListener("fetch", event => {
+  console.log("Inside the fetch handler:", event);
+});
