@@ -8,19 +8,19 @@
     "theme_color": "#037de1",
     "description": "Smart thumbnail maker for cubfan135's HermitCraft videos.",
     "icons": [{
-            "src": "../Resources/Icons/Cub's Head",
+            "src": "../Resources/Icons/Cub's Head.png",
             "sizes": "1030x902",
             "type": "image/png",
             "purpose": "any"
         },
         {
-            "src": "../Resources/Icons/Cub's Head 144x144",
+            "src": "../Resources/Icons/Cub's Head 144x144.png",
             "sizes": "144x144",
             "type": "image/png",
             "purpose": "any"
         },
         {
-            "src": "../Resources/Icons/Cub's Head 512x512",
+            "src": "../Resources/Icons/Cub's Head 512x512.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any"
