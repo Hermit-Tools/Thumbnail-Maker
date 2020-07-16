@@ -50,8 +50,12 @@ function episodeNum() {
   ctx.font = "1000 401px Tahoma";
   ctx.textBaseline = "bottom";
 
-  ctx.fillText(epNum, 25, 1100);
-  ctx.strokeText(epNum, 25, 1100);
+  ctx.save();
+  ctx.scale(1.05, 0.98);
+  ctx.fillText(epNum, 15, 1120);
+  ctx.strokeText(epNum, 15, 1120);
+  ctx.restore();
+  
   ctx.fill();
   ctx.stroke();
 }
