@@ -22,3 +22,10 @@ Changed something | ✏ | ✏Changed background color from red to blue
 Updated something | 🔼 | 🔼Updated downloadImage()
 Minor changes | 🦠 | 🦠Minor changes `List the changes in description`
 Created a new file | ➕ | ➕Created file service-worker.js
+
+## Coding conventions
+Start reading our code and you'll get the hang of it. We optimize for readability:
+
+- We indent using four spaces
+- We ALWAYS put spaces after list items and method parameters ([1, 2, 3], not [1,2,3]), around operators (x += 1, not x+=1), and around hash arrows.
+- This is open source software. Consider the people who will read your code, and make it look nice for them. It's sort of like driving a car: Perhaps you love doing donuts when you're alone, but with passengers the goal is to make the ride as smooth as possible.
