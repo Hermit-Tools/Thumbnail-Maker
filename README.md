@@ -5,7 +5,7 @@ Minecraft is the best-selling game on Earth. HermitCraft is one of the most popu
 ## Cub's Contraption
 <img src="https://imgur.com/MKfL5y2.png">  
 
-Cub's Contraption is the name for **v0.0-v1.0** releases of Thumbnail-Maker. This phase is aimed for making cubfan135's Thumbnail-Maker.
+Cub's Contraption is the name for **v0.1-v1.0** releases of Thumbnail-Maker. This phase is aimed for making cubfan135's Thumbnail-Maker.
 This tool is completed. It is live [here](https://hermit-tools.github.io/Thumbnail-Maker/cubfan135/).  
 
 ## TFC's Tool
