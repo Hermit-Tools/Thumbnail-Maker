@@ -12,12 +12,12 @@ $ git commit -m "A brief summary of the commit
 > 
 > A paragraph describing what changed and its impact."
 ```
-We would love if you add emojis to your commit messages. Emojis can make commit messages very much friendly. The following is a table of emojis you should add with your commit messages. These are just guidelines, use your best judgement in choosing emojis.
+We would love if you add emojis to your commit messages. Emojis can make commit messages very much friendly. The following is a table of emojis you should add with your commit messages. Feel free to add more rows to the table.
 
 Commit is about | Emoji to represent | Example
 --- | --- | ---
 Added something new | 🆕 | 🆕Added download button
-Fixed something | 🔧 | 🔧Fixed #9
+Fixed/corrected something | 🔧 | 🔧Fixed #9
 Changed something | ✏ | ✏Changed background color from red to blue
 Updated something | 🔼 | 🔼Updated downloadImage()
 Minor changes | 🦠 | 🦠Minor changes `List the changes in description`
