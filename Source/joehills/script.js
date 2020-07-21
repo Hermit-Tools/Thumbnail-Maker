@@ -71,21 +71,25 @@ function hcLogo() {
 
 function captionWriter() {
   let captions = document.getElementsByClassName('caption');
-  for (let i = 0; i < captions.length; i++) {
-    const captionBox = captions[i];
-    let caption = captionBox.value;
 
-    const theGradient = ctx.createLinearGradient(15,820,20, 837);
-//    theGradient.addColorStop(0, '#93680c');
-//    theGradient.addColorStop(1, '#e6cf1a');
-theGradient.addColorStop(0, '#f00');
-theGradient.addColorStop(1, '#00f');
+  for (let i = 0; i < captions.length; i++) {
+    let caption = captions[i].value;
+
+    ctx.font = "1000 1000px Ed Gothic";
+    const lineHeight = ctx.measureText('M').width;
+
+    const theGradient = ctx.createLinearGradient(00, 00, 0, lineHeight);
+    theGradient.addColorStop(0, '#eace08');
+    theGradient.addColorStop(1, '#9c6102');
 
     ctx.fillStyle = theGradient;
-    ctx.font = "1000 401px Tahoma";
-    ctx.textBaseline = "bottom";
+    ctx.textBaseline = "top";
 
-    ctx.fillText(caption, 15, 820);
+    ctx.strokeStyle = "#281604";
+    ctx.lineWidth = 12;
+
+    ctx.fillText(caption, 00, 00);
+    ctx.strokeText(caption, 0, 0);
     ctx.fill();
   }
 }
