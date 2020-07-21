@@ -6,7 +6,7 @@ const hcLogoToggler = document.getElementById("hcLogoToggler");
 const previewText = document.getElementById("preview-text");
 const downloader = document.getElementById("downloader");
 
-// Cookies Stuff
+/*// Cookies Stuff
 let epNumValueFromCookie;
 
 downloader.addEventListener("click", () => {
@@ -19,6 +19,7 @@ if (document.cookie.length === 0) {
   epNumValueFromCookie = document.cookie.split("=")[1];
   epNumSelector.value = Number(epNumValueFromCookie) + 1;
 }
+// End Cookies Stuff
 
 // Service Worker
 if ("serviceWorker" in navigator) {
@@ -26,6 +27,7 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("service-worker.js");
   });
 }
+// End Service Worker*/
 
 function addBgImage() {
   let bgImage = new Image();
@@ -35,6 +37,7 @@ function addBgImage() {
       ctx.drawImage(bgImage, 0, 0, 1920, 1080);
       hcLogo();
       episodeNum();
+      captionWriter();
     },
     false
   );
@@ -44,20 +47,14 @@ function addBgImage() {
 function episodeNum() {
   let epNum = epNumSelector.value;
 
-  ctx.fillStyle = "#fff";
-  ctx.strokeStyle = "#000";
-  ctx.lineWidth = 12;
+  ctx.fillStyle = "#261412";
   ctx.font = "1000 401px Tahoma";
   ctx.textBaseline = "bottom";
 
-  ctx.save();
-  ctx.scale(1.05, 0.98);
   ctx.fillText(epNum, 15, 1120);
   ctx.strokeText(epNum, 15, 1120);
-  ctx.restore();
   
   ctx.fill();
-  ctx.stroke();
 }
 
 function hcLogo() {
@@ -72,6 +69,27 @@ function hcLogo() {
   }
 }
 
+function captionWriter() {
+  let captions = document.getElementsByClassName('caption');
+  for (let i = 0; i < captions.length; i++) {
+    const captionBox = captions[i];
+    let caption = captionBox.value;
+
+    const theGradient = ctx.createLinearGradient(15,820,20, 837);
+//    theGradient.addColorStop(0, '#93680c');
+//    theGradient.addColorStop(1, '#e6cf1a');
+theGradient.addColorStop(0, '#f00');
+theGradient.addColorStop(1, '#00f');
+
+    ctx.fillStyle = theGradient;
+    ctx.font = "1000 401px Tahoma";
+    ctx.textBaseline = "bottom";
+
+    ctx.fillText(caption, 15, 820);
+    ctx.fill();
+  }
+}
+
 function process() {
   ctx.fillStyle = "#fff";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -80,6 +98,7 @@ function process() {
   } else {
     hcLogo();
     episodeNum();
+    captionWriter();
   }
 }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Cub's Contraption by Hermit Tools</title>
+    <title>Joey by Hermit Tools</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <link rel="manifest" href="./manifest.webmanifest" />
     <link
@@ -20,21 +20,21 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <meta property="og:site_name" content="Cub's Contraption by Hermit Tools" />
-    <meta property="og:title" content="Cub's Contraption" />
+    <meta property="og:site_name" content="Joey by Hermit Tools" />
+    <meta property="og:title" content="Joey" />
     <meta
       name="description"
-      content="An automated and smart thumbnail maker for cubfan135's HermitCraft videos. Crafted with love from Hermit Tools."
+      content="An automated and smart thumbnail maker for Joe Hills' Hermitcraft videos. Crafted with love from Hermit Tools."
     />
     <meta name="theme-color" content="#037de1" />
     <meta
       name="og:description"
-      content="An automated and smart thumbnail maker for cubfan135's HermitCraft videos. Crafted with love from Hermit Tools."
+      content="An automated and smart thumbnail maker for Joe Hills' Hermitcraft videos. Crafted with love from Hermit Tools."
     />
     <meta property="og:locale" content="en_US" />
     <meta
       property="og:url"
-      content="https://hermit-tools.github.io/Thumbnail-Maker/cubfan135"
+      content="https://hermit-tools.github.io/Thumbnail-Maker/joehills"
     />
   </head>
 
@@ -55,8 +55,8 @@
         id="bgInputLabel"
         for="bgInput"
         title="Choose background image or nothing."
-        ><i class="material-icons md-18">publish</i> Choose Background Image</label
-      >
+        ><i class="material-icons md-18">publish</i> Choose Background Image</label>
+        
       <input
         type="file"
         accept="image/*"
@@ -83,7 +83,17 @@
           id="hcLogoToggler"
           class="mdc-switch"
         />
-      </div>
+      </div><br />
+
+      <input
+      type="text"
+      title="Enter caption here."
+      oninput="process()"
+      onclick="this.focus();this.select();"
+      class="caption"
+      placeholder="Enter Caption Here"
+      autocomplete="off"
+      /><br />
 
       <a
         style="text-decoration: none; margin: 20px"
