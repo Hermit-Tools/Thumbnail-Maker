@@ -50,6 +50,17 @@ function episodeNum() {
     epNum = '';
   } else {epNum = '#' + epNumSelector.value}
 
+  ctx.beginPath();
+  ctx.moveTo(0,1080);
+  ctx.lineTo(0, 798.5);
+  ctx.lineTo(312, 816);
+  ctx.lineTo(374, 1080);
+  ctx.lineTo(0, 1080);
+  
+  ctx.fillStyle = '#f00';
+  ctx.fill();
+  ctx.beginPath();
+  
   ctx.fillStyle = "#261412";
   ctx.font = "normal 250px EdGothic";
   ctx.textBaseline = "top";
@@ -92,6 +103,7 @@ function captionWriter() {
     ctx.fillText(caption, 00, 00);
     ctx.strokeText(caption, 0, 0);
     ctx.fill();
+    ctx.stroke();
   }
 }
 
