@@ -45,15 +45,16 @@ function addBgImage() {
 }
 
 function episodeNum() {
-  let epNum = epNumSelector.value;
+  let epNum;
+  if (epNumSelector.value.length === 0) {
+    epNum = '';
+  } else {epNum = '#' + epNumSelector.value}
 
   ctx.fillStyle = "#261412";
-  ctx.font = "1000 401px EdGothic";
-  ctx.textBaseline = "bottom";
+  ctx.font = "normal 250px EdGothic";
+  ctx.textBaseline = "top";
 
-  ctx.fillText(epNum, 15, 1120);
-  ctx.strokeText(epNum, 15, 1120);
-  
+  ctx.fillText(epNum, 14, 840.5);
   ctx.fill();
 }
 
@@ -95,8 +96,9 @@ function captionWriter() {
 }
 
 function process() {
-  ctx.fillStyle = "#fff";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  //ctx.fillStyle = "#fff";
+  //ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0,0,canvas.width,canvas.height)
   if (bgInput.files.length != 0) {
     addBgImage();
   } else {
