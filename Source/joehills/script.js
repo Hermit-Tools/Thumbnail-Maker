@@ -48,7 +48,7 @@ function episodeNum() {
   let epNum = epNumSelector.value;
 
   ctx.fillStyle = "#261412";
-  ctx.font = "1000 401px Tahoma";
+  ctx.font = "1000 401px EdGothic";
   ctx.textBaseline = "bottom";
 
   ctx.fillText(epNum, 15, 1120);
@@ -75,7 +75,7 @@ function captionWriter() {
   for (let i = 0; i < captions.length; i++) {
     let caption = captions[i].value;
 
-    ctx.font = "1000 1000px Ed Gothic";
+    ctx.font = "normal 300px EdGothic, Comic Sans MS, Segoe UI";
     const lineHeight = ctx.measureText('M').width;
 
     const theGradient = ctx.createLinearGradient(00, 00, 0, lineHeight);

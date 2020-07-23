@@ -325,3 +325,9 @@ label#bgInputLabel:active,
     box-shadow: 0px 30px 50px #0005;
   }
 }
+@font-face {
+  font-family: 'EdGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(EdGothic.otf);
+}
