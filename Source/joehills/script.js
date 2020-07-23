@@ -50,19 +50,21 @@ function episodeNum() {
     epNum = '';
   } else {epNum = '#' + epNumSelector.value}
 
+  ctx.font = "normal 250px EdGothic";
+  let epNumWidth = ctx.measureText(epNum).width;
+
   ctx.beginPath();
   ctx.moveTo(0,1080);
   ctx.lineTo(0, 798.5);
-  ctx.lineTo(312, 816);
-  ctx.lineTo(374, 1080);
+  ctx.lineTo(epNumWidth + 30.5, 816);
+  ctx.lineTo(epNumWidth + 62, 1080);
   ctx.lineTo(0, 1080);
-  
+
   ctx.fillStyle = '#f00';
   ctx.fill();
   ctx.beginPath();
-  
+
   ctx.fillStyle = "#261412";
-  ctx.font = "normal 250px EdGothic";
   ctx.textBaseline = "top";
 
   ctx.fillText(epNum, 14, 840.5);
@@ -115,7 +117,9 @@ function process() {
     addBgImage();
   } else {
     hcLogo();
+    if (epNumSelector.value.length !== 0) {
     episodeNum();
+    }
     captionWriter();
   }
 }
