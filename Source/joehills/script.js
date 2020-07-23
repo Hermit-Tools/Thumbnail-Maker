@@ -93,21 +93,21 @@ function captionWriter() {
   for (let i = 0; i < captions.length; i++) {
     let caption = captions[i].value;
 
-    ctx.font = "normal 300px EdGothic, Comic Sans MS, Segoe UI";
-    const lineHeight = ctx.measureText('M').width;
+    ctx.font = "normal 165px EdGothic";
 
-    const theGradient = ctx.createLinearGradient(0, 0, 0, lineHeight);
-    theGradient.addColorStop(0, '#eace08');
-    theGradient.addColorStop(1, '#9c6102');
+    const theGradient = ctx.createLinearGradient(0, ctx.measureText('|>').width, 0, ctx.measureText('||>|').width);
+    theGradient.addColorStop(0, '#ecd319');
+    theGradient.addColorStop(1, '#9b5e12');
 
     ctx.fillStyle = theGradient;
     ctx.textBaseline = "top";
 
     ctx.strokeStyle = "#281604";
-    ctx.lineWidth = 12;
-
-    ctx.fillText(caption, 00, 00);
+    ctx.lineWidth = 24.5;
+    ctx.lineJoin = 'round';
+    
     ctx.strokeText(caption, 0, 0);
+    ctx.fillText(caption, 0, 0);
     ctx.fill();
     ctx.stroke();
   }
