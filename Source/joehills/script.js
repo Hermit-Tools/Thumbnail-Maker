@@ -53,14 +53,18 @@ function episodeNum() {
   ctx.font = "normal 250px EdGothic";
   let epNumWidth = ctx.measureText(epNum).width;
 
+  const theGradient = ctx.createLinearGradient(0, 798.5, 0, 1080);
+  theGradient.addColorStop(1, '#eace08');
+  theGradient.addColorStop(0, '#9a6105');
+
   ctx.beginPath();
   ctx.moveTo(0,1080);
   ctx.lineTo(0, 798.5);
-  ctx.lineTo(epNumWidth + 30.5, 816);
-  ctx.lineTo(epNumWidth + 62, 1080);
+  ctx.lineTo(epNumWidth + 36.5, 816);
+  ctx.lineTo(epNumWidth + 97, 1080);
   ctx.lineTo(0, 1080);
 
-  ctx.fillStyle = '#f00';
+  ctx.fillStyle = theGradient;
   ctx.fill();
   ctx.beginPath();
 
@@ -75,7 +79,7 @@ function hcLogo() {
   if (hcLogoToggler.checked) {
     let hc7Logo = new Image();
     hc7Logo.addEventListener("load", () => {
-      ctx.drawImage(hc7Logo, 15.7, 40, 1887.5, 244);
+      ctx.drawImage(hc7Logo, 28, 22, 1842.5, 236);
     });
     hc7Logo.src =
       "https://hermit-tools.github.io/Thumbnail-Maker/Resources/Hermitcraft Logos/HC7 Logo.png";
@@ -92,7 +96,7 @@ function captionWriter() {
     ctx.font = "normal 300px EdGothic, Comic Sans MS, Segoe UI";
     const lineHeight = ctx.measureText('M').width;
 
-    const theGradient = ctx.createLinearGradient(00, 00, 0, lineHeight);
+    const theGradient = ctx.createLinearGradient(0, 0, 0, lineHeight);
     theGradient.addColorStop(0, '#eace08');
     theGradient.addColorStop(1, '#9c6102');
 
