@@ -105,6 +105,9 @@ function captionWriter() {
     //theGradient.addColorStop(0, '#c6b90c');
     theGradient.addColorStop(1, '#9b4a06');
 
+    const lineHeight = ctx.measureText('|||||').width
+    let line = caption.split(/\r?\n/);
+
     ctx.fillStyle = theGradient;
     ctx.textBaseline = "top";
 
@@ -112,8 +115,11 @@ function captionWriter() {
     ctx.lineWidth = 24.5;
     ctx.lineJoin = 'round';
     
-    ctx.strokeText(caption, 0, 0);
-    ctx.fillText(caption, 0, 0);
+    for (let i = 0; i < line.length; i++) {
+      ctx.strokeText(line[i], 0, 0 + i * lineHeight);
+      ctx.fillText(line[i], 0, 0 + i * lineHeight);
+    }
+    
     ctx.fill();
     ctx.stroke();
   }
