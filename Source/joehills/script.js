@@ -53,9 +53,13 @@ function episodeNum() {
   ctx.font = "normal 250px EdGothic";
   let epNumWidth = ctx.measureText(epNum).width;
 
-  const theGradient = ctx.createLinearGradient(0, 798.5, 0, 1080);
-  theGradient.addColorStop(1, '#eace08');
-  theGradient.addColorStop(0, '#9a6105');
+  const theGradient = ctx.createLinearGradient(0, 816, 0, 1080);
+  //theGradient.addColorStop(0, '#9a6105');
+  //theGradient.addColorStop(1, '#a16d03');
+  //theGradient.addColorStop(0, '#c6b90c');
+  theGradient.addColorStop(0, '#a66c02');
+  theGradient.addColorStop(0.5, '#caa205');
+  theGradient.addColorStop(1, '#e9cd07');
 
   ctx.beginPath();
   ctx.moveTo(0,1080);
@@ -68,7 +72,7 @@ function episodeNum() {
   ctx.fill();
   ctx.beginPath();
 
-  ctx.fillStyle = "#261412";
+  ctx.fillStyle = "#26150e";
   ctx.textBaseline = "top";
 
   ctx.fillText(epNum, 14, 840.5);
@@ -97,7 +101,9 @@ function captionWriter() {
 
     const theGradient = ctx.createLinearGradient(0, ctx.measureText('|>').width, 0, ctx.measureText('||>|').width);
     theGradient.addColorStop(0, '#ecd319');
-    theGradient.addColorStop(1, '#9b5e12');
+    //theGradient.addColorStop(1, '#a16d03');
+    //theGradient.addColorStop(0, '#c6b90c');
+    theGradient.addColorStop(1, '#9b4a06');
 
     ctx.fillStyle = theGradient;
     ctx.textBaseline = "top";
