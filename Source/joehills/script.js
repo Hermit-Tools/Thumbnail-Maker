@@ -110,8 +110,7 @@ function captionWriter() {
     
     for (let i = 0; i < line.length; i++) {
       const theGradient = ctx.createLinearGradient(
-        0, ctx.measureText('|>').width+i*lineHeight, 0, ctx.measureText('|||>').width+i*lineHeight
-        );
+        0, ctx.measureText('|>').width + i * lineHeight, 0, ctx.measureText('|||>').width + i * lineHeight);
       theGradient.addColorStop(0, '#ecd319');
       theGradient.addColorStop(1, '#9b4a06');
       ctx.fillStyle = theGradient;
