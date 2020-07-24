@@ -99,16 +99,9 @@ function captionWriter() {
 
     ctx.font = "normal 165px EdGothic";
 
-    const theGradient = ctx.createLinearGradient(0, ctx.measureText('|>').width, 0, ctx.measureText('||>|').width);
-    theGradient.addColorStop(0, '#ecd319');
-    //theGradient.addColorStop(1, '#a16d03');
-    //theGradient.addColorStop(0, '#c6b90c');
-    theGradient.addColorStop(1, '#9b4a06');
-
     const lineHeight = ctx.measureText('|||||').width
     let line = caption.split(/\r?\n/);
 
-    ctx.fillStyle = theGradient;
     ctx.textBaseline = "top";
 
     ctx.strokeStyle = "#281604";
@@ -116,10 +109,17 @@ function captionWriter() {
     ctx.lineJoin = 'round';
     
     for (let i = 0; i < line.length; i++) {
+      const theGradient = ctx.createLinearGradient(
+        0, ctx.measureText('|>').width+i*lineHeight, 0, ctx.measureText('|||>').width+i*lineHeight
+        );
+      theGradient.addColorStop(0, '#ecd319');
+      theGradient.addColorStop(1, '#9b4a06');
+      ctx.fillStyle = theGradient;
+
       ctx.strokeText(line[i], 0, 0 + i * lineHeight);
       ctx.fillText(line[i], 0, 0 + i * lineHeight);
     }
-    
+
     ctx.fill();
     ctx.stroke();
   }
