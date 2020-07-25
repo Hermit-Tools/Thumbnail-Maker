@@ -46,11 +46,15 @@
       <canvas width="1920" height="1080" id="canvas">
         Your browser does not support the canvas element. Consider upgrading to a newer browser.
       </canvas>
+      <div id="dragContainer">
+        <div class="draggable"></div>
+        <div class="draggable d2"></div>
+        </div>
     </div>
-
+    
     <main id="form">
       <hr id="line" />
-
+      
       <label
         id="bgInputLabel"
         for="bgInput"
@@ -84,16 +88,6 @@
           class="mdc-switch"
         />
       </div><br />
-
-      <!--<input
-      type="text"
-      title="Enter caption here."
-      oninput="process()"
-      onclick="this.focus();this.select();"
-      class="caption"
-      placeholder="Enter Caption Here"
-      autocomplete="off"
-      /><br />-->
 
       <textarea
       title="Enter caption here."

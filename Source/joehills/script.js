@@ -150,3 +150,53 @@ function finishEditing() {
     .toDataURL("image/png")
     .replace("data:image/png", "data:concorp>sahara");
 }
+
+draggable = document.getElementsByClassName('draggable');
+
+let oldX = 0;
+let oldY = 0;
+let distX = 0;
+let distY = 0;
+
+for (let i = 0; i < draggable.length; i++) {
+  const dragElement = draggable[i];
+  dragElement.isMoving = false;
+  dragElement.onmousedown = e => {
+    dragElement.isMoving = true;
+
+    oldX = e.clientX;
+    oldY = e.clientY;
+  }
+    dragElement.onmouseup = () => {
+        dragElement.isMoving = false;
+    };
+
+    window.onmousemove = e => {
+      e.preventDefault();
+      if (dragElement.isMoving === true) {
+        distX = e.clientX - oldX;
+        distY = e.clientY - oldY;
+        oldX = e.clientX;
+        oldY = e.clientY;
+        dragElement.style.left = (dragElement.offsetLeft + distX) + 'px';
+        dragElement.style.top = (dragElement.offsetTop + distY) + 'px';
+      }
+    }
+  }
+  /*window.addEventListener('mousemove', e => {
+    if (dragElement.isMoving === true) {
+      distX = oldX - e.clientX;
+      distY = oldY - e.clientY;
+      oldX = e.clientX;
+      oldY = e.clientY;
+      dragElement.style.left = (dragElement.offsetLeft - distX) + 'px';
+      dragElement.style.top = (dragElement.offsetTop - distY) + 'px';
+    }
+  });*/
+  
+  /*window.addEventListener('mouseup', e => {
+    if (dragElement.isMoving === true) {
+      dragElement.isMoving = false;
+    }
+  }); 
+}*/
