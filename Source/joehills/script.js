@@ -5,6 +5,9 @@ const epNumSelector = document.getElementById("epNumSelector");
 const hcLogoToggler = document.getElementById("hcLogoToggler");
 const previewText = document.getElementById("preview-text");
 const downloader = document.getElementById("downloader");
+const addCaption = document.getElementById("addCaption");
+const form = document.getElementById("form");
+const captionContainer = document.getElementById("caption-container");
 
 /*// Cookies Stuff
 let epNumValueFromCookie;
@@ -92,7 +95,7 @@ function hcLogo() {
 }
 
 function captionWriter() {
-  let captions = document.getElementsByClassName('caption');
+  /*let captions = document.getElementsByClassName('caption');
 
   for (let i = 0; i < captions.length; i++) {
     let caption = captions[i].value;
@@ -121,7 +124,7 @@ function captionWriter() {
 
     ctx.fill();
     ctx.stroke();
-  }
+  }*/
 }
 
 function process() {
@@ -186,3 +189,31 @@ function draggableGuard(evt) {
   }
 }
 document.body.addEventListener('mousedown', draggableGuard);
+// End draggable saga
+
+// Start multiple captions adder
+cpNo = 1;
+addCaption.addEventListener('click', addNewCaption)
+function addNewCaption() {
+  let newCaptionTextarea = document.createElement('textarea');
+  newCaptionTextarea.classList.add('caption');
+  newCaptionTextarea.classList.add(cpNo);
+  form.appendChild(newCaptionTextarea);
+
+  let newCaptionDiv = document.createElement('div');
+  newCaptionDiv.className = 'draggable ' + cpNo;
+  cpNo++;
+  captionContainer.appendChild(newCaptionDiv);
+  for (let i = 0; i < captions.length; i++) {
+    const caption = captions[i];
+    caption.addEventListener('input', textAreaToDiv);
+  }
+}
+let captions = document.getElementsByClassName('caption');
+function textAreaToDiv(e) {
+  const captionId = e.target.className.split(' ')[1];
+  console.log(captionId);
+  const captionDiv = document.getElementsByClassName('draggable ' + captionId);
+  captionDiv[0].textContent = e.target.value;
+  console.log(captionDiv);
+}
