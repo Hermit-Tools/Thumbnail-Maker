@@ -114,7 +114,7 @@ function captionWriter() {
       theGradient.addColorStop(0, '#ecd319');
       theGradient.addColorStop(1, '#9b4a06');
       ctx.fillStyle = theGradient;
-
+      //ctx.textAlign = 'center';
       ctx.strokeText(line[i], 0, 0 + i * lineHeight);
       ctx.fillText(line[i], 0, 0 + i * lineHeight);
     }
@@ -151,52 +151,38 @@ function finishEditing() {
     .replace("data:image/png", "data:concorp>sahara");
 }
 
-draggable = document.getElementsByClassName('draggable');
+// Following code makes any element with class containing 'draggable' draggable
+
+draggable = document.getElementById('draggable');
 
 let oldX = 0;
 let oldY = 0;
 let distX = 0;
 let distY = 0;
+let dragElement;
 
-for (let i = 0; i < draggable.length; i++) {
-  const dragElement = draggable[i];
+function drag(event) {
+  distX = event.clientX - oldX;
+  distY = event.clientY - oldY;
+  oldX = event.clientX;
+  oldY = event.clientY;
+  if (dragElement.isMoving) {
+    dragElement.style.left = (dragElement.offsetLeft + distX) + 'px';
+    dragElement.style.top = (dragElement.offsetTop + distY) + 'px';
+  }
+}
+function stopDrag() {
   dragElement.isMoving = false;
-  dragElement.onmousedown = e => {
+}
+function draggableGuard(evt) {
+  if (evt.target.classList.contains('draggable')) {
+    dragElement = evt.target;
     dragElement.isMoving = true;
-
-    oldX = e.clientX;
-    oldY = e.clientY;
+    oldX = evt.clientX;
+    oldY = evt.clientY;
+    document.addEventListener('mousemove', drag)
+    dragElement.addEventListener('mouseup', stopDrag)
+    console.log(dragElement);
   }
-    dragElement.onmouseup = () => {
-        dragElement.isMoving = false;
-    };
-
-    window.onmousemove = e => {
-      e.preventDefault();
-      if (dragElement.isMoving === true) {
-        distX = e.clientX - oldX;
-        distY = e.clientY - oldY;
-        oldX = e.clientX;
-        oldY = e.clientY;
-        dragElement.style.left = (dragElement.offsetLeft + distX) + 'px';
-        dragElement.style.top = (dragElement.offsetTop + distY) + 'px';
-      }
-    }
-  }
-  /*window.addEventListener('mousemove', e => {
-    if (dragElement.isMoving === true) {
-      distX = oldX - e.clientX;
-      distY = oldY - e.clientY;
-      oldX = e.clientX;
-      oldY = e.clientY;
-      dragElement.style.left = (dragElement.offsetLeft - distX) + 'px';
-      dragElement.style.top = (dragElement.offsetTop - distY) + 'px';
-    }
-  });*/
-  
-  /*window.addEventListener('mouseup', e => {
-    if (dragElement.isMoving === true) {
-      dragElement.isMoving = false;
-    }
-  }); 
-}*/
+}
+document.body.addEventListener('mousedown', draggableGuard);

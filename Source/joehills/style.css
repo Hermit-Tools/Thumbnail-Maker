@@ -340,14 +340,14 @@ label#bgInputLabel:active,
   top: 0;
   left: 0;
 }
-.d2 {
-  top: 100px;
-  left: 100px;
-}
-#dragContainer {
+
+#caption-container {
   position: absolute;
   width: 640px;
   height: 360px;
   border: 1px solid green;
   border-radius: 5px;
+}
+.caption {
+  resize: vertical;
 }
