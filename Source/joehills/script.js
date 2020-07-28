@@ -95,7 +95,7 @@ function hcLogo() {
 }
 
 function captionWriter() {
-  /*let captions = document.getElementsByClassName('caption');
+  let captions = document.getElementsByClassName('caption');
 
   for (let i = 0; i < captions.length; i++) {
     let caption = captions[i].value;
@@ -124,7 +124,7 @@ function captionWriter() {
 
     ctx.fill();
     ctx.stroke();
-  }*/
+  }
 }
 
 function process() {

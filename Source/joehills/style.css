@@ -332,15 +332,22 @@ label#bgInputLabel:active,
   src: url(EdGothic.otf);
 }
 .draggable {
-  border: 1px solid black;
+  border: 1px dashed gray;
   position: absolute;
-  width: 50px;
-  height: 50px;
-  background-color: blue;
+  min-width: 50px;
+  min-height: 50px;
   top: 0;
   left: 0;
+  width: fit-content;
+  height: fit-content;
+  font: normal 65px EdGothic;
+  background: linear-gradient(#ecd319 40%, #9b4a06 70%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  /*-webkit-text-stroke: 20px #0f0;
+  paint-order: stroke fill;*/
 }
-
 #caption-container {
   position: absolute;
   width: 640px;
