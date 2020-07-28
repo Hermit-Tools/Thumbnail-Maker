@@ -165,6 +165,7 @@ let distY = 0;
 let dragElement;
 
 function drag(event) {
+  event.preventDefault();
   distX = event.clientX - oldX;
   distY = event.clientY - oldY;
   oldX = event.clientX;
@@ -185,7 +186,6 @@ function draggableGuard(evt) {
     oldY = evt.clientY;
     document.addEventListener('mousemove', drag)
     dragElement.addEventListener('mouseup', stopDrag)
-    console.log(dragElement);
   }
 }
 document.body.addEventListener('mousedown', draggableGuard);
@@ -212,8 +212,6 @@ function addNewCaption() {
 let captions = document.getElementsByClassName('caption');
 function textAreaToDiv(e) {
   const captionId = e.target.className.split(' ')[1];
-  console.log(captionId);
   const captionDiv = document.getElementsByClassName('draggable ' + captionId);
   captionDiv[0].textContent = e.target.value;
-  console.log(captionDiv);
 }

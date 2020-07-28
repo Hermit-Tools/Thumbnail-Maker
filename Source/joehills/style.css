@@ -347,6 +347,7 @@ label#bgInputLabel:active,
   background-clip: text;
   /*-webkit-text-stroke: 20px #0f0;
   paint-order: stroke fill;*/
+  cursor: move;
 }
 #caption-container {
   position: absolute;
@@ -354,6 +355,7 @@ label#bgInputLabel:active,
   height: 360px;
   border: 1px solid green;
   border-radius: 5px;
+  overflow: hidden;
 }
 .caption {
   resize: vertical;
