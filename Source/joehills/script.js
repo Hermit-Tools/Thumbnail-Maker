@@ -51,7 +51,9 @@ function episodeNum() {
   let epNum;
   if (epNumSelector.value.length === 0) {
     epNum = '';
-  } else {epNum = '#' + epNumSelector.value}
+  } else {
+    epNum = '#' + epNumSelector.value
+  }
 
   ctx.font = "normal 250px EdGothic";
   let epNumWidth = ctx.measureText(epNum).width;
@@ -65,7 +67,7 @@ function episodeNum() {
   theGradient.addColorStop(1, '#e9cd07');
 
   ctx.beginPath();
-  ctx.moveTo(0,1080);
+  ctx.moveTo(0, 1080);
   ctx.lineTo(0, 798.5);
   ctx.lineTo(epNumWidth + 36.5, 816);
   ctx.lineTo(epNumWidth + 97, 1080);
@@ -110,7 +112,7 @@ function captionWriter() {
     ctx.strokeStyle = "#281604";
     ctx.lineWidth = 24.5;
     ctx.lineJoin = 'round';
-    
+
     for (let i = 0; i < line.length; i++) {
       const theGradient = ctx.createLinearGradient(
         0, ctx.measureText('|>').width + i * lineHeight, 0, ctx.measureText('|||>').width + i * lineHeight);
@@ -130,13 +132,13 @@ function captionWriter() {
 function process() {
   //ctx.fillStyle = "#fff";
   //ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.clearRect(0,0,canvas.width,canvas.height)
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
   if (bgInput.files.length != 0) {
     addBgImage();
   } else {
     hcLogo();
     if (epNumSelector.value.length !== 0) {
-    episodeNum();
+      episodeNum();
     }
     captionWriter();
   }
@@ -175,9 +177,11 @@ function drag(event) {
     dragElement.style.top = (dragElement.offsetTop + distY) + 'px';
   }
 }
+
 function stopDrag() {
   dragElement.isMoving = false;
 }
+
 function draggableGuard(evt) {
   if (evt.target.classList.contains('draggable')) {
     dragElement = evt.target;
@@ -194,6 +198,7 @@ document.body.addEventListener('mousedown', draggableGuard);
 // Start multiple captions adder
 cpNo = 1;
 addCaption.addEventListener('click', addNewCaption)
+
 function addNewCaption() {
   let newCaptionTextarea = document.createElement('textarea');
   newCaptionTextarea.classList.add('caption');
@@ -210,8 +215,10 @@ function addNewCaption() {
   }
 }
 let captions = document.getElementsByClassName('caption');
+
 function textAreaToDiv(e) {
   const captionId = e.target.className.split(' ')[1];
   const captionDiv = document.getElementsByClassName('draggable ' + captionId);
   captionDiv[0].textContent = e.target.value;
 }
+// End multiple caption adder
