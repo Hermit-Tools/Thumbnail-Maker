@@ -101,6 +101,8 @@ function captionWriter() {
 
   for (let i = 0; i < captions.length; i++) {
     let caption = captions[i].value;
+    let captionPositionTop = draggable[i].offsetTop * 3 + 21;
+    let captionPositionLeft = draggable[i].offsetLeft * 3;
 
     ctx.font = "normal 165px EdGothic";
 
@@ -115,13 +117,13 @@ function captionWriter() {
 
     for (let i = 0; i < line.length; i++) {
       const theGradient = ctx.createLinearGradient(
-        0, ctx.measureText('|>').width + i * lineHeight, 0, ctx.measureText('|||>').width + i * lineHeight);
+        captionPositionLeft, captionPositionTop + ctx.measureText('|>').width + i * lineHeight, captionPositionLeft, captionPositionTop + ctx.measureText('|||>').width + i * lineHeight);
       theGradient.addColorStop(0, '#ecd319');
       theGradient.addColorStop(1, '#9b4a06');
       ctx.fillStyle = theGradient;
       //ctx.textAlign = 'center';
-      ctx.strokeText(line[i], 0, 0 + i * lineHeight);
-      ctx.fillText(line[i], 0, 0 + i * lineHeight);
+      ctx.strokeText(line[i], captionPositionLeft, captionPositionTop + i * lineHeight);
+      ctx.fillText(line[i], captionPositionLeft, captionPositionTop + i * lineHeight);
     }
 
     ctx.fill();
@@ -158,7 +160,7 @@ function finishEditing() {
 
 // Following code makes any element with class containing 'draggable' draggable
 
-draggable = document.getElementById('draggable');
+let draggable = document.getElementsByClassName('draggable');
 
 let oldX = 0;
 let oldY = 0;
@@ -212,6 +214,12 @@ function addNewCaption() {
   for (let i = 0; i < captions.length; i++) {
     const caption = captions[i];
     caption.addEventListener('input', textAreaToDiv);
+    caption.addEventListener('input', process);
+  }
+  for (let i = 0; i < draggable.length; i++) {
+  draggable[i].addEventListener('mousedown', process);
+  draggable[i].addEventListener('mouseup', process);
+        
   }
 }
 let captions = document.getElementsByClassName('caption');

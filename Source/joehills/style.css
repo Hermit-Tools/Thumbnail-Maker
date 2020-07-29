@@ -340,11 +340,13 @@ label#bgInputLabel:active,
   left: 0;
   width: fit-content;
   height: fit-content;
-  font: normal 65px EdGothic;
-  background: linear-gradient(#ecd319 40%, #9b4a06 70%);
+  font: normal 55px EdGothic;
+  /*background: linear-gradient(#ecd319 40%, #9b4a06 70%);
   color: transparent;
   -webkit-background-clip: text;
-  background-clip: text;
+  background-clip: text;*/
+  color: goldenrod;
+  color: transparent;
   /*-webkit-text-stroke: 20px #0f0;
   paint-order: stroke fill;*/
   cursor: move;
