@@ -132,7 +132,6 @@ label#bgInputLabel,
   justify-content: center;
   height: 100%;
   overflow: hidden;
-  z-index: -2;
 }
 
 #preview-area .material-icons {
@@ -150,6 +149,7 @@ label#bgInputLabel,
   box-sizing: border-box;
   overflow: hidden;
   box-shadow: 30px 0 50px #0005;
+  user-select: none;
 }
 
 .mdc-switch {
@@ -330,4 +330,38 @@ label#bgInputLabel:active,
   font-style: normal;
   font-weight: 400;
   src: url(EdGothic.otf);
+}
+.draggable {
+  border: 1px dashed gray;
+  position: absolute;
+  min-width: 50px;
+  min-height: 50px;
+  top: 0;
+  left: 0;
+  width: fit-content;
+  height: fit-content;
+  font: normal 55px EdGothic;
+  /*background: linear-gradient(#ecd319 40%, #9b4a06 70%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;*/
+  color: goldenrod;
+  color: transparent;
+  /*-webkit-text-stroke: 20px #0f0;
+  paint-order: stroke fill;*/
+  cursor: move;
+  white-space: pre;
+  user-select: none;
+  line-height: 52px;
+}
+#caption-container {
+  position: absolute;
+  width: 640px;
+  height: 360px;
+  border: 1px solid green;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.caption {
+  resize: vertical;
 }

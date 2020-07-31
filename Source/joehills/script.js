@@ -5,6 +5,9 @@ const epNumSelector = document.getElementById("epNumSelector");
 const hcLogoToggler = document.getElementById("hcLogoToggler");
 const previewText = document.getElementById("preview-text");
 const downloader = document.getElementById("downloader");
+const addCaption = document.getElementById("addCaption");
+const form = document.getElementById("form");
+const captionContainer = document.getElementById("caption-container");
 
 /*// Cookies Stuff
 let epNumValueFromCookie;
@@ -45,10 +48,7 @@ function addBgImage() {
 }
 
 function episodeNum() {
-  let epNum;
-  if (epNumSelector.value.length === 0) {
-    epNum = '';
-  } else {epNum = '#' + epNumSelector.value}
+  let epNum = '#' + epNumSelector.value
 
   ctx.font = "normal 250px EdGothic";
   let epNumWidth = ctx.measureText(epNum).width;
@@ -62,7 +62,7 @@ function episodeNum() {
   theGradient.addColorStop(1, '#e9cd07');
 
   ctx.beginPath();
-  ctx.moveTo(0,1080);
+  ctx.moveTo(0, 1080);
   ctx.lineTo(0, 798.5);
   ctx.lineTo(epNumWidth + 36.5, 816);
   ctx.lineTo(epNumWidth + 97, 1080);
@@ -96,6 +96,8 @@ function captionWriter() {
 
   for (let i = 0; i < captions.length; i++) {
     let caption = captions[i].value;
+    let captionPositionTop = draggable[i].offsetTop * 3;
+    let captionPositionLeft = draggable[i].offsetLeft * 3;
 
     ctx.font = "normal 165px EdGothic";
 
@@ -107,16 +109,16 @@ function captionWriter() {
     ctx.strokeStyle = "#281604";
     ctx.lineWidth = 24.5;
     ctx.lineJoin = 'round';
-    
+
     for (let i = 0; i < line.length; i++) {
       const theGradient = ctx.createLinearGradient(
-        0, ctx.measureText('|>').width + i * lineHeight, 0, ctx.measureText('|||>').width + i * lineHeight);
+        captionPositionLeft, captionPositionTop + ctx.measureText('|>').width + i * lineHeight, captionPositionLeft, captionPositionTop + ctx.measureText('|||>').width + i * lineHeight);
       theGradient.addColorStop(0, '#ecd319');
       theGradient.addColorStop(1, '#9b4a06');
       ctx.fillStyle = theGradient;
-
-      ctx.strokeText(line[i], 0, 0 + i * lineHeight);
-      ctx.fillText(line[i], 0, 0 + i * lineHeight);
+      //ctx.textAlign = 'center';
+      ctx.strokeText(line[i], captionPositionLeft, captionPositionTop + i * lineHeight);
+      ctx.fillText(line[i], captionPositionLeft, captionPositionTop + i * lineHeight);
     }
 
     ctx.fill();
@@ -127,13 +129,13 @@ function captionWriter() {
 function process() {
   //ctx.fillStyle = "#fff";
   //ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.clearRect(0,0,canvas.width,canvas.height)
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
   if (bgInput.files.length != 0) {
     addBgImage();
   } else {
     hcLogo();
     if (epNumSelector.value.length !== 0) {
-    episodeNum();
+      episodeNum();
     }
     captionWriter();
   }
@@ -150,3 +152,76 @@ function finishEditing() {
     .toDataURL("image/png")
     .replace("data:image/png", "data:concorp>sahara");
 }
+
+// Following code makes any element with class containing 'draggable' draggable
+
+let draggable = document.getElementsByClassName('draggable');
+
+let oldX = 0;
+let oldY = 0;
+let distX = 0;
+let distY = 0;
+let dragElement;
+
+function drag(event) {
+  event.preventDefault();
+  distX = event.clientX - oldX;
+  distY = event.clientY - oldY;
+  oldX = event.clientX;
+  oldY = event.clientY;
+  if (dragElement.isMoving) {
+    dragElement.style.left = (dragElement.offsetLeft + distX) + 'px';
+    dragElement.style.top = (dragElement.offsetTop + distY) + 'px';
+  }
+}
+
+function stopDrag() {
+  dragElement.isMoving = false;
+}
+
+function draggableGuard(evt) {
+  if (evt.target.classList.contains('draggable')) {
+    dragElement = evt.target;
+    dragElement.isMoving = true;
+    oldX = evt.clientX;
+    oldY = evt.clientY;
+    document.addEventListener('mousemove', drag)
+    dragElement.addEventListener('mouseup', stopDrag)
+  }
+}
+document.body.addEventListener('mousedown', draggableGuard);
+// End draggable saga
+
+// Start multiple captions adder
+cpNo = 1;
+addCaption.addEventListener('click', addNewCaption)
+
+function addNewCaption() {
+  let newCaptionTextarea = document.createElement('textarea');
+  newCaptionTextarea.classList.add('caption');
+  newCaptionTextarea.classList.add(cpNo);
+  form.appendChild(newCaptionTextarea);
+
+  let newCaptionDiv = document.createElement('div');
+  newCaptionDiv.className = 'draggable ' + cpNo;
+  cpNo++;
+  captionContainer.appendChild(newCaptionDiv);
+  for (let i = 0; i < captions.length; i++) {
+    const caption = captions[i];
+    caption.addEventListener('input', textAreaToDiv);
+    caption.addEventListener('input', process);
+  }
+  for (let i = 0; i < draggable.length; i++) {
+  draggable[i].addEventListener('mousedown', process);
+  draggable[i].addEventListener('mouseup', process);
+        
+  }
+}
+let captions = document.getElementsByClassName('caption');
+
+function textAreaToDiv(e) {
+  const captionId = e.target.className.split(' ')[1];
+  const captionDiv = document.getElementsByClassName('draggable ' + captionId);
+  captionDiv[0].textContent = e.target.value;
+}
+// End multiple caption adder
