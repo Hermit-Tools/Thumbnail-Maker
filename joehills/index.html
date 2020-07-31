@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Joey by Hermit Tools</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../Resources/Icons/Cub's Head.png"
+    />
+    <link rel="apple-touch-icon" href="../Resources/Icons/Cub's Head.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta property="og:site_name" content="Joey by Hermit Tools" />
+    <meta property="og:title" content="Joey" />
+    <meta
+      name="description"
+      content="An automated and smart thumbnail maker for Joe Hills' Hermitcraft videos. Crafted with love from Hermit Tools."
+    />
+    <meta name="theme-color" content="#037de1" />
+    <meta
+      name="og:description"
+      content="An automated and smart thumbnail maker for Joe Hills' Hermitcraft videos. Crafted with love from Hermit Tools."
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      property="og:url"
+      content="https://hermit-tools.github.io/Thumbnail-Maker/joehills"
+    />
+  </head>
+
+  <body>
+    <div id="preview-area">
+      <canvas width="1920" height="1080" id="canvas">
+        Your browser does not support the canvas element. Consider upgrading to a newer browser.
+      </canvas>
+      <div id="caption-container"></div>
+    </div>
+    
+    <main id="form">
+      <hr id="line" />
+      
+      <label
+        id="bgInputLabel"
+        for="bgInput"
+        title="Choose background image or nothing."
+        ><i class="material-icons md-18">publish</i> Choose Background Image</label>
+        
+      <input
+        type="file"
+        accept="image/*"
+        onchange="process()"
+        id="bgInput"
+      /><br />
+
+      <input
+        type="text"
+        title="Enter episode number here. It can accept number, text or nothing."
+        oninput="process()"
+        onclick="this.focus();this.select();"
+        id="epNumSelector"
+        placeholder="Enter Episode Number"
+        autocomplete="off"
+      /><br />
+
+      <div id="show-hc-logo">
+        Show HC7 Logo:
+        <input
+          type="checkbox"
+          checked
+          onchange="process()"
+          id="hcLogoToggler"
+          class="mdc-switch"
+        />
+      </div><br />
+      <button id="addCaption">+</button>
+      <!--<textarea
+      title="Enter caption here."
+      oninput="process()"
+      onclick="this.focus();this.select();"
+      class="caption"
+      placeholder="Enter Caption Here"
+      autocomplete="off"
+      ></textarea><br />-->
+
+      <a
+        style="text-decoration: none; margin: 20px"
+        href="#"
+        id="downloader"
+        onclick="finishEditing()"
+        download="image.png"
+        >
+        <i class="material-icons md-18">get_app</i>Download Thumbnail
+      </a>
+    </main>
+    <div id="downloadShow">Thumbnail downloaded successfully.</div>
+    <script src="./script.js"></script>
+  </body>
+</html>
