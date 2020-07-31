@@ -48,12 +48,7 @@ function addBgImage() {
 }
 
 function episodeNum() {
-  let epNum;
-  if (epNumSelector.value.length === 0) {
-    epNum = '';
-  } else {
-    epNum = '#' + epNumSelector.value
-  }
+  let epNum = '#' + epNumSelector.value
 
   ctx.font = "normal 250px EdGothic";
   let epNumWidth = ctx.measureText(epNum).width;
@@ -101,7 +96,7 @@ function captionWriter() {
 
   for (let i = 0; i < captions.length; i++) {
     let caption = captions[i].value;
-    let captionPositionTop = draggable[i].offsetTop * 3 + 21;
+    let captionPositionTop = draggable[i].offsetTop * 3;
     let captionPositionLeft = draggable[i].offsetLeft * 3;
 
     ctx.font = "normal 165px EdGothic";

@@ -350,6 +350,9 @@ label#bgInputLabel:active,
   /*-webkit-text-stroke: 20px #0f0;
   paint-order: stroke fill;*/
   cursor: move;
+  white-space: pre;
+  user-select: none;
+  line-height: 52px;
 }
 #caption-container {
   position: absolute;
