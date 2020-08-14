@@ -27,7 +27,7 @@
 <body>
 
     <header>
-        <h1>Thumbnail Maker</h1>
+        <h1>Thumbnail Mak<span id="the-e">e</span>r</h1>
     </header>
 
     <nav>
@@ -61,6 +61,8 @@
         <a>|</a>
         <a href="https://github.com/hermit-tools/Thumbnail-Maker/">View Code On GitHub</a>
     </footer>
+
+    <div id="bottom-line"></div>
 
     <script>
         window.onscroll = () => {
@@ -116,6 +118,10 @@
             document.body.appendChild(theBar);
 
             setTimeout(() => {document.body.removeChild(theBar)}, 5000)
+        }
+
+        window.onload = () => {
+            document.getElementById('the-e').style.transform = "rotate(360deg)";
         }
     </script>
 
