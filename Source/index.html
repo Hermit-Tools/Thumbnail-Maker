@@ -29,6 +29,7 @@
     <header>
         <h1>Thumbnail Maker</h1>
     </header>
+
     <nav>
         <a href="../">By Hermit Tools</a>
         <a id="show-on-scroll">Thumbnail Maker</a>
@@ -37,24 +38,24 @@
 
     <main>
         <ol id="main-list">
-            <li class="main-list-item">
-                <img class="icon" alt="Icon for Cub's Contraption" loading="lazy"
-                    src="../Resources/Icons/Cub's Head.png">
+            <a href="./cubfan135/"><li class="main-list-item">
+                <img class="icon" alt="Icon for Cub's Contraption" loading="lazy" src="../Resources/Icons/Cub's Head.png">
                 <div class="title">Cub's Contraption</div>
                 <div class="person">cubfan135</div>
-            </li>
-            <li class="main-list-item">
+            </li></a>
+            <a onclick="javascript: notYetMade()"><li class="main-list-item">
                 <img class="icon" alt="Icon for TFC's Tool" loading="lazy" src="../Resources/Icons/TFC's Icon.svg">
                 <div class="title">TFC's Tool</div>
                 <div class="person">TFC's Gaming Channel</div>
-            </li>
-            <li class="main-list-item">
+            </li></a>
+            <a href="./Source/joehills"><li class="main-list-item">
                 <img class="icon" alt="Icon for Joey" loading="lazy" src="../Resources/Icons/Joe's at.svg">
                 <div class="title">Joey</div>
                 <div class="person">JoeHillsTSD</div>
-            </li>
+            </li></a>
         </ol>
     </main>
+
     <footer>
         <a href="../">By Hermit Tools</a>
         <a>|</a>
@@ -98,6 +99,21 @@
                 i += 5;
 
             }, 5);
+        }
+
+        function notYetMade() {
+            let theBar = document.createElement('div');
+            theBar.textContent = 'We have not yet made this tool, but we will soon.';
+            theBar.style.position = 'fixed';
+            theBar.style.bottom = '0';
+            theBar.style.width = '100%';
+            theBar.style.left = '0';
+            theBar.style.background = '#333';
+            theBar.style.color = '#fff';
+            theBar.style.padding = '10px 0';
+            theBar.style.textAlign = 'center';
+
+            document.body.appendChild(theBar);
         }
     </script>
 
