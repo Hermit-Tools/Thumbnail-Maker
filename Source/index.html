@@ -114,6 +114,8 @@
             theBar.style.textAlign = 'center';
 
             document.body.appendChild(theBar);
+
+            setTimeout(() => {document.body.removeChild(theBar)}, 5000)
         }
     </script>
 
