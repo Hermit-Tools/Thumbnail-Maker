@@ -7,9 +7,9 @@
     <meta property="og:title" content="Thumbnail Maker by Hermit Tools" />
     <meta property="og:locale" content="en_US" />
     <meta name="description"
-        content="HermitCraft is one of the most popular Minecraft whitelisted server. This website is aimed for making each and every hermit an automated thumbnail maker." />
+        content="Hermitcraft is one of the most popular Minecraft whitelisted server. This website is aimed for making each and every hermit an automated thumbnail maker." />
     <meta property="og:description"
-        content="HermitCraft is one of the most popular Minecraft whitelisted server. This website is aimed for making each and every hermit an automated thumbnail maker." />
+        content="Hermitcraft is one of the most popular Minecraft whitelisted server. This website is aimed for making each and every hermit an automated thumbnail maker." />
     <link rel="canonical" href="https://hermit-tools.github.io/Thumbnail-Maker/" />
     <meta property="og:url" content="https://hermit-tools.github.io/Thumbnail-Maker/" />
     <meta property="og:site_name" content="Thumbnail Maker by Hermit Tools" />
@@ -18,6 +18,7 @@
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="icon" type="image/png" href="Resources/Icons/htlogo144.png">
     <link rel="apple-touch-icon" href="Resources/Icons/htlogo180.png">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -25,18 +26,39 @@
 
     <header>
         <h1>Thumbnail Maker</h1>
-        <!--<h2>By Hermit-Tools</h2>
-        <p class="desc">HermitCraft is one of the most popular Minecraft whitelisted server. This website is aimed
-            for making every hermit an automated thumbnail maker.</p>
-        <p class="on-phone"><a href="https://github.com/Hermit-Tools/Thumbnail-Maker">View the Project on GitHub</a>
-        </p>
-        <a href="https://github.com/hermit-tools/Thumbnail-Maker"><button type="button" id="see-on-gh">View on <strong>GitHub</strong></button></a>-->
     </header>
     <nav>
         <a href="../">By Hermit Tools</a>
         <a id="show-on-scroll">Thumbnail Maker</a>
         <a href="https://github.com/hermit-tools/Thumbnail-Maker/">View Code On GitHub</a>
     </nav>
+
+    <main>
+        <ol id="main-list">
+            <li class="main-list-item">
+                <img class="icon" alt="Icon for Cub's Contraption" loading="lazy"
+                    src="../Resources/Icons/Cub's Head.png">
+                <div class="title">Cub's Contraption</div>
+                <div class="person">cubfan135</div>
+            </li>
+            <li class="main-list-item">
+                <img class="icon" alt="Icon for TFC's Tool" loading="lazy" src="../Resources/Icons/TFC's Icon.svg">
+                <div class="title">TFC's Tool</div>
+                <div class="person">TFC's Gaming Channel</div>
+            </li>
+            <li class="main-list-item">
+                <img class="icon" alt="Icon for Joey" loading="lazy" src="../Resources/Icons/Joe's at.svg">
+                <div class="title">Joey</div>
+                <div class="person">JoeHillsTSD</div>
+            </li>
+        </ol>
+    </main>
+    <footer>
+        <a href="../">By Hermit Tools</a>
+        <a>|</a>
+        <a href="https://github.com/hermit-tools/Thumbnail-Maker/">View Code On GitHub</a>
+    </footer>
+
     <script>
         window.onscroll = () => {
             const soscroll = document.getElementById('show-on-scroll');
@@ -52,33 +74,31 @@
                 soscroll.parentElement.style.borderBottomWidth = '0px';
             }
         }
+
+        const mainListItems = document.getElementsByClassName('main-list-item');
+        for (let i = 0; i < mainListItems.length; i++) {
+            mainListItems[i].addEventListener('mousedown', mdcTapAnim);
+        }
+
+        function mdcTapAnim(e) {
+            let item = event.currentTarget,
+                i = 0,
+                mpX = e.clientX - item.getBoundingClientRect().left,
+                mpY = e.clientY - item.getBoundingClientRect().top;
+
+            item.style.pointerEvents = 'none';
+
+            let theInt = setInterval(() => {
+
+                item.style.background =
+                    `radial-gradient(circle at ${mpX}px ${mpY}px, #0001 0px, #0001 ${i}px, transparent ${i}px)`;
+                i >= 1000 ? (clearInterval(theInt), item.style.background = '#fff', item.style.pointerEvents = 'auto') : null
+                i += 5;
+
+            }, 5);
+        }
     </script>
 
-    <main>
-        <ol id="main">
-            <li>
-                <img class="icon" alt="Icon for Cub's Contraption" loading="lazy"
-                    src="../Resources/Icons/Cub's Head.png">
-                <div class="title">Cub's Contraption</div>
-                <div>cubfan135</div>
-            </li>
-            <li>
-                <img class="icon" alt="Icon for TFC's Tool" loading="lazy" src="../Resources/Icons/TFC's Icon.svg">
-                <div class="title">TFC's Tool</div>
-                <div>TFC's Gaming Channel</div>
-            </li>
-            <li>
-                <img class="icon" alt="Icon for Joey" loading="lazy" src="../Resources/Icons/Joe's at.svg">
-                <div class="title">Joey</div>
-                <div>JoeHillsTSD</div>
-            </li>
-        </ol>
-    </main>
-    <footer>
-        <a href="../">By Hermit Tools</a>
-        <a>|</a>
-        <a href="https://github.com/hermit-tools/Thumbnail-Maker/">View Code On GitHub</a>
-    </footer>
 </body>
 
 </html>

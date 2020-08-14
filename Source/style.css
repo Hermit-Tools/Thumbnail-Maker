@@ -1,11 +1,11 @@
 body {
     margin: 0;
-    font: 400 14px/1.5 Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', "Helvetica Neue", Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    font: 400 14px/1.5 Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', "Helvetica Neue", Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
 }
 
 ::selection {
-    background-color: #fa6400;
-    color: #fff;
+    background-color: #ffd500;
+    color: #000;
 }
 
 header {
@@ -13,12 +13,12 @@ header {
     background: linear-gradient(45deg, #ffe561, #ffd500);
     text-align: center;
     font-size: 25px;
+    font-family: 'Berkshire Swash', serif;
 }
 
 nav {
     z-index: 999999999;
     padding: 10px 40px;
-    font-size: unset;
     position: sticky;
     top: 0;
     background-color: #fffffffc;
@@ -27,14 +27,11 @@ nav {
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
-    letter-spacing: 0px;
-    border-bottom-color: #000;
-    border-bottom-style: solid;
-    border-bottom-width: 0px;
-    transition: border-bottom-width 200ms linear;
+    border-bottom: 0px solid #333333;
+    box-shadow: 0 0 0 2px #fff;
 }
 
-nav a {
+a {
     text-decoration: none;
     color: #000;
     transition: all 200ms linear;
@@ -53,7 +50,7 @@ main {
     justify-content: center;
 }
 
-#main {
+#main-list {
     border-radius: 8px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -63,7 +60,7 @@ main {
     padding: 0;
 }
 
-#main li {
+#main-list li {
     background-color: #fff;
     border-radius: 8px;
     border: 1px solid #dadce0;
@@ -76,14 +73,14 @@ main {
     cursor: pointer;
 }
 
-#main li :nth-child(3) {
+.person {
     text-transform: uppercase;
     letter-spacing: 0.4px;
     font-size: 10px;
     text-align: center;
 }
 
-#main li:hover {
+#main-list li:hover {
     box-shadow: 0px 1px 4px rgba(0, 0, 0, .1),
         0px 2px 3px rgba(0, 0, 0, .12),
         0px 1px 3px rgba(0, 0, 0, .14);
@@ -95,6 +92,7 @@ main {
     height: 50%;
     width: 100%;
     object-fit: contain;
+    user-select: none;
 }
 
 .title {
@@ -124,7 +122,7 @@ footer {
 
 @media print,
 screen and (max-width: 750px) {
-    #main {
+    #main-list {
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -156,7 +154,7 @@ screen and (max-width: 600px) {
 
 @media print,
 screen and (max-width: 490px) {
-    #main {
+    #main-list {
         grid-template-columns: 1fr;
     }
 
