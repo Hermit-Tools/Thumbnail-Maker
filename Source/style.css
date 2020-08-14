@@ -72,7 +72,7 @@ main {
     grid-template-rows: 3fr 2fr 1fr;
     align-items: center;
     overflow: hidden;
-    transition: .18s ease all;
+    transition: all 180ms ease, border 0s linear;
     cursor: pointer;
 }
 
