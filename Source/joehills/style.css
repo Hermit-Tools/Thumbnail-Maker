@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'EdGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(EdGothic.otf);
+}
+
 html {
   height: 100%;
 }
@@ -109,21 +116,6 @@ label#bgInputLabel,
   height: 360px;
   border-radius: 5px;
   box-shadow: 0 0 14.4px 0 #00000022, 0 2.2px 3.6px 0 #0000001c;
-}
-
-#preview-text {
-  position: absolute;
-  width: 640px;
-  height: 360px;
-  background: #fff;
-  color: #ccf;
-  border-radius: 5px;
-  font-size: 48px;
-  font-weight: 900;
-  line-height: 360px;
-  text-align: center;
-  text-transform: uppercase;
-  z-index: -1;
 }
 
 #preview-area {
@@ -326,15 +318,9 @@ label#bgInputLabel:active,
     box-shadow: 0px 30px 50px #0005;
   }
 }
-@font-face {
-  font-family: 'EdGothic';
-  font-style: normal;
-  font-weight: 400;
-  src: url(EdGothic.otf);
-}
 .draggable {
-  border: 1px dashed gray;
   position: absolute;
+  border: 1px dashed gray;
   min-width: 50px;
   min-height: 50px;
   top: 0;
@@ -342,18 +328,10 @@ label#bgInputLabel:active,
   width: fit-content;
   height: fit-content;
   font: normal 55px EdGothic;
-  /*background: linear-gradient(#ecd319 40%, #9b4a06 70%);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;*/
-  color: goldenrod;
-  color: transparent;
-  /*-webkit-text-stroke: 20px #0f0;
-  paint-order: stroke fill;*/
   cursor: move;
-  white-space: pre;
   user-select: none;
   line-height: 52px;
+  color: transparent;
 }
 #caption-container {
   position: absolute;

@@ -1,18 +1,27 @@
 const bgInput = document.getElementById("bgInput");
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+ctx.font = "normal 250px EdGothic";
+const theGradient = ctx.createLinearGradient(0, 816, 0, 1080);
+theGradient.addColorStop(0, '#a66c02');
+theGradient.addColorStop(0.5, '#caa205');
+theGradient.addColorStop(1, '#e9cd07');
+
 const captionCanvas = document.getElementById('captionCanvas');
 const ctxCaption = captionCanvas.getContext('2d');
+
 const epNumSelector = document.getElementById("epNumSelector");
 const hcLogoToggler = document.getElementById("hcLogoToggler");
-const previewText = document.getElementById("preview-text");
 const downloader = document.getElementById("downloader");
 const addCaption = document.getElementById("addCaption");
 const form = document.getElementById("form");
 const captionContainer = document.getElementById("caption-container");
+const downloadShow = document.getElementById("downloadShow");
+
 let captions = document.getElementsByClassName('caption');
 let cpNo = 0;
-const downloadShow = document.getElementById("downloadShow");
+
 const hc7Logo = new Image()
 hc7Logo.src = "https://hermit-tools.github.io/Thumbnail-Maker/Resources/Hermitcraft Logos/HC7 Logo.png";
 hc7Logo.crossOrigin = "Anonymous";
@@ -42,29 +51,18 @@ if ("serviceWorker" in navigator) {
 
 function addBgImage() {
   let bgImage = new Image();
-  bgImage.addEventListener(
-    "load",
-    () => {
-      ctx.drawImage(bgImage, 0, 0, 1920, 1080);
-    },
-    false
-  );
   bgImage.src = URL.createObjectURL(bgInput.files[0]);
+  bgImage.onload = () => {
+    ctx.drawImage(bgImage, 0, 0, 1920, 1080);
+    hcLogoToggler.checked ? hcLogo() : null
+    epNumSelector.value.length === 0 ? null : episodeNum()
+  }
 }
 
 function episodeNum() {
   let epNum = '#' + epNumSelector.value
 
-  ctx.font = "normal 250px EdGothic";
   let epNumWidth = ctx.measureText(epNum).width;
-
-  const theGradient = ctx.createLinearGradient(0, 816, 0, 1080);
-  //theGradient.addColorStop(0, '#9a6105');
-  //theGradient.addColorStop(1, '#a16d03');
-  //theGradient.addColorStop(0, '#c6b90c');
-  theGradient.addColorStop(0, '#a66c02');
-  theGradient.addColorStop(0.5, '#caa205');
-  theGradient.addColorStop(1, '#e9cd07');
 
   ctx.beginPath();
   ctx.moveTo(0, 1080);
@@ -91,9 +89,10 @@ function hcLogo() {
 function process() {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-  bgInput.files.length === 0 ? null : addBgImage()
-  hcLogoToggler.checked ? hcLogo() : null
-  epNumSelector.value.length === 0 ? null : episodeNum()
+  bgInput.files.length === 0 ? (
+    hcLogoToggler.checked ? hcLogo() : null,
+    epNumSelector.value.length === 0 ? null : episodeNum()
+  ) : addBgImage()
 }
 
 function finishEditing() {
@@ -114,9 +113,6 @@ function finishEditing() {
 
 // Following code makes any element with class containing 'draggable' draggable
 const draggable = document.getElementsByClassName("draggable");
-for (let i = 0; i < draggable.length; i++) {
-  draggable[i].style.position = "absolute";
-}
 
 function filter(e) {
   if (!e.target.classList.contains("draggable")) {
@@ -220,8 +216,6 @@ function addNewCaption() {
 }
 
 function textAreaToDiv(e) {
-  const captionId = e.target.classList[1];
-  const captionDiv = document.getElementsByClassName(`draggable  ${captionId}`);
-  captionDiv[0].textContent = e.target.value;
+  document.getElementsByClassName(`draggable  ${e.target.classList[1]}`)[0].textContent = e.target.value;
 }
 // End multiple caption adder
