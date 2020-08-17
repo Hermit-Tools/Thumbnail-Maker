@@ -212,9 +212,9 @@ function addNewCaption() {
     caption.addEventListener('input', process);
   }
   for (let i = 0; i < draggable.length; i++) {
-  draggable[i].addEventListener('mousedown', process);
-  draggable[i].addEventListener('mouseup', process);
-        
+    draggable[i].addEventListener('mousedown', process);
+    draggable[i].addEventListener('mouseup', process);
+
   }
 }
 let captions = document.getElementsByClassName('caption');
