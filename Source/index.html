@@ -83,21 +83,24 @@
         const mainListItems = document.getElementsByClassName('main-list-item');
         for (let i = 0; i < mainListItems.length; i++) {
             mainListItems[i].addEventListener('mousedown', mdcTapAnim);
+            mainListItems[i].addEventListener('touchstart', mdcTapAnim);
         }
 
+        let sP;
+
         function mdcTapAnim(e) {
+            if (sP === 1) {return}
+            sP = 1;
             let item = event.currentTarget,
                 i = 0,
                 mpX = e.clientX - item.getBoundingClientRect().left,
                 mpY = e.clientY - item.getBoundingClientRect().top;
 
-            item.style.pointerEvents = 'none';
-
             let theInt = setInterval(() => {
 
                 item.style.background =
                     `radial-gradient(circle at ${mpX}px ${mpY}px, #0001 0px, #0001 ${i}px, transparent ${i}px)`;
-                i >= 1000 ? (clearInterval(theInt), item.style.background = '#fff', item.style.pointerEvents = 'auto') : null
+                i >= 1000 ? (clearInterval(theInt), item.style.background = '#fff', sP = 0) : null
                 i += 5;
 
             }, 5);
