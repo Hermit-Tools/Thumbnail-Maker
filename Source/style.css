@@ -170,8 +170,3 @@ screen and (max-width: 490px) {
         font-size: 10px;
     }
 }
-
-#the-e {
-    transition: all 400ms linear;
-    display: inline-block;
-}

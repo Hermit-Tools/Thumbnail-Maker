@@ -21,13 +21,13 @@
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="icon" type="image/png" href="Resources/Icons/htlogo144.png">
     <link rel="apple-touch-icon" href="Resources/Icons/htlogo180.png">
-    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Lato&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <header>
-        <h1>Thumbnail Mak<span id="the-e">e</span>r</h1>
+        <h1>Thumbnail Maker</h1>
     </header>
 
     <nav>
@@ -118,10 +118,6 @@
             document.body.appendChild(theBar);
 
             setTimeout(() => {document.body.removeChild(theBar)}, 5000)
-        }
-
-        window.onload = () => {
-            document.getElementById('the-e').style.transform = "rotate(360deg)";
         }
     </script>
 
