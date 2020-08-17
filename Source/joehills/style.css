@@ -103,7 +103,8 @@ label#bgInputLabel,
   z-index: -1;
 }
 
-#canvas {
+#canvas, #captionCanvas {
+  position: absolute;
   width: 640px;
   height: 360px;
   border-radius: 5px;
@@ -248,7 +249,7 @@ label#bgInputLabel:active,
     grid-template-rows: 50% 50%;
   }
 
-  #canvas,
+  #canvas, #captionCanvas,
   #preview-text {
     width: 480px;
     height: 270px;
@@ -275,7 +276,7 @@ label#bgInputLabel:active,
     grid-template-rows: 50% 50%;
   }
 
-  #canvas,
+  #canvas, #captionCanvas,
   #preview-text {
     width: 360px;
     height: 202.5px;
@@ -302,7 +303,7 @@ label#bgInputLabel:active,
     grid-template-rows: 50% 50%;
   }
 
-  #canvas,
+  #canvas, #captionCanvas,
   #preview-text {
     width: 300px;
     height: 168.75px;

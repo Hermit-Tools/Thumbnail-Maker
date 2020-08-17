@@ -91,7 +91,10 @@ function hcLogo() {
   }
 }
 
+let captionCanvas = document.getElementById('captionCanvas');
+let ctxCaption = captionCanvas.getContext('2d');
 function captionWriter() {
+  ctxCaption.clearRect(0, 0, captionCanvas.width, captionCanvas.height)
   let captions = document.getElementsByClassName('caption');
 
   for (let i = 0; i < captions.length; i++) {
@@ -99,30 +102,30 @@ function captionWriter() {
     let captionPositionTop = draggable[i].offsetTop * 3;
     let captionPositionLeft = draggable[i].offsetLeft * 3;
 
-    ctx.font = "normal 165px EdGothic";
+    ctxCaption.font = "normal 165px EdGothic";
 
-    const lineHeight = ctx.measureText('|||||').width
+    const lineHeight = ctxCaption.measureText('|||||').width
     let line = caption.split(/\r?\n/);
 
-    ctx.textBaseline = "top";
+    ctxCaption.textBaseline = "top";
 
-    ctx.strokeStyle = "#281604";
-    ctx.lineWidth = 24.5;
-    ctx.lineJoin = 'round';
+    ctxCaption.strokeStyle = "#281604";
+    ctxCaption.lineWidth = 24.5;
+    ctxCaption.lineJoin = 'round';
 
     for (let i = 0; i < line.length; i++) {
-      const theGradient = ctx.createLinearGradient(
-        captionPositionLeft, captionPositionTop + ctx.measureText('|>').width + i * lineHeight, captionPositionLeft, captionPositionTop + ctx.measureText('|||>').width + i * lineHeight);
+      const theGradient = ctxCaption.createLinearGradient(
+        captionPositionLeft, captionPositionTop + ctxCaption.measureText('|>').width + i * lineHeight, captionPositionLeft, captionPositionTop + ctxCaption.measureText('|||>').width + i * lineHeight);
       theGradient.addColorStop(0, '#ecd319');
       theGradient.addColorStop(1, '#9b4a06');
-      ctx.fillStyle = theGradient;
-      //ctx.textAlign = 'center';
-      ctx.strokeText(line[i], captionPositionLeft, captionPositionTop + i * lineHeight);
-      ctx.fillText(line[i], captionPositionLeft, captionPositionTop + i * lineHeight);
+      ctxCaption.fillStyle = theGradient;
+      //ctxCaption.textAlign = 'center';
+      ctxCaption.strokeText(line[i], captionPositionLeft, captionPositionTop + i * lineHeight);
+      ctxCaption.fillText(line[i], captionPositionLeft, captionPositionTop + i * lineHeight);
     }
 
-    ctx.fill();
-    ctx.stroke();
+    ctxCaption.fill();
+    ctxCaption.stroke();
   }
 }
 
@@ -208,11 +211,15 @@ function addNewCaption() {
   for (let i = 0; i < captions.length; i++) {
     const caption = captions[i];
     caption.addEventListener('input', textAreaToDiv);
-    caption.addEventListener('input', process);
+    caption.addEventListener('input', captionWriter);
   }
   for (let i = 0; i < draggable.length; i++) {
-    draggable[i].addEventListener('mousedown', process);
-    draggable[i].addEventListener('mouseup', process);
+    draggable[i].addEventListener('mousedown', captionWriter);
+    draggable[i].addEventListener('touchstart', captionWriter);
+    draggable[i].addEventListener('mouseup', captionWriter);
+    draggable[i].addEventListener('touchend', captionWriter);
+    draggable[i].addEventListener('mousemove', captionWriter);
+    draggable[i].addEventListener('touchmove', captionWriter);
 
   }
 }
