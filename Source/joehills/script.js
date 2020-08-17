@@ -154,42 +154,41 @@ function finishEditing() {
 }
 
 // Following code makes any element with class containing 'draggable' draggable
+const draggable = document.getElementsByClassName("draggable");
+for (let i = 0; i < draggable.length; i++) {
+  draggable[i].style.position = "absolute";
+}
 
-let draggable = document.getElementsByClassName('draggable');
-
-let oldX = 0;
-let oldY = 0;
-let distX = 0;
-let distY = 0;
-let dragElement;
-
-function drag(event) {
-  event.preventDefault();
-  distX = event.clientX - oldX;
-  distY = event.clientY - oldY;
-  oldX = event.clientX;
-  oldY = event.clientY;
-  if (dragElement.isMoving) {
-    dragElement.style.left = (dragElement.offsetLeft + distX) + 'px';
-    dragElement.style.top = (dragElement.offsetTop + distY) + 'px';
+function filter(e) {
+  if (!e.target.classList.contains("draggable")) {
+    return
   }
-}
+  let target = e.target;
+  target.moving = true;
+  e.clientX ? (target.oX = e.clientX, target.oY = e.clientY) : (target.oX = e.touches[0].clientX, target.oY = e.touches[0].clientY);
+  document.onmousemove = drag;
+  document.addEventListener("touchmove", drag, {
+    passive: false
+  });
 
-function stopDrag() {
-  dragElement.isMoving = false;
-}
-
-function draggableGuard(evt) {
-  if (evt.target.classList.contains('draggable')) {
-    dragElement = evt.target;
-    dragElement.isMoving = true;
-    oldX = evt.clientX;
-    oldY = evt.clientY;
-    document.addEventListener('mousemove', drag)
-    dragElement.addEventListener('mouseup', stopDrag)
+  function drag(evt) {
+    evt.preventDefault();
+    if (!target.moving) {
+      return
+    };
+    e.clientX ? (target.lX = evt.clientX - target.oX, target.lY = evt.clientY - target.oY, target.oX = evt.clientX, target.oY = evt.clientY) : (target.lX = evt.touches[0].clientX - target.oX, target.lY = evt.touches[0].clientY - target.oY, target.oX = evt.touches[0].clientX, target.oY = evt.touches[0].clientY);
+    target.style.left = target.offsetLeft + target.lX + "px";
+    target.style.top = target.offsetTop + target.lY + "px"
   }
-}
-document.body.addEventListener('mousedown', draggableGuard);
+
+  function k() {
+    target.moving = false
+  };
+  target.onmouseup = k;
+  target.ontouchend = k
+};
+document.onmousedown = filter;
+document.ontouchstart = filter;
 // End draggable saga
 
 // Start multiple captions adder
