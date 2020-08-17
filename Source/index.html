@@ -38,21 +38,28 @@
 
     <main>
         <ol id="main-list">
-            <a href="./cubfan135/"><li class="main-list-item">
-                <img class="icon" alt="Icon for Cub's Contraption" loading="lazy" src="../Resources/Icons/Cub's Head.png">
-                <div class="title">Cub's Contraption</div>
-                <div class="person">cubfan135</div>
-            </li></a>
-            <a onclick="javascript: notYetMade()"><li class="main-list-item">
-                <img class="icon" alt="Icon for TFC's Tool" loading="lazy" src="../Resources/Icons/TFC's Icon.svg">
-                <div class="title">TFC's Tool</div>
-                <div class="person">TFC's Gaming Channel</div>
-            </li></a>
-            <a href="./Source/joehills"><li class="main-list-item">
-                <img class="icon" alt="Icon for Joey" loading="lazy" src="../Resources/Icons/Joe's at.svg">
-                <div class="title">Joey</div>
-                <div class="person">JoeHillsTSD</div>
-            </li></a>
+            <a href="./cubfan135/">
+                <li class="main-list-item">
+                    <img class="icon" alt="Icon for Cub's Contraption" loading="lazy"
+                        src="../Resources/Icons/Cub's Head.png">
+                    <div class="title">Cub's Contraption</div>
+                    <div class="person">cubfan135</div>
+                </li>
+            </a>
+            <a onclick="javascript: notYetMade()">
+                <li class="main-list-item">
+                    <img class="icon" alt="Icon for TFC's Tool" loading="lazy" src="../Resources/Icons/TFC's Icon.svg">
+                    <div class="title">TFC's Tool</div>
+                    <div class="person">TFC's Gaming Channel</div>
+                </li>
+            </a>
+            <a href="./Source/joehills">
+                <li class="main-list-item">
+                    <img class="icon" alt="Icon for Joey" loading="lazy" src="../Resources/Icons/Joe's at.svg">
+                    <div class="title">Joey</div>
+                    <div class="person">JoeHillsTSD</div>
+                </li>
+            </a>
         </ol>
     </main>
 
@@ -89,7 +96,9 @@
         let sP;
 
         function mdcTapAnim(e) {
-            if (sP === 1) {return}
+            if (sP === 1) {
+                return
+            }
             sP = 1;
             let item = event.currentTarget,
                 i = 0,
@@ -120,7 +129,9 @@
 
             document.body.appendChild(theBar);
 
-            setTimeout(() => {document.body.removeChild(theBar)}, 5000)
+            setTimeout(() => {
+                document.body.removeChild(theBar)
+            }, 5000)
         }
     </script>
 
