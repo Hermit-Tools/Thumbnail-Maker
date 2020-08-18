@@ -116,7 +116,7 @@ label#bgInputLabel,
   width: 640px;
   height: 360px;
   background: #fff;
-  color: #ccf;
+  color: #c7e3ff;
   border-radius: 5px;
   font-size: 48px;
   font-weight: 900;
@@ -127,7 +127,7 @@ label#bgInputLabel,
 }
 
 #preview-area {
-  background-color: #f7f7ff;
+  background-color: #f7fbff;
   display: flex;
   align-items: center;
   justify-content: center;
