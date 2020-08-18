@@ -5,6 +5,11 @@ const epNumSelector = document.getElementById("epNumSelector");
 const hcLogoToggler = document.getElementById("hcLogoToggler");
 const previewText = document.getElementById("preview-text");
 const downloader = document.getElementById("downloader");
+const downloadShow = document.getElementById("downloadShow");
+const hc7Logo = new Image();
+hc7Logo.src =
+  "https://hermit-tools.github.io/Thumbnail-Maker/Resources/Hermitcraft Logos/HC7 Logo.png";
+hc7Logo.crossOrigin = "Anonymous";
 
 // Cookies Stuff
 let epNumValueFromCookie;
@@ -29,16 +34,12 @@ if ("serviceWorker" in navigator) {
 
 function addBgImage() {
   let bgImage = new Image();
-  bgImage.addEventListener(
-    "load",
-    () => {
-      ctx.drawImage(bgImage, 0, 0, 1920, 1080);
-      hcLogo();
-      episodeNum();
-    },
-    false
-  );
   bgImage.src = URL.createObjectURL(bgInput.files[0]);
+  bgImage.onload = () => {
+    ctx.drawImage(bgImage, 0, 0, 1920, 1080);
+    hcLogoToggler.checked ? hcLogo() : null
+    epNumSelector.value.length === 0 ? null : episodeNum()
+  }
 }
 
 function episodeNum() {
@@ -60,37 +61,26 @@ function episodeNum() {
   ctx.stroke();
 }
 
-function hcLogo() {
-  if (hcLogoToggler.checked) {
-    let hc7Logo = new Image();
-    hc7Logo.addEventListener("load", () => {
-      ctx.drawImage(hc7Logo, 15.7, 40, 1887.5, 244);
-    });
-    hc7Logo.src =
-      "https://hermit-tools.github.io/Thumbnail-Maker/Resources/Hermitcraft Logos/HC7 Logo.png";
-    hc7Logo.crossOrigin = "Anonymous";
-  }
+function hcLogo() {    
+    ctx.drawImage(hc7Logo, 15.7, 40, 1887.5, 244);
 }
 
 function process() {
-  ctx.fillStyle = "#fff";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  if (bgInput.files.length != 0) {
-    addBgImage();
-  } else {
-    hcLogo();
-    episodeNum();
-  }
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+  bgInput.files.length === 0 ? (
+    hcLogoToggler.checked ? hcLogo() : null,
+    epNumSelector.value.length === 0 ? null : episodeNum()
+  ) : addBgImage()
 }
 
 function finishEditing() {
-  const downloadShow = document.getElementById("downloadShow");
   downloadShow.style.opacity = "1";
   setTimeout(() => {
     downloadShow.style.opacity = "0";
   }, 5000);
+
   downloader.download = `Ep${epNumSelector.value} HC7 Cub's Contraption.jpg`;
   downloader.href = canvas
     .toDataURL("image/png")
-    .replace("data:image/png", "data:concorp>sahara");
 }
