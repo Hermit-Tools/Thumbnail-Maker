@@ -1,7 +1,6 @@
 const bgInput = document.getElementById("bgInput");
 const epNumSelector = document.getElementById("epNumSelector");
 const hcLogoToggler = document.getElementById("hcLogoToggler");
-const previewText = document.getElementById("preview-text");
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
@@ -18,7 +17,7 @@ hc7Logo.crossOrigin = "Anonymous";
 let epNumValueFromCookie;
 
 downloader.addEventListener("click", () => {
-  document.cookie = `epNumCookie=${epNumSelector.value}`;
+  document.cookie = `epNumCookie=${epNumSelector.value}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
 });
 
 document.cookie.length === 0 ?
