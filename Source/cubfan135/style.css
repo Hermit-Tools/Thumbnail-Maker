@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  --themeColor: #037de1;
 }
 
 body {
@@ -31,8 +32,8 @@ label#bgInputLabel,
   width: 80%;
   padding: 10px 15px;
   background-color: #fff;
-  color: #3740ff;
-  border: 1px solid #3740ff;
+  color: var(--themeColor);
+  border: 1px solid var(--themeColor);
   border-radius: 5px;
   font-size: 0.9em;
   font-weight: 600;
@@ -54,7 +55,7 @@ label#bgInputLabel,
 #downloader {
   height: 56px;
   padding: 0 20px;
-  background: #2930ff;
+  background: var(--themeColor);
   color: #fff;
   border: 0;
   border-radius: 28px;
@@ -85,7 +86,7 @@ label#bgInputLabel,
   bottom: 0;
   left: 0;
   width: calc(100% - 20px);
-  background: #333;
+  background: #222;
   color: #fff;
   overflow: hidden;
   padding: 10px;
@@ -99,7 +100,7 @@ label#bgInputLabel,
   top: 100px;
   width: 180px;
   transform: rotate(90deg);
-  border: 1px solid #00f;
+  border: 1px solid var(--themeColor);
   z-index: -1;
 }
 
@@ -149,7 +150,7 @@ label#bgInputLabel,
   padding: 10px;
   box-sizing: border-box;
   overflow: hidden;
-  box-shadow: 30px 0 50px #0005;
+  box-shadow: 10px 0 20px #0005;
 }
 
 .mdc-switch {
@@ -186,7 +187,7 @@ label#bgInputLabel,
 }
 
 .mdc-switch:checked::before {
-  background: #053fff;
+  background: var(--themeColor);
   transform: translateX(12px);
 }
 
@@ -266,7 +267,7 @@ label#bgInputLabel:active,
   }
 
   #form {
-    box-shadow: 0px 30px 50px #0005;
+    box-shadow: 0 10px 20px #0005;
   }
 }
 @media print, screen and (max-width: 480px) {
@@ -293,7 +294,7 @@ label#bgInputLabel:active,
   }
 
   #form {
-    box-shadow: 0px 30px 50px #0005;
+    box-shadow: 0 10px 20px #0005;
   }
 }
 @media print, screen and (max-width: 360px) {
@@ -322,6 +323,6 @@ label#bgInputLabel:active,
   }
 
   #form {
-    box-shadow: 0px 30px 50px #0005;
+    box-shadow: 0 10px 20px #0005;
   }
 }
