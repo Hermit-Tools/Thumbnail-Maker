@@ -69,8 +69,6 @@
         <a href="https://github.com/hermit-tools/Thumbnail-Maker/">View Code On GitHub</a>
     </footer>
 
-    <div id="bottom-line"></div>
-
     <script>
         window.onscroll = () => {
             const soscroll = document.getElementById('show-on-scroll');
@@ -118,19 +116,14 @@
         function notYetMade() {
             let theBar = document.createElement('div');
             theBar.textContent = 'We have not yet made this tool, but we will soon.';
-            theBar.style.position = 'fixed';
-            theBar.style.bottom = '0';
-            theBar.style.width = '100%';
-            theBar.style.left = '0';
-            theBar.style.background = '#333';
-            theBar.style.color = '#fff';
-            theBar.style.padding = '10px 0';
-            theBar.style.textAlign = 'center';
-
+            theBar.classList = "not-yet-made"
             document.body.appendChild(theBar);
+            
+            setTimeout(() => {theBar.style.opacity = '1'}, 1)
 
             setTimeout(() => {
-                document.body.removeChild(theBar)
+                theBar.style.opacity = '0';
+                setTimeout(() => {document.body.removeChild(theBar)}, 200)
             }, 5000)
         }
     </script>

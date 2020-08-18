@@ -102,6 +102,8 @@ main {
     justify-content: center;
     text-align: center;
     font-weight: bold;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
 #show-on-scroll {
@@ -116,16 +118,21 @@ h1 {
     color: #ff3c00;
 }
 
-#bottom-line {
-    width: 100%;
-    height: 2px;
-    position: absolute;
-    bottom: 0;
-    background: linear-gradient(to right, #ffe561, #ffd500);
-}
-
 footer {
     display: none;
+}
+
+.not-yet-made {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background: #222;
+    color: #fff;
+    opacity: 0;
+    transition: all 200ms linear;
 }
 
 @media print,
