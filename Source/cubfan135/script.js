@@ -1,11 +1,14 @@
 const bgInput = document.getElementById("bgInput");
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
 const epNumSelector = document.getElementById("epNumSelector");
 const hcLogoToggler = document.getElementById("hcLogoToggler");
 const previewText = document.getElementById("preview-text");
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
 const downloader = document.getElementById("downloader");
 const downloadShow = document.getElementById("downloadShow");
+
 const hc7Logo = new Image();
 hc7Logo.src =
   "https://hermit-tools.github.io/Thumbnail-Maker/Resources/Hermitcraft Logos/HC7 Logo.png";
@@ -18,12 +21,12 @@ downloader.addEventListener("click", () => {
   document.cookie = `epNumCookie=${epNumSelector.value}`;
 });
 
-if (document.cookie.length === 0) {
-  epNumValueFromCookie = "";
-} else {
-  epNumValueFromCookie = document.cookie.split("=")[1];
-  epNumSelector.value = Number(epNumValueFromCookie) + 1;
-}
+document.cookie.length === 0 ?
+  epNumValueFromCookie = "" :
+  (
+    epNumValueFromCookie = document.cookie.split("=")[1],
+    epNumSelector.value = Number(epNumValueFromCookie) + 1
+  )
 
 // Service Worker
 if ("serviceWorker" in navigator) {
@@ -56,13 +59,13 @@ function episodeNum() {
   ctx.fillText(epNum, 15, 1120);
   ctx.strokeText(epNum, 15, 1120);
   ctx.restore();
-  
+
   ctx.fill();
   ctx.stroke();
 }
 
-function hcLogo() {    
-    ctx.drawImage(hc7Logo, 15.7, 40, 1887.5, 244);
+function hcLogo() {
+  ctx.drawImage(hc7Logo, 15.7, 40, 1887.5, 244);
 }
 
 function process() {
@@ -81,6 +84,5 @@ function finishEditing() {
   }, 5000);
 
   downloader.download = `Ep${epNumSelector.value} HC7 Cub's Contraption.jpg`;
-  downloader.href = canvas
-    .toDataURL("image/png")
+  downloader.href = canvas.toDataURL("image/png")
 }
