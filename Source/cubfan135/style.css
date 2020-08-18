@@ -10,7 +10,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font: 400 14px/1.5 Roboto, sans-serif !important;
+  font: 400 14px/1.5 Roboto, 'Segoe UI', Lato, sans-serif !important;
 }
 
 *::placeholder {
@@ -102,13 +102,14 @@ label#bgInputLabel,
   transform: rotate(90deg);
   border: 1px solid var(--themeColor);
   z-index: -1;
+  margin: 0;
 }
 
 #canvas {
   width: 640px;
   height: 360px;
   border-radius: 5px;
-  box-shadow: 0 0 14.4px 0 #00000022, 0 2.2px 3.6px 0 #0000001c;
+  box-shadow: 0 0 14.4px 0 #0002, 0 2.2px 3.6px 0 #0000001c;
 }
 
 #preview-text {
