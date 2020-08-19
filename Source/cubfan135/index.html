@@ -51,6 +51,12 @@
       download="image.png">
       <i class="material-icons md-18">get_app</i>Download Thumbnail
     </a>
+
+    <div id="etc">
+      <button title="Check out the repository" onclick="javascript: window.location = `https://github.com/hermit-tools/Thumbnail-Maker`"><i class="material-icons md-18">info</i></button>
+      <button title="Share Cub's Contraption" onclick="javascript: navigator.share({title: `Cub's Contraption by Hermit Tools`, url: ''})"><i class="material-icons md-18">share</i></button>
+      <button title="Start over" onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)"><i class="material-icons md-18">clear</i></button>
+    </div>
   </main>
   <div id="downloadShow">Your thumbnail will be downloaded.</div>
   <script src="./script.js"></script>

@@ -25,11 +25,13 @@ input[type="file"] {
 
 #downloader,
 label#bgInputLabel,
-#epNumSelector {
-  display: inline-flex;
+#epNumSelector,
+#etc button {
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 80%;
+  box-sizing: content-box;
   padding: 10px 15px;
   background-color: #fff;
   color: var(--themeColor);
@@ -43,6 +45,17 @@ label#bgInputLabel,
   overflow: hidden;
   cursor: pointer;
   user-select: none;
+}
+
+#etc button {
+  display: inline-flex;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px 10px;
+}
+
+#etc button i {
+  margin: 0;
 }
 
 label#bgInputLabel,
@@ -221,7 +234,8 @@ input:focus::placeholder {
 label#bgInputLabel:hover,
 #epNumSelector:hover,
 #show-hc-logo:hover,
-#downloader:hover {
+#downloader:hover,
+#etc button:hover {
   transform: scale(1.01);
 }
 
