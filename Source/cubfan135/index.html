@@ -7,7 +7,7 @@
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="icon" type="image/png" href="../Resources/Icons/Cub's Head.png" />
   <link rel="apple-touch-icon" href="../Resources/Icons/Cub's Head.png" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta charset="utf-8" />
   <meta property="og:site_name" content="Cub's Contraption by Hermit Tools" />
@@ -24,7 +24,7 @@
 <body>
   <div id="preview-area">
     <div id="preview-text">
-      <i class="material-icons md-48">remove_red_eye</i>Preview
+      &#128065; Preview
     </div>
     <canvas width="1920" height="1080" id="canvas">
       Your browser does not support the canvas element. Consider upgrading to a newer browser.
@@ -32,31 +32,35 @@
   </div>
 
   <main id="form">
-    <hr id="line" />
+    <span style="display: grid; grid-template-columns: 10fr 1fr; width: 100%; align-items: center;gap: 5px">
+      <label class="area" id="bgInputLabel" for="bgInput" title="Choose background image or nothing.">&#10514; Choose
+        Background</label>
+      <button class="area" title="Removed background image"
+        onclick="javascript: bgInput.value = ''; process()">&times</button>
+      <input class="area" type="file" accept="image/*" onchange="process()" id="bgInput" />
+    </span>
 
-    <label id="bgInputLabel" for="bgInput" title="Choose background image or nothing."><i
-        class="material-icons md-18">publish</i> Choose Background Image</label>
-    <input type="file" accept="image/*" onchange="process()" id="bgInput" /><br />
+    <input class="area" type="text" title="Enter episode number here. It can accept number, text or nothing."
+      oninput="process()"
+      onclick="this.focus();this.select();" id="epNumSelector" placeholder="Enter Episode Number" autocomplete="off" />
 
-    <input type="text" title="Enter episode number here. It can accept number, text or nothing." oninput="process()"
-      onclick="this.focus();this.select();" id="epNumSelector" placeholder="Enter Episode Number"
-      autocomplete="off" /><br />
-
-    <div id="show-hc-logo">
-      <label for="hcLogoToggler">Show HC7 Logo:</label>
+    <span class="area" id="show-hc-logo" style="cursor: auto;">
+      <label for="hcLogoToggler" style="cursor: pointer;">Show HC7 Logo:</label>
       <input type="checkbox" checked onchange="process()" id="hcLogoToggler" class="mdc-switch" />
-    </div>
+    </span>
 
-    <a style="text-decoration: none; margin: 20px" href="#" id="downloader" onclick="finishEditing()"
+    <a class="area" style="text-decoration: none;" href="#" id="downloader" onclick="finishEditing()"
       download="image.png">
-      <i class="material-icons md-18">get_app</i>Download Thumbnail
+      &#11123; Download Thumbnail
     </a>
 
-    <div id="etc">
-      <button title="Check out the repository" onclick="javascript: window.location = `https://github.com/hermit-tools/Thumbnail-Maker`"><i class="material-icons md-18">info</i></button>
-      <button title="Share Cub's Contraption" onclick="javascript: navigator.share({title: `Cub's Contraption by Hermit Tools`, url: ''})"><i class="material-icons md-18">share</i></button>
-      <button title="Start over" onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)"><i class="material-icons md-18">clear</i></button>
-    </div>
+    <span id="etc" style="display: grid; grid-template-columns: 1fr 1fr 1fr;gap: 5px;">
+      <button class="area" title="Check out the repository"
+        onclick="javascript: window.location = `https://github.com/hermit-tools/Thumbnail-Maker`">&#8505;</button>
+      <button class="area" title="Share Cub's Contraption"
+        onclick="javascript: navigator.share({title: `Cub's Contraption by Hermit Tools`, url: ''})">&#10149;</button>
+      <button class="area" title="Start over" onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)">&#11118;</button>
+    </span>
   </main>
   <div id="downloadShow">Your thumbnail will be downloaded.</div>
   <script src="./script.js"></script>

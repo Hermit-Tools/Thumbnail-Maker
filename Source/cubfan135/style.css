@@ -10,7 +10,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font: 400 14px/1.5 Roboto, 'Segoe UI', Lato, sans-serif !important;
+  font: 600 14px/1.5 Roboto, 'Segoe UI', Lato, sans-serif !important;
+  letter-spacing: 1px;
 }
 
 *::placeholder {
@@ -23,69 +24,37 @@ input[type="file"] {
   display: none;
 }
 
-#downloader,
-label#bgInputLabel,
-#epNumSelector,
-#etc button {
+.area {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%;
-  box-sizing: content-box;
+
+  width: 100%;
+  height: 5vh;
   padding: 10px 15px;
+  box-sizing: border-box;
+
   background-color: #fff;
   color: var(--themeColor);
   border: 1px solid var(--themeColor);
   border-radius: 5px;
-  font-size: 0.9em;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-overflow: initial;
+
   text-transform: uppercase;
+  text-align: center;
+
   overflow: hidden;
   cursor: pointer;
   user-select: none;
-}
-
-#etc button {
-  display: inline-flex;
-  width: fit-content;
-  height: fit-content;
-  padding: 5px 10px;
-}
-
-#etc button i {
-  margin: 0;
-}
-
-label#bgInputLabel,
-#epNumSelector,
-#show-hc-logo,
-#downloader {
   transition: all 0.1s ease;
 }
 
 #downloader {
-  height: 56px;
-  padding: 0 20px;
+  height: calc(5vh + 20px);
   background: var(--themeColor);
   color: #fff;
   border: 0;
   border-radius: 28px;
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-    0 1px 10px 0 rgba(0, 0, 0, 0.12);
-}
-
-#show-hc-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
-  background: #fff;
-  padding: 5px 15px;
-  border: 1px solid #053fff;
-  border-radius: 5px;
-  letter-spacing: 1px;
+  box-shadow: 0 2px 4px -1px #0003, 0 4px 5px 0 #00000024, 0 1px 10px 0 #0000001f;
 }
 
 #epNumSelector {
@@ -105,17 +74,6 @@ label#bgInputLabel,
   padding: 10px;
   opacity: 0;
   transition: opacity 0.1s ease-in;
-}
-
-#line {
-  position: relative;
-  left: -30%;
-  top: 100px;
-  width: 180px;
-  transform: rotate(90deg);
-  border: 1px solid var(--themeColor);
-  z-index: -1;
-  margin: 0;
 }
 
 #canvas {
@@ -150,21 +108,18 @@ label#bgInputLabel,
   z-index: -2;
 }
 
-#preview-area .material-icons {
-  position: relative;
-  bottom: -7px;
-}
-
 #form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  gap: 20px;
+  justify-items: center;
   align-items: center;
+  align-content: center;
   height: 100%;
-  padding: 10px;
+  padding: 10px 10%;
   box-sizing: border-box;
   overflow: hidden;
   box-shadow: 10px 0 20px #0005;
+  background: #fff;
 }
 
 .mdc-switch {
@@ -231,20 +186,12 @@ input:focus::placeholder {
   outline: none;
 }
 
-label#bgInputLabel:hover,
-#epNumSelector:hover,
-#show-hc-logo:hover,
-#downloader:hover,
-#etc button:hover {
-  transform: scale(1.01);
+.area:hover {
+  transform: scale(1.05);
 }
 
-#downloader:active,
-#downloader:focus,
-label#bgInputLabel:focus,
-label#bgInputLabel:active,
-#epNumSelector:active,
-#epNumSelector:focus {
+.area:focus,
+.area:active {
   text-decoration: none;
   transform: scale(0.99);
 }
@@ -285,6 +232,25 @@ label#bgInputLabel:active,
     box-shadow: 0 10px 20px #0005;
   }
 }
+
+@media screen and (max-height: 550px) {
+  #preview-text {
+    width: 360px;
+    height: 202.5px;
+    line-height: 202.5px;
+  }
+  #canvas {
+    width: 360px;
+    height: 202.5px;
+  }
+}
+
+@media screen and (max-height: 420px) {
+  #etc {
+    display: none!important;
+  }
+}
+
 @media print, screen and (max-width: 480px) {
   body {
     grid-template-columns: none;
