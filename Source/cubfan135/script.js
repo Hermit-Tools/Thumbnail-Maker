@@ -90,6 +90,6 @@ function finishEditing() {
     }, 100)
   }, 5000);
 
-  //downloader.download = `Ep${epNumSelector.value} HC7 Cub's Contraption.jpg`;
-  //downloader.href = canvas.toDataURL("image/png")
+  downloader.download = `Ep${epNumSelector.value} HC7 Cub's Contraption.jpg`;
+  downloader.href = canvas.toDataURL("image/png")
 }
