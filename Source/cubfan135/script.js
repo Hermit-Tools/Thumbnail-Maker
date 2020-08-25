@@ -6,7 +6,6 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 const downloader = document.getElementById("downloader");
-const downloadShow = document.getElementById("downloadShow");
 
 const hc7Logo = new Image();
 hc7Logo.src =
@@ -77,11 +76,20 @@ function process() {
 }
 
 function finishEditing() {
-  downloadShow.style.opacity = "1";
+  let downloadShow = document.createElement('div');
+  downloadShow.className = "downloadShow";
+  downloadShow.textContent = "Your thumbnail will be downloaded."
+  document.body.appendChild(downloadShow);
+  setTimeout(() => {
+    downloadShow.style.opacity = "1"
+  }, 0)
   setTimeout(() => {
     downloadShow.style.opacity = "0";
+    setTimeout(() => {
+      document.body.removeChild(downloadShow)
+    }, 100)
   }, 5000);
 
-  downloader.download = `Ep${epNumSelector.value} HC7 Cub's Contraption.jpg`;
-  downloader.href = canvas.toDataURL("image/png")
+  //downloader.download = `Ep${epNumSelector.value} HC7 Cub's Contraption.jpg`;
+  //downloader.href = canvas.toDataURL("image/png")
 }

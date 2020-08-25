@@ -65,8 +65,10 @@ input[type="file"] {
   text-transform: none;
 }
 
-#downloadShow {
-  position: absolute;
+.downloadShow {
+  font-weight: normal;
+  letter-spacing: normal;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: calc(100% - 20px);
@@ -208,7 +210,8 @@ input:focus::placeholder {
   background: #053fff;
 }
 
-@media print, screen and (max-width: 920px) {
+@media print,
+screen and (max-width: 920px) {
   body {
     grid-template-columns: none;
     grid-template-rows: 50% 50%;
@@ -242,6 +245,7 @@ input:focus::placeholder {
     height: 202.5px;
     line-height: 202.5px;
   }
+
   #canvas {
     width: 360px;
     height: 202.5px;
@@ -250,11 +254,12 @@ input:focus::placeholder {
 
 @media screen and (max-height: 420px) {
   #etc {
-    display: none!important;
+    display: none !important;
   }
 }
 
-@media print, screen and (max-width: 480px) {
+@media print,
+screen and (max-width: 480px) {
   body {
     grid-template-columns: none;
     grid-template-rows: 50% 50%;
@@ -281,7 +286,9 @@ input:focus::placeholder {
     box-shadow: 0 10px 20px #0005;
   }
 }
-@media print, screen and (max-width: 360px) {
+
+@media print,
+screen and (max-width: 360px) {
   body {
     grid-template-columns: none;
     grid-template-rows: 50% 50%;
