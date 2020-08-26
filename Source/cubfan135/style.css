@@ -102,6 +102,16 @@ input[type="file"] {
   z-index: -1;
 }
 
+.material-icons-round {
+  font-size: inherit!important;
+  margin: 0 5px;
+  vertical-align: text-top;
+}
+
+#preview-text i {
+  font-size: 48px;
+}
+
 #preview-area {
   background-color: #f7fbff;
   display: flex;

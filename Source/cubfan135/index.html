@@ -8,6 +8,7 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" type="image/png" href="../Resources/Icons/Cub's Head.png">
   <link rel="apple-touch-icon" href="../Resources/Icons/Cub's Head.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
@@ -25,14 +26,14 @@
 
 <body>
   <section id="preview-area">
-    <div id="preview-text">&#128065; Preview</div>
+    <div id="preview-text"><i class="material-icons-round">remove_red_eye</i> Preview</div>
     <canvas width="1920" height="1080" id="canvas">Your browser does not support the canvas element. Consider upgrading to a newer browser.</canvas>
   </section>
 
   <main id="form">
     <span id="bgArea">
-      <label class="area" id="bgInputLabel" for="bgInput" title="Choose background image or nothing.">&#10514; Choose Background</label>
-      <button class="area" title="Removed background image" onclick="javascript: bgInput.value = ''; process()">&times</button>
+      <label class="area" id="bgInputLabel" for="bgInput" title="Choose background image or nothing."><i class="material-icons-round">publish</i> Choose Background</label>
+      <button class="area" title="Removed background image" onclick="javascript: bgInput.value = ''; process()"><i class="material-icons-round">close</i></button>
       <input class="area" type="file" accept="image/*" onchange="process()" id="bgInput">
     </span>
 
@@ -44,15 +45,16 @@
       <input type="checkbox" checked onchange="process()" id="hcLogoToggler" class="mdc-switch">
     </span>
 
-    <a class="area" style="text-decoration: none;" href="#" id="downloader" onclick="finishEditing()" download="image.png">&#11123; Download Thumbnail</a>
+    <a class="area" style="text-decoration: none;" href="#" id="downloader" onclick="finishEditing()" download="image.png">
+      <i class="material-icons-round">get_app</i>Download Thumbnail</a>
 
     <span id="etc">
       <button class="area" title="Check out the repository" onclick="javascript: window.location = 'https://github.com/hermit-tools/Thumbnail-Maker'">
-        &#8505;</button>
+        <i class="material-icons-round">info</i></button>
       <button class="area" title="Share Cub's Contraption" onclick="javascript: navigator.share({title: `Cub's Contraption by Hermit Tools`, url: ''})">
-        &#10149;</button>
+        <i class="material-icons-round">share</i></button>
       <button class="area" title="Clear canvas and start over" onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)">
-        &#11118;</button>
+        <i class="material-icons-round">backspace</i></button>
     </span>
   </main>
 
