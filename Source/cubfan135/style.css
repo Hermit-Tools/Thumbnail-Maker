@@ -47,7 +47,23 @@ input[type="file"] {
   overflow: hidden;
   cursor: pointer;
   user-select: none;
-  transition: all 0.1s ease;
+  transition: all 0.1s ease,
+  background-color 500ms ease-out,
+  color 500ms ease-out;
+}
+
+body.dark .area,
+body.dark #form,
+body.dark #preview-text {
+  background-color: #2b2b2b;
+}
+
+body.dark #downloader {
+  color: #2b2b2b;
+}
+
+body.dark #preview-area {
+  background-color: #222;
 }
 
 #downloader {
@@ -100,6 +116,7 @@ input[type="file"] {
   text-align: center;
   text-transform: uppercase;
   z-index: -1;
+  transition: background-color 500ms ease-out;
 }
 
 .material-icons-round {
@@ -120,6 +137,7 @@ input[type="file"] {
   height: 100%;
   overflow: hidden;
   z-index: -2;
+  transition: background-color 500ms ease-out;
 }
 
 #form {
@@ -134,6 +152,7 @@ input[type="file"] {
   overflow: hidden;
   box-shadow: 10px 0 20px #0005;
   background: #fff;
+  transition: background-color 500ms ease-out;
 }
 
 #etc {

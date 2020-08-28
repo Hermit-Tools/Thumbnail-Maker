@@ -93,3 +93,22 @@ function finishEditing() {
   downloader.download = `Ep${epNumSelector.value} HC7 Cub's Contraption.jpg`;
   downloader.href = canvas.toDataURL("image/png")
 }
+
+let keyCheat = [];
+let darkText = "invert"
+let oldTime = Date.now();
+
+document.onkeydown = (e) => {
+  if (darkText.indexOf(e.key.toLowerCase()) !== -1) {
+    let newTime = Date.now();
+    if (newTime - oldTime > 1000) { keyCheat = [] }
+    oldTime = newTime;
+  
+    keyCheat.push(e.key.toLowerCase())
+    keyCheat.join('') === "invert" ? (darken(), keyCheat = []) : console.log(keyCheat.join(''));
+  }
+}
+
+async function darken() {
+  document.body.classList.toggle('dark')
+}
