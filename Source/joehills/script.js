@@ -27,17 +27,18 @@ hc7Logo.src = "https://hermit-tools.github.io/Thumbnail-Maker/Resources/Hermitcr
 hc7Logo.crossOrigin = "Anonymous";
 
 /*// Cookies Stuff
-let epNumValueFromCookie;
-
 downloader.addEventListener("click", () => {
-  document.cookie = `epNumCookie=${epNumSelector.value}`;
+  document.cookie = `epNumCookie=${epNumSelector.value}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
 });
 
-if (document.cookie.length === 0) {
-  epNumValueFromCookie = "";
-} else {
-  epNumValueFromCookie = document.cookie.split("=")[1];
-  epNumSelector.value = Number(epNumValueFromCookie) + 1;
+if (document.cookie.length !== 0) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; epNumCookie=`);
+  if (parts[1]) {
+    epNumSelector.value = parts[1].split(';')[0];
+  } else {
+    epNumSelector.value = 'm';
+  }
 }
 // End Cookies Stuff
 
