@@ -39,5 +39,5 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
   console.log("SW is being fetched.");
   event.respondWith(fromCache(event.request));
-  event.respondWith(updateCache(event.request));
+  update(event.request);
 });

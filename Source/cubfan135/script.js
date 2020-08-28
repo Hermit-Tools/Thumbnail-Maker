@@ -13,18 +13,19 @@ hc7Logo.src =
 hc7Logo.crossOrigin = "Anonymous";
 
 // Cookies Stuff
-let epNumValueFromCookie;
-
 downloader.addEventListener("click", () => {
   document.cookie = `epNumCookie=${epNumSelector.value}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
 });
 
-document.cookie.length === 0 ?
-  epNumValueFromCookie = "" :
-  (
-    epNumValueFromCookie = document.cookie.split("=")[1],
-    epNumSelector.value = Number(epNumValueFromCookie) + 1
-  )
+if (document.cookie.length !== 0) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; epNumCookie=`);
+  if (parts[1]) {
+    epNumSelector.value = parts[1].split(';')[0];
+  } else {
+    epNumSelector.value = 'm';
+  }
+}
 
 // Service Worker
 if ("serviceWorker" in navigator) {
@@ -105,7 +106,7 @@ document.onkeydown = (e) => {
     oldTime = newTime;
   
     keyCheat.push(e.key.toLowerCase())
-    keyCheat.join('') === "invert" ? (darken(), keyCheat = []) : console.log(keyCheat.join(''));
+    keyCheat.join('') === "invert" ? (darken(), keyCheat = []) : null
   }
 }
 
