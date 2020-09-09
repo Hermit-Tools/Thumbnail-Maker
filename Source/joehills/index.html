@@ -3,69 +3,75 @@
 
 <head>
   <title>Joey by Hermit Tools</title>
-  <link rel="stylesheet" type="text/css" href="./style.css" />
-  <link rel="manifest" href="./manifest.webmanifest" />
-  <link rel="icon" type="image/png" href="../Resources/Icons/Cub's Head.png" />
-  <link rel="apple-touch-icon" href="../Resources/Icons/Cub's Head.png" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta charset="utf-8" />
-  <meta property="og:site_name" content="Joey by Hermit Tools" />
-  <meta property="og:title" content="Joey" />
+
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <link rel="stylesheet" type="text/css" href="../cubfan135/style.css">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" href="../Resources/Icons/Cub's Head.png">
+  <link rel="apple-touch-icon" href="../Resources/Icons/Cub's Head.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta property="og:site_name" content="Joey by Hermit Tools">
+  <meta property="og:title" content="Joey">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hermit-tools.github.io/Thumbnail-Maker/joehills">
+  <meta property="og:image" content="https://hermit-tools.github.io/Thumbnail-Maker/Resources/Icons/Joe's at.png">
   <meta name="description"
-    content="An automated and smart thumbnail maker for Joe Hills' Hermitcraft videos. Crafted with love from Hermit Tools." />
-  <meta name="theme-color" content="#037de1" />
-  <meta name="og:description"
-    content="An automated and smart thumbnail maker for Joe Hills' Hermitcraft videos. Crafted with love from Hermit Tools." />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:url" content="https://hermit-tools.github.io/Thumbnail-Maker/joehills" />
+    content="An automated and smart thumbnail maker for Joe Hills' Hermitcraft videos. Crafted with love from Hermit Tools.">
+    <meta name="og:description"
+    content="An automated and smart thumbnail maker for Joe Hills' Hermitcraft videos. Crafted with love from Hermit Tools.">
+    <meta name="theme-color" content="#037de1">
 </head>
 
 <body>
-  <div id="preview-area">
+  <section id="preview-area">
     <canvas width="1920" height="1080" id="canvas">
       Your browser does not support the canvas element. Consider upgrading to a newer browser.
     </canvas>
-    <canvas width="1920" height="1080" id="captionCanvas">
-    </canvas>
+    <canvas width="1920" height="1080" id="captionCanvas"></canvas>
     <div id="caption-container"></div>
-  </div>
+  </section>
 
   <main id="form">
-    <hr id="line" />
 
-    <label id="bgInputLabel" for="bgInput" title="Choose background image or nothing."><i
-        class="material-icons md-18">publish</i> Choose Background Image</label>
+    <span id="bgArea">
+      <label class="area" id="bgInputLabel" for="bgInput" title="Choose background image or nothing."><i
+          class="material-icons-round">publish</i> Choose Background</label>
+      <button class="area" title="Removed background image" onclick="javascript: bgInput.value = ''; process()"><i
+          class="material-icons-round">close</i></button>
+      <input type="file" accept="image/*" onchange="process()" id="bgInput">
+    </span>
 
-    <input type="file" accept="image/*" onchange="process()" id="bgInput" /><br />
+    <input class="area" type="text" title="Enter episode number here. It can accept number, text or nothing."
+      oninput="process()" onclick="this.focus();this.select();" id="epNumSelector" placeholder="Enter Episode Number"
+      autocomplete="off">
 
-    <input type="text" title="Enter episode number here. It can accept number, text or nothing." oninput="process()"
-      onclick="this.focus();this.select();" id="epNumSelector" placeholder="Enter Episode Number"
-      autocomplete="off" /><br />
+    <span class="area" id="show-hc-logo" style="cursor: auto;">
+      <label for="hcLogoToggler" style="cursor: pointer;">Show HC7 Logo:</label>
+      <input type="checkbox" checked onchange="process()" id="hcLogoToggler" class="mdc-switch">
+    </span>
 
-    <div id="show-hc-logo">
-      Show HC7 Logo:
-      <input type="checkbox" checked onchange="process()" id="hcLogoToggler" class="mdc-switch" />
-    </div><br />
     <button id="addCaption">+</button>
-    <!--<textarea
-      title="Enter caption here."
-      oninput="process()"
-      onclick="this.focus();this.select();"
-      class="caption"
-      placeholder="Enter Caption Here"
-      autocomplete="off"
-      ></textarea><br />-->
 
-    <a style="text-decoration: none; margin: 20px" href="#" id="downloader" onclick="finishEditing()"
+    <a class="area" style="text-decoration: none;" href="#" id="downloader" onclick="finishEditing()"
       download="image.png">
-      <i class="material-icons md-18">get_app</i>Download Thumbnail
+      <i class="material-icons-round">get_app</i>Download Thumbnail
     </a>
+
+    <span id="etc">
+      <button class="area" title="Check out the repository"
+        onclick="javascript: window.location = 'https://github.com/hermit-tools/Thumbnail-Maker'">
+        <i class="material-icons-round">info</i></button>
+      <button class="area" title="Share Cub's Contraption"
+        onclick="javascript: navigator.share({title: `Cub's Contraption by Hermit Tools`, url: ''})">
+        <i class="material-icons-round">share</i></button>
+      <button class="area" title="Clear canvas and start over"
+        onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)">
+        <i class="material-icons-round">backspace</i></button>
+    </span>
   </main>
-  <div id="downloadShow">Thumbnail downloaded successfully.</div>
   <script src="./script.js"></script>
 </body>
 
