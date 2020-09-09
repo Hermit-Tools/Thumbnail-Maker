@@ -106,9 +106,9 @@
             let theInt = setInterval(() => {
 
                 item.style.background =
-                    `radial-gradient(circle at ${mpX}px ${mpY}px, #0001 0px, #0001 ${i}px, transparent ${i}px)`;
-                i >= 1000 ? (clearInterval(theInt), item.style.background = '#fff', sP = 0) : null
-                i += 5;
+                    `radial-gradient(circle at ${mpX}px ${mpY}px, #0001 0px, #0001 ${i}%, transparent ${i}%)`;
+                i >= 110 ? (clearInterval(theInt), setTimeout(() => {item.style.background = '#fff'; sP = 0}, 1000)) : null
+                i += 2;
 
             }, 5);
         }
