@@ -14,12 +14,13 @@ body {
   letter-spacing: 1px;
 }
 
-*::placeholder {
+.area::placeholder {
   text-align: center;
   transition: all ease 0.2s;
   text-transform: uppercase;
   font-weight: 600;
   color: #777;
+  transition: color 500ms ease-out;
 }
 
 input[type="file"] {
@@ -52,20 +53,6 @@ input[type="file"] {
   color 500ms ease-out;
 }
 
-body.dark .area,
-body.dark #form,
-body.dark #preview-text {
-  background-color: #2b2b2b;
-}
-
-body.dark #downloader {
-  color: #2b2b2b;
-}
-
-body.dark #preview-area {
-  background-color: #222;
-}
-
 #downloader {
   height: calc(5vh + 20px);
   background: var(--themeColor);
@@ -79,21 +66,6 @@ body.dark #preview-area {
   cursor: auto;
   text-align: center;
   text-transform: none;
-}
-
-.downloadShow {
-  font-weight: normal;
-  letter-spacing: normal;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: calc(100% - 20px);
-  background: #222;
-  color: #fff;
-  overflow: hidden;
-  padding: 10px;
-  opacity: 0;
-  transition: opacity 0.1s ease-in;
 }
 
 #canvas {
@@ -119,7 +91,7 @@ body.dark #preview-area {
   transition: background-color 500ms ease-out;
 }
 
-.material-icons-round {
+.material-icons-outlined {
   font-size: inherit!important;
   margin: 0 5px;
   vertical-align: text-top;
@@ -345,4 +317,28 @@ screen and (max-width: 360px) {
   #form {
     box-shadow: 0 10px 20px #0005;
   }
+}
+
+.downloadShow {
+  font-weight: normal;
+  letter-spacing: normal;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 20px);
+  background: #222;
+  color: #fff;
+  overflow: hidden;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+}
+
+body.dark .area,
+body.dark #form,
+body.dark #preview-text,
+body.dark #preview-area,
+body.dark .area::placeholder {
+  background-color: #2b2b2b;
+  color: #eee;
 }
