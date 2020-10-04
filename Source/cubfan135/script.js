@@ -31,6 +31,15 @@ if (document.cookie.length !== 0) {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("service-worker.js");
+    // Set Theme If Exists
+    if (localStorage.getItem("theme")) {
+      if (localStorage.getItem("theme") == "dark") {
+        darken();
+      }
+    } else {
+      // Set Theme To Default
+      localStorage.setItem("theme", "light");
+    }
   });
 }
 
@@ -95,6 +104,8 @@ function finishEditing() {
   downloader.href = canvas.toDataURL("image/png")
 }
 
+
+
 let keyCheat = [];
 let darkText = "invert"
 let oldTime = Date.now();
@@ -112,4 +123,10 @@ document.onkeydown = (e) => {
 
 async function darken() {
   document.body.classList.toggle('dark')
+  // Check Theme and Save in Local Storage
+  if(document.body.classList.contains("dark")) {
+    localStorage.setItem("theme", "Dark")
+  } else {
+    localStorage.setItem("theme", "light")
+  }
 }
