@@ -39,7 +39,7 @@ label#bgInputLabel,
   letter-spacing: 1px;
   text-overflow: initial;
   text-transform: uppercase;
-  overflow: hidden;
+  /* overflow: hidden; */
   cursor: pointer;
   user-select: none;
 }
@@ -242,7 +242,8 @@ label#bgInputLabel:active,
   background: #053fff;
 }
 
-@media print, screen and (max-width: 920px) {
+@media print,
+screen and (max-width: 920px) {
   body {
     grid-template-columns: none;
     grid-template-rows: 50% 50%;
@@ -269,7 +270,9 @@ label#bgInputLabel:active,
     box-shadow: 0px 30px 50px #0005;
   }
 }
-@media print, screen and (max-width: 480px) {
+
+@media print,
+screen and (max-width: 480px) {
   body {
     grid-template-columns: none;
     grid-template-rows: 50% 50%;
@@ -296,7 +299,9 @@ label#bgInputLabel:active,
     box-shadow: 0px 30px 50px #0005;
   }
 }
-@media print, screen and (max-width: 360px) {
+
+@media print,
+screen and (max-width: 360px) {
   body {
     grid-template-columns: none;
     grid-template-rows: 50% 50%;
