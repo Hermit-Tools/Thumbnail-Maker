@@ -39,7 +39,7 @@ label#bgInputLabel,
   letter-spacing: 1px;
   text-overflow: initial;
   text-transform: uppercase;
-  /* overflow: hidden; */
+  overflow: hidden;
   cursor: pointer;
   user-select: none;
 }
@@ -328,5 +328,6 @@ screen and (max-width: 360px) {
 
   #form {
     box-shadow: 0px 30px 50px #0005;
+    height: max-content;
   }
 }
