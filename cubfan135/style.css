@@ -242,7 +242,8 @@ label#bgInputLabel:active,
   background: #053fff;
 }
 
-@media print, screen and (max-width: 920px) {
+@media print,
+screen and (max-width: 920px) {
   body {
     grid-template-columns: none;
     grid-template-rows: 50% 50%;
@@ -269,7 +270,9 @@ label#bgInputLabel:active,
     box-shadow: 0px 30px 50px #0005;
   }
 }
-@media print, screen and (max-width: 480px) {
+
+@media print,
+screen and (max-width: 480px) {
   body {
     grid-template-columns: none;
     grid-template-rows: 50% 50%;
@@ -294,9 +297,12 @@ label#bgInputLabel:active,
 
   #form {
     box-shadow: 0px 30px 50px #0005;
+    height: max-content;
   }
 }
-@media print, screen and (max-width: 360px) {
+
+@media print,
+screen and (max-width: 360px) {
   body {
     grid-template-columns: none;
     grid-template-rows: 50% 50%;
@@ -323,5 +329,6 @@ label#bgInputLabel:active,
 
   #form {
     box-shadow: 0px 30px 50px #0005;
+    height: max-content;
   }
 }
