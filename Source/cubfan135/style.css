@@ -188,15 +188,10 @@ input:focus::placeholder {
   opacity: 0;
 }
 
-*:focus {
-  outline: none;
-}
-
 .area:hover {
   transform: scale(1.05);
 }
 
-.area:focus,
 .area:active {
   text-decoration: none;
   transform: scale(0.99);
@@ -206,7 +201,6 @@ input:focus::placeholder {
   background-color: #0032d6;
 }
 
-#downloader:focus,
 #downloader:active {
   background: #053fff;
 }
@@ -341,4 +335,9 @@ body.dark #preview-area,
 body.dark .area::placeholder {
   background-color: #2b2b2b;
   color: #eee;
+}
+
+*:focus {
+  filter: sepia(180%);
+  outline: none;
 }
