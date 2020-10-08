@@ -26,43 +26,48 @@
 
 <body>
   <section id="preview-area">
-    <div id="preview-text"><i class="material-icons-outlined">remove_red_eye</i> Preview</div>
-    <canvas width="1920" height="1080" id="canvas">Your browser does not support the canvas element. Consider upgrading
-      to a newer browser.</canvas>
+    <div id="preview-text">
+      <i class="material-icons-outlined">remove_red_eye</i> Preview
+    </div>
+    
+    <canvas width="1920" height="1080" id="canvas">
+      Your browser does not support the canvas element. Consider upgrading to a newer browser.
+    </canvas>
   </section>
 
   <main id="form">
     <span id="bgArea">
-      <label class="area" id="bgInputLabel" for="bgInput" title="Choose background image or nothing."
-       role="button" tabindex="0"><i class="material-icons-outlined">publish</i> Choose Background</label>
-      <button class="area" title="Removed background image" onclick="javascript: bgInput.value = ''; process()"><i
-          class="material-icons-outlined">close</i></button>
-      <input type="file" accept="image/*" onchange="process()" id="bgInput">
+      <label id="bgInputLabel" class="area" for="bgInput" role="button" tabindex="0" title="Choose background image.">
+        <i class="material-icons-outlined">publish</i> Choose Background
+      </label>
+      <input type="file" accept="image/*" id="bgInput" onchange="process()">
+
+      <button class="area" onclick="javascript: bgInput.value = ''; process()" title="Removed background image">
+        <i class="material-icons-outlined">close</i>
+      </button>
     </span>
 
-    <input class="area" type="text" title="Enter episode number here. It can accept number, text or nothing."
-      oninput="process()" onclick="this.focus();this.select();" id="epNumSelector" placeholder="Enter Episode Number"
-      autocomplete="off">
+    <input type="text" id="epNumSelector" class="area" autocomplete="off" oninput="process()" onclick="this.focus();this.select();" title="Enter episode number here. It can accept number, text or nothing." placeholder="Enter Episode Number">
 
     <span class="area" id="show-hc-logo" style="cursor: auto;">
       <label for="hcLogoToggler" style="cursor: pointer;">Show HC7 Logo:</label>
-      <input type="checkbox" checked onchange="process()" id="hcLogoToggler" class="mdc-switch">
+      <input type="checkbox" checked id="hcLogoToggler" class="mdc-switch" onchange="process()">
     </span>
 
-    <a class="area" style="text-decoration: none;" href="#" id="downloader" onclick="finishEditing()"
-      download="image.png">
-      <i class="material-icons-outlined">get_app</i>Download Thumbnail</a>
+    <a class="area" href="#" id="downloader" onclick="finishEditing()" style="text-decoration: none;">
+      <i class="material-icons-outlined">get_app</i>Download Thumbnail
+    </a>
 
     <span id="etc">
-      <button class="area" title="Check out the repository"
-        onclick="javascript: window.location = 'https://github.com/hermit-tools/Thumbnail-Maker'">
-        <i class="material-icons-outlined">info</i></button>
-      <button class="area" title="Share Cub's Contraption"
-        onclick="javascript: navigator.share({title: `Cub's Contraption by Hermit Tools`, url: ''})">
-        <i class="material-icons-outlined">share</i></button>
-      <button class="area" title="Clear canvas and start over"
-        onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)">
-        <i class="material-icons-outlined">backspace</i></button>
+      <button class="area" onclick="javascript: window.location = 'https\:\/\/github.com/hermit-tools/Thumbnail-Maker'" title="Check out the repository">
+        <i class="material-icons-outlined">info</i>
+      </button>
+      <button class="area" onclick="javascript: navigator.share({title: `Cub's Contraption by Hermit Tools`, url: ''})" title="Share Cub's Contraption">
+        <i class="material-icons-outlined">share</i>
+      </button>
+      <button class="area" onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)" title="Clear canvas and start over">
+        <i class="material-icons-outlined">backspace</i>
+      </button>
     </span>
   </main>
 
