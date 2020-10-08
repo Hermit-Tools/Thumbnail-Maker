@@ -14,13 +14,13 @@ hc7Logo.src =
 hc7Logo.crossOrigin = "Anonymous";
 
 //Focus Choose Background Label
-bgInputLabel.addEventListener("focus", e => {
+bgInputLabel.addEventListener("focus", (e) => {
   e.preventDefault();
 });
 
 //Make Label Interactive
-bgInputLabel.addEventListener("keydown", e => {
-  if (e.key === 32) {
+bgInputLabel.addEventListener("keyup", (e) => {
+  if (e.key == "Enter" || " " || "Spacebar") {
     bgInput.click();
   }
 });
