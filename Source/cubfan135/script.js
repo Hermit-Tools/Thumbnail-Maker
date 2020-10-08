@@ -20,7 +20,7 @@ bgInputLabel.addEventListener("focus", (e) => {
 
 //Make Label Interactive
 bgInputLabel.addEventListener("keyup", (e) => {
-  if (e.key == "Enter" || " " || "Spacebar") {
+  if (e.key === "Enter" || e.key === "Spacebar" || e.key === " ") {
     bgInput.click();
   }
 });
