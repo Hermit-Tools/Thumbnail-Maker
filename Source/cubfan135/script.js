@@ -20,7 +20,7 @@ bgInputLabel.addEventListener("focus", e => {
 
 //Make Label Interactive
 bgInputLabel.addEventListener("keydown", e => {
-  if (e.key = 32) {
+  if (e.key === 32) {
     bgInput.click();
   }
 });
