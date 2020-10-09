@@ -4,7 +4,7 @@
 The following is a set of guidelines for contributing to Thumbnail-Maker. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 ## Submitting a change
-Please commitall the changes in the beta version ofthe tool only. Beta version ofanything is located under *Source/* with the same rest of the location.  
+Please commit all the changes in the beta version of the tool only. Beta version of anything is located under *Source/* with the same rest of the location. Commiting to the direct next release is more beneficial than commiting to a far release.  
 Please send a GitHub Pull Request with a clear list of what you've done. Please make sure all of your commits are atomic (one feature per commit).
 
 Always write a clear log message for your commits. One-line messages are fine for small changes, but bigger changes should look like this:
