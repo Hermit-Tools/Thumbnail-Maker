@@ -29,7 +29,7 @@
     <div id="preview-text">
       <i class="material-icons-outlined">remove_red_eye</i> Preview
     </div>
-    
+
     <canvas width="1920" height="1080" id="canvas" aria-label="A preview area of your thumbnail">
       Your browser does not support the canvas element. Consider upgrading to a newer browser.
     </canvas>
@@ -47,7 +47,11 @@
       </button>
     </span>
 
-    <input type="text" id="epNumSelector" class="area" autocomplete="off" oninput="process()" onclick="this.focus();this.select();" title="Enter episode number here. It can accept number, text or nothing." placeholder="Enter Episode Number">
+    <label for="epNumSelector" class="area__input--label">
+      <input type="text" id="epNumSelector" class="area" autocomplete="off" oninput="process()"
+        onclick="this.focus();this.select();" title="Enter episode number here. It can accept number, text or nothing."
+        placeholder="Enter Episode Number" aria-label="Enter Episode Number">
+    </label>
 
     <span class="area" id="show-hc-logo" style="cursor: auto;">
       <label for="hcLogoToggler" style="cursor: pointer;">Show HC7 Logo:</label>
@@ -59,13 +63,16 @@
     </a>
 
     <span id="etc">
-      <button class="area" onclick="javascript: window.location = 'https\:\/\/github.com/hermit-tools/Thumbnail-Maker'" title="Check out the repository">
+      <button class="area" onclick="javascript: window.location = 'https\:\/\/github.com/hermit-tools/Thumbnail-Maker'"
+        title="Check out the repository">
         <i class="material-icons-outlined">info</i>
       </button>
-      <button class="area" onclick="javascript: navigator.share({title: `Cub's Contraption by Hermit Tools`, url: ''})" title="Share Cub's Contraption">
+      <button class="area" onclick="javascript: navigator.share({title: `Cub's Contraption by Hermit Tools`, url: ''})"
+        title="Share Cub's Contraption">
         <i class="material-icons-outlined">share</i>
       </button>
-      <button class="area" onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)" title="Clear canvas and start over">
+      <button class="area" onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)"
+        title="Clear canvas and start over">
         <i class="material-icons-outlined">backspace</i>
       </button>
     </span>
