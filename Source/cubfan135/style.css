@@ -341,3 +341,10 @@ body.dark .area::placeholder {
   filter: sepia(180%);
   outline: none;
 }
+
+
+/* DRAG AND DROP component */
+.drop {
+  margin: 6px;
+  border: 2px dashed #c7e3ff;
+}
