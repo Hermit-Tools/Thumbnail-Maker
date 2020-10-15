@@ -344,7 +344,54 @@ body.dark .area::placeholder {
 
 
 /* DRAG AND DROP component */
-.drop {
-  margin: 6px;
-  border: 2px dashed #c7e3ff;
+body {
+  position: relative;
 }
+
+.drop-zone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+  background: #191919;
+  background: rgba(25,25,25,0.95);
+  transition: visibility 175ms, opacity 175ms;
+  outline: 0.275em dashed #c7e3ff;
+  outline-offset: -1em;
+  border: 0.75em solid transparent;
+  z-index: 9999;
+}
+
+.drop-zone h1 {
+  font-size: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.175em;
+  color: #c7e3ff;
+  cursor: default;
+-webkit-transition: font-size 735ms;
+   -moz-transition: font-size 735ms;
+     -o-transition: font-size 735ms;
+        transition: font-size 735ms;
+}
+
+.dropInput {
+  display: block!important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  background: transparent;
+  z-index: 99999;
+}
+
