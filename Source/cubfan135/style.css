@@ -53,11 +53,6 @@ input[type="file"] {
   color 500ms ease-out;
 }
 
-.area__input--label {
-  border: none;
-  width: 100%;
-}
-
 #downloader {
   height: calc(5vh + 20px);
   background: var(--themeColor);
