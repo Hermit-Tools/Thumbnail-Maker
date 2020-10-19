@@ -1,28 +1,13 @@
 /* ======================================================= */
 /* ======= Drag and drop Script by nsandor-webDev ======== */
-/* = This file is called after script.js file and jQuery = */
+/* ====== This file is called after script.js file ======= */
 /* ========= Can be overwritten toscript.js file ========= */
-/* ======= jQuery downloaded from CDNJS cloudflare ======= */
-/* == Recommended to download jQuery and use it locally == */
 /* ======================================================= */
-
-(function($) {
-    // VARIABLES and CSS objects
-    var body = $('body'),
-        dropZone = body.find('#dropzone'), // Full page overlay drop zone element
-        dropInput = body.find('#bgInput'),  // input file element from right part
-        lastTarget = null,
-        cssHide = { // CSS object to hide the drop zone element
-            visibility: 'hidden',
-            opacity: 0
-        },
-        cssShow = { // CSS object to show the drop zone element
-            visibility: 'visible',
-            opacity: 1
-        },
-        titleFrontSize = {      // Front size for H1 title in drop zone element
-            fontSize: '3em'     // transition effect
-        };
+    // VARIABLES
+    var dropZone = document.getElementById('dropzone'), // Full page overlay drop zone element
+        dropInput = document.getElementById('bgInput'), // Input file element from right part
+        dropZoneTitle = dropZone.getElementsByTagName("H1")[0]; // Title in dropZone element
+        lastTarget = null;
 
     // Stop original events when dragover
     window.addEventListener("dragover", function (e){
@@ -60,25 +45,27 @@
     function isFile(evt) {
         var dt = evt.dataTransfer;
         for (var i = 0; i < dt.types.length; i++) {
-            if (dt.types[i] === "Files") {
-                return true;
+            if (dt.items[i].kind === 'file') { // Dragged item is a file
+                if (dt.items[i].type.indexOf('image') === 0) { // Drageed file is an image
+                    return true;
+                }
             }
         }
         return false;
     }
-    // Set CSS for dropZone then find TITLE H1 element and set FontSize
+    // Set CSS for dropZone and set FontSize to  TITLE H1 element
     // Add class to INPUT FILE element - become an overlay full page input
     function showDropZone() {
-        dropZone.css(cssShow).find('h1').css(titleFrontSize);
-        dropInput.addClass('dropInput');
+        dropZone.style.visibility = "visible";
+        dropZone.style.opacity = 1;
+        dropZoneTitle.style.fontSize = "3rem";
+        dropInput.classList.add('dropInput')
     }
-    // Set CSS for dropZone to HIDE it and then find TITLE H1 element and set FontSize to 0 (reset transition effet)
+    // Set CSS for dropZone and set FontSize to  TITLE H1 element - Hiding element
     // REMOVE class to INPUT FILE element - become a default input element
     function hideDropZone() {
-        dropZone.css(cssHide).find('h1').css('font-size', 0);
-        dropInput.removeClass('dropInput');
+        dropZone.style.visibility = "";
+        dropZone.style.opacity = "";
+        dropZoneTitle.style.fontSize = "";
+        dropInput.classList.remove('dropInput')
     }
-
-})(jQuery);
-// Used jQuery framework - for future development I decided for this notation
-// When you will be using some JS framework with "$" symbol, this part of CODE will be always in jQuery
