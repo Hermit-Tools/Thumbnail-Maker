@@ -341,3 +341,17 @@ body.dark .area::placeholder {
   filter: sepia(180%);
   outline: none;
 }
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .area:active,
+  .area:hover{
+    transform: none !important;
+  }
+
+  /* style for the .area class elements except the download button */
+  .area:active:not(#downloader),
+  .area:hover:not(#downloader) {
+    border-color: #0032d6 !important;
+    color: #0032d6 !important;
+  }
+}
