@@ -1,6 +1,6 @@
 html {
   height: 100%;
-  --themeColor: #037de1;
+  --themeColor: #0576DF;
 }
 
 body {
@@ -80,7 +80,7 @@ input[type="file"] {
   width: 640px;
   height: 360px;
   background: #fff;
-  color: #c7e3ff;
+  color: #949594;
   border-radius: 5px;
   font-size: 48px;
   font-weight: 900;
