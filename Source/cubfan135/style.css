@@ -349,7 +349,6 @@ body.dark .area::placeholder {
   }
 
   /* style for the .area class elements except the download button */
-  .area:active:not(#downloader),
   .area:hover:not(#downloader) {
     border-color: #0032d6 !important;
     color: #0032d6 !important;
