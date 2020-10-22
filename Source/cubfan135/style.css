@@ -76,6 +76,9 @@ input[type="file"] {
 }
 
 #preview-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   width: 640px;
   height: 360px;
@@ -84,7 +87,6 @@ input[type="file"] {
   border-radius: 5px;
   font-size: 48px;
   font-weight: 900;
-  line-height: 360px;
   text-align: center;
   text-transform: uppercase;
   z-index: -1;
@@ -220,13 +222,6 @@ screen and (max-width: 920px) {
 
   #preview-text {
     font-size: 40px;
-    line-height: 270px;
-  }
-
-  #preview-text .material-icons {
-    font-size: 40px;
-    line-height: 270px;
-    bottom: -3px;
   }
 
   #form {
@@ -238,7 +233,6 @@ screen and (max-width: 920px) {
   #preview-text {
     width: 360px;
     height: 202.5px;
-    line-height: 202.5px;
   }
 
   #canvas {
@@ -268,13 +262,6 @@ screen and (max-width: 480px) {
 
   #preview-text {
     font-size: 30px;
-    line-height: 202.5px;
-  }
-
-  #preview-text .material-icons {
-    font-size: 30px;
-    line-height: 202.5px;
-    bottom: -3px;
   }
 
   #form {
@@ -299,13 +286,6 @@ screen and (max-width: 360px) {
 
   #preview-text {
     font-size: 30px;
-    line-height: 168.75px;
-  }
-
-  #preview-text .material-icons {
-    font-size: 30px;
-    line-height: 168.75px;
-    bottom: -3px;
   }
 
   #form {
