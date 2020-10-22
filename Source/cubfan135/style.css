@@ -317,6 +317,10 @@ body.dark .area::placeholder {
   color: #eee;
 }
 
+body.dark #preview-area {
+  background-color: #222;
+}
+
 *:focus {
   filter: sepia(180%);
   outline: none;
