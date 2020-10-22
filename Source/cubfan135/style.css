@@ -66,6 +66,7 @@ input[type="file"] {
   cursor: auto;
   text-align: center;
   text-transform: none;
+  font-family: inherit;
 }
 
 #canvas {
