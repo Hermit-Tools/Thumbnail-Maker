@@ -93,10 +93,9 @@ input[type="file"] {
   transition: background-color 500ms ease-out;
 }
 
-.material-icons-outlined {
+.material-icons {
   font-size: inherit!important;
   margin: 0 5px;
-  vertical-align: text-top;
 }
 
 #preview-text i {
