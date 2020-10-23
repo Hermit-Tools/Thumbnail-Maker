@@ -12,6 +12,7 @@ body {
   padding: 0;
   font: 600 14px/1.5 Roboto, 'Segoe UI', Lato, sans-serif !important;
   letter-spacing: 1px;
+  background-color: #222;
 }
 
 .area::placeholder {
