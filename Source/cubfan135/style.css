@@ -49,8 +49,8 @@ input[type="file"] {
   cursor: pointer;
   user-select: none;
   transition: all 0.1s ease,
-  background-color 500ms ease-out,
-  color 500ms ease-out;
+    background-color 500ms ease-out,
+    color 500ms ease-out;
 }
 
 #downloader {
@@ -95,7 +95,7 @@ input[type="file"] {
 }
 
 .material-icons {
-  font-size: inherit!important;
+  font-size: inherit !important;
   margin: 0 5px;
 }
 
