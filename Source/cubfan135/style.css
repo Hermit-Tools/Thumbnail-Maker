@@ -38,7 +38,7 @@ input[type="file"] {
   padding: 10px 15px;
   box-sizing: border-box;
 
-  background-color: #fff;
+  background-color: transparent;
   color: var(--themeColor);
   border: 1px solid var(--themeColor);
   border-radius: 5px;
@@ -310,12 +310,13 @@ screen and (max-width: 360px) {
 }
 
 body.dark .area,
-body.dark #form,
 body.dark #preview-text,
-body.dark #preview-area,
 body.dark .area::placeholder {
-  background-color: #2b2b2b;
   color: #eee;
+}
+body.dark #form,
+body.dark #preview-text {
+  background-color: #2b2b2b;
 }
 
 body.dark #preview-area {
