@@ -17,7 +17,6 @@ body {
 
 .area::placeholder {
   text-align: center;
-  transition: all ease 0.2s;
   text-transform: uppercase;
   font-weight: 600;
   color: #777;
@@ -55,7 +54,8 @@ input[type="file"] {
 }
 
 #downloader {
-  height: calc(5vh + 20px);
+  padding: 10px 0;
+  box-sizing: content-box;
   background: var(--themeColor);
   color: #fff;
   border: 0;
@@ -75,6 +75,17 @@ input[type="file"] {
   height: 360px;
   border-radius: 5px;
   box-shadow: 0 0 14.4px 0 #0002, 0 2.2px 3.6px 0 #0000001c;
+}
+
+#preview-area {
+  background-color: #f7fbff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
+  transition: background-color 500ms ease-out;
 }
 
 #preview-text {
@@ -98,21 +109,6 @@ input[type="file"] {
 .material-icons {
   font-size: inherit !important;
   margin: 0 5px;
-}
-
-#preview-text i {
-  font-size: 48px;
-}
-
-#preview-area {
-  background-color: #f7fbff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  overflow: hidden;
-  z-index: -2;
-  transition: background-color 500ms ease-out;
 }
 
 #form {
@@ -184,6 +180,41 @@ input[type="file"] {
 
 .mdc-switch:checked::after {
   background: #a1a6ff;
+}
+
+.downloadShow {
+  font-weight: normal;
+  letter-spacing: normal;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 20px);
+  background: #222;
+  color: #fff;
+  overflow: hidden;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+}
+
+body.dark .area,
+body.dark #preview-text,
+body.dark .area::placeholder {
+  color: #eee;
+}
+
+body.dark #form,
+body.dark #preview-text {
+  background-color: #2b2b2b;
+}
+
+body.dark #preview-area {
+  background-color: #222;
+}
+
+*:focus {
+  filter: sepia(180%);
+  outline: none;
 }
 
 input:focus::placeholder {
@@ -292,38 +323,4 @@ screen and (max-width: 360px) {
   #form {
     box-shadow: 0 10px 20px #0005;
   }
-}
-
-.downloadShow {
-  font-weight: normal;
-  letter-spacing: normal;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: calc(100% - 20px);
-  background: #222;
-  color: #fff;
-  overflow: hidden;
-  padding: 10px;
-  opacity: 0;
-  transition: opacity 0.1s ease-in;
-}
-
-body.dark .area,
-body.dark #preview-text,
-body.dark .area::placeholder {
-  color: #eee;
-}
-body.dark #form,
-body.dark #preview-text {
-  background-color: #2b2b2b;
-}
-
-body.dark #preview-area {
-  background-color: #222;
-}
-
-*:focus {
-  filter: sepia(180%);
-  outline: none;
 }
