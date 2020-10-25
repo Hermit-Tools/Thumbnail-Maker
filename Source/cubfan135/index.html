@@ -6,9 +6,11 @@
 
   <link rel="stylesheet" type="text/css" href="./style.css">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="icon" type="image/png" href="../../Resources/Icons/Cub's Head.png">
-  <link rel="apple-touch-icon" href="../../Resources/Icons/Cub's Head.png">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="../Resources/Icons/Cub's Head.png">
+  <link rel="apple-touch-icon" href="../Resources/Icons/Cub's Head.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
@@ -25,12 +27,36 @@
 </head>
 
 <body>
+
   <div class="drop-zone" id="dropzone">
     <h1>DRAG A FILE HERE</h1>
   </div>
+
+  <script>
+    // Set Theme If Exists
+    if (localStorage.getItem("theme")) {
+      if (localStorage.getItem("theme") == "dark") {
+        darken();
+      }
+    } else {
+      // Set Theme To Default
+      localStorage.setItem("theme", "light");
+    }
+
+    function darken() {
+      document.body.classList.toggle('dark')
+      // Check Theme and Save in Local Storage
+      if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark")
+      } else {
+        localStorage.setItem("theme", "light")
+      }
+    }
+  </script>
+
   <section id="preview-area">
     <div id="preview-text">
-      <i class="material-icons-outlined">remove_red_eye</i> Preview
+      <i class="material-icons">remove_red_eye</i> Preview
     </div>
 
     <canvas width="1920" height="1080" id="canvas">
@@ -40,13 +66,13 @@
 
   <main id="form">
     <span id="bgArea">
-      <label id="bgInputLabel" class="area" for="bgInput" role="button" tabindex="0" title="Choose background image.">
-        <i class="material-icons-outlined">publish</i> Choose Background
+      <label id="bgInputLabel" class="area" for="bgInput" role="button" tabindex="0" title="Choose background image">
+        <i class="material-icons">publish</i> Choose Background
       </label>
       <input type="file" accept="image/*" id="bgInput" onchange="process()">
 
-      <button class="area" onclick="javascript: bgInput.value = ''; process()" title="Removed background image">
-        <i class="material-icons-outlined">close</i>
+      <button class="area" onclick="javascript: bgInput.value = ''; process()" title="Remove background image">
+        <i class="material-icons">close</i>
       </button>
     </span>
 
@@ -58,18 +84,18 @@
     </span>
 
     <a class="area" href="#" id="downloader" onclick="finishEditing()" style="text-decoration: none;">
-      <i class="material-icons-outlined">get_app</i>Download Thumbnail
+      <i class="material-icons">get_app</i>Download Thumbnail
     </a>
 
     <span id="etc">
       <button class="area" onclick="javascript: window.location = 'https\:\/\/github.com/hermit-tools/Thumbnail-Maker'" title="Check out the repository">
-        <i class="material-icons-outlined">info</i>
+        <i class="material-icons">info</i>
       </button>
       <button class="area" onclick="javascript: navigator.share({title: `Cub's Contraption by Hermit Tools`, url: ''})" title="Share Cub's Contraption">
-        <i class="material-icons-outlined">share</i>
+        <i class="material-icons">share</i>
       </button>
       <button class="area" onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)" title="Clear canvas and start over">
-        <i class="material-icons-outlined">backspace</i>
+        <i class="material-icons">backspace</i>
       </button>
     </span>
   </main>
