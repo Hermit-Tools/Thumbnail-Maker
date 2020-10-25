@@ -369,17 +369,14 @@ body {
 }
 
 .drop-zone h1 {
-  font-size: 0;
+  font-size: 3em;
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.175em;
   color: #c7e3ff;
   cursor: default;
--webkit-transition: font-size 735ms;
-   -moz-transition: font-size 735ms;
-     -o-transition: font-size 735ms;
-        transition: font-size 735ms;
+  transform: scale(0.75);
 }
 
 .dropInput {

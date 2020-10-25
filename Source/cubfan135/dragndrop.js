@@ -6,12 +6,13 @@
     // VARIABLES
     var dropZone = document.getElementById('dropzone'), // Full page overlay drop zone element
         dropInput = document.getElementById('bgInput'), // Input file element from right part
-        dropZoneTitle = dropZone.getElementsByTagName("H1")[0]; // Title in dropZone element
+        dropZoneTitle = dropZone.getElementsByTagName("H1")[0], // Title in dropZone element
         lastTarget = null;
 
     // Stop original events when dragover
     window.addEventListener("dragover", function (e){
-        preventDef(e);
+        e.preventDefault();
+        e.stopPropagation();
     });
 
     // Show drop zone element when u drag a file in window
@@ -24,7 +25,8 @@
 
     // Hide drop zone element when you leave windows during drag
     window.addEventListener("dragleave", function (e) {
-        preventDef(e);
+        e.preventDefault();
+        e.stopPropagation();
         if (e.target === lastTarget || e.target === document) {
             hideDropZone();
         }
@@ -35,12 +37,6 @@
         hideDropZone();
     });
 
-    // Function that stop triggering default action of the event
-    // Stop bubbling up the DOM tree, preventing any parent from sharing events
-    function preventDef(e) {
-        e.preventDefault();
-        e.stopPropagation();
-    }
     // Checking dragged element
     function isFile(evt) {
         var dt = evt.dataTransfer;
@@ -58,7 +54,7 @@
     function showDropZone() {
         dropZone.style.visibility = "visible";
         dropZone.style.opacity = 1;
-        dropZoneTitle.style.fontSize = "3rem";
+        dropZoneTitle.style.transform = "";
         dropInput.classList.add('dropInput')
     }
     // Set CSS for dropZone and set FontSize to  TITLE H1 element - Hiding element
@@ -66,6 +62,5 @@
     function hideDropZone() {
         dropZone.style.visibility = "";
         dropZone.style.opacity = "";
-        dropZoneTitle.style.fontSize = "";
         dropInput.classList.remove('dropInput')
     }
