@@ -390,6 +390,7 @@ body {
   color: #c7e3ff;
   cursor: default;
   transform: scale(0.75);
+  transition: transform 200ms ease-out;
 }
 
 .dropInput {
@@ -404,5 +405,3 @@ body {
   background: transparent;
   z-index: 99999;
 }
-
-
