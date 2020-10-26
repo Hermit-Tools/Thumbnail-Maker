@@ -118,7 +118,7 @@ document.onkeydown = (e) => {
     let newTime = Date.now();
     if (newTime - oldTime > 1000) { keyCheat = [] }
     oldTime = newTime;
-  
+
     keyCheat.push(e.key.toLowerCase())
     keyCheat.join('') === "invert" ? (darken(), keyCheat = []) : null
   }

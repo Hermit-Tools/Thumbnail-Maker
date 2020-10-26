@@ -6,9 +6,11 @@
 
   <link rel="stylesheet" type="text/css" href="./style.css">
   <link rel="manifest" href="./manifest.webmanifest">
+
   <link rel="icon" type="image/png" href="../Resources/Icons/Cub's Head.png">
   <link rel="apple-touch-icon" href="../Resources/Icons/Cub's Head.png">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
@@ -25,6 +27,11 @@
 </head>
 
 <body>
+
+  <div class="drop-zone" id="dropzone">
+    <h1>DRAG A FILE HERE</h1>
+  </div>
+
   <script>
     // Set Theme If Exists
     if (localStorage.getItem("theme")) {
@@ -46,6 +53,7 @@
       }
     }
   </script>
+
   <section id="preview-area">
     <div id="preview-text">
       <i class="material-icons">remove_red_eye</i> Preview
@@ -91,8 +99,8 @@
       </button>
     </span>
   </main>
-
   <script src="./script.js"></script>
+  <script src="./dragndrop.js"></script>
 </body>
 
 </html>

@@ -323,4 +323,85 @@ screen and (max-width: 360px) {
   #form {
     box-shadow: 0 10px 20px #0005;
   }
+
+}
+
+.downloadShow {
+  font-weight: normal;
+  letter-spacing: normal;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 20px);
+  background: #222;
+  color: #fff;
+  overflow: hidden;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+}
+
+body.dark .area,
+body.dark #form,
+body.dark #preview-text,
+body.dark #preview-area,
+body.dark .area::placeholder {
+  background-color: #2b2b2b;
+  color: #eee;
+}
+
+*:focus {
+  filter: sepia(180%);
+  outline: none;
+}
+
+
+/* DRAG AND DROP component */
+body {
+  position: relative;
+}
+
+.drop-zone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+  background: #191919;
+  background: rgba(25,25,25,0.95);
+  transition: visibility 175ms, opacity 175ms;
+  outline: 0.275em dashed #c7e3ff;
+  outline-offset: -1em;
+  border: 0.75em solid transparent;
+  z-index: 9999;
+}
+
+.drop-zone h1 {
+  font-size: 3em;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.175em;
+  color: #c7e3ff;
+  cursor: default;
+  transform: scale(0.75);
+  transition: transform 200ms ease-out;
+}
+
+.dropInput {
+  display: block!important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  background: transparent;
+  z-index: 99999;
 }
