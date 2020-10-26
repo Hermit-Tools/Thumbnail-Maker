@@ -54,7 +54,7 @@
     function showDropZone() {
         dropZone.style.visibility = "visible";
         dropZone.style.opacity = 1;
-        dropZoneTitle.style.transform = "";
+        dropZoneTitle.style.transform = "scale(1)";
         dropInput.classList.add('dropInput')
     }
     // Set CSS for dropZone and set FontSize to  TITLE H1 element - Hiding element
@@ -62,5 +62,6 @@
     function hideDropZone() {
         dropZone.style.visibility = "";
         dropZone.style.opacity = "";
+        dropZoneTitle.style.transform = "";
         dropInput.classList.remove('dropInput')
     }
