@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  --theme-color: #037de1;
 }
 
 body {
@@ -10,123 +11,70 @@ body {
   margin: 0;
   padding: 0;
   font: 600 14px/1.5 Roboto, 'Segoe UI', Lato, sans-serif !important;
+  letter-spacing: 1px;
+  background-color: #222;
 }
 
-*::placeholder {
+.area::placeholder {
   text-align: center;
-  transition: all ease 0.2s;
   text-transform: uppercase;
+  font-weight: 600;
+  color: #777;
 }
 
 input[type="file"] {
   display: none;
 }
 
-#downloader,
-label#bgInputLabel,
-#epNumSelector {
-  display: inline-flex;
+.area {
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%;
+
+  width: 100%;
+  height: 5vh;
   padding: 10px 15px;
-  background-color: #fff;
-  color: #3740ff;
-  border: 1px solid #3740ff;
+  box-sizing: border-box;
+
+  background-color: transparent;
+  color: var(--theme-color);
+  border: 1px solid var(--theme-color);
   border-radius: 5px;
-  font-size: 0.9em;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-overflow: initial;
+
   text-transform: uppercase;
+  text-align: center;
+
   overflow: hidden;
   cursor: pointer;
   user-select: none;
 }
 
-label#bgInputLabel,
-#epNumSelector,
-#show-hc-logo,
 #downloader {
-  transition: all 0.1s ease;
-}
-
-#downloader {
-  height: 56px;
-  padding: 0 20px;
-  background: #2930ff;
+  padding: 10px 0;
+  box-sizing: content-box;
+  background: var(--theme-color);
   color: #fff;
   border: 0;
   border-radius: 28px;
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-    0 1px 10px 0 rgba(0, 0, 0, 0.12);
-}
-
-#show-hc-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
-  background: #fff;
-  padding: 5px 15px;
-  border: 1px solid #053fff;
-  border-radius: 5px;
-  letter-spacing: 1px;
+  box-shadow: 0 2px 4px -1px #0003, 0 4px 5px 0 #00000024, 0 1px 10px 0 #0000001f;
 }
 
 #epNumSelector {
   cursor: auto;
   text-align: center;
   text-transform: none;
-}
-
-#downloadShow {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: calc(100% - 20px);
-  background: #333;
-  color: #fff;
-  overflow: hidden;
-  padding: 10px;
-  opacity: 0;
-  transition: opacity 0.1s ease-in;
-}
-
-#line {
-  position: relative;
-  left: -30%;
-  top: 100px;
-  width: 180px;
-  transform: rotate(90deg);
-  border: 1px solid #00f;
-  z-index: -1;
+  font-family: inherit;
 }
 
 #canvas {
   width: 640px;
   height: 360px;
   border-radius: 5px;
-  box-shadow: 0 0 14.4px 0 #00000022, 0 2.2px 3.6px 0 #0000001c;
-}
-
-#preview-text {
-  position: absolute;
-  width: 640px;
-  height: 360px;
-  background: #fff;
-  color: #ccf;
-  border-radius: 5px;
-  font-size: 48px;
-  font-weight: 900;
-  line-height: 360px;
-  text-align: center;
-  text-transform: uppercase;
-  z-index: -1;
+  box-shadow: 0 0 14.4px 0 #0002, 0 2.2px 3.6px 0 #0000001c;
 }
 
 #preview-area {
-  background-color: #f7f7ff;
+  background-color: #f7fbff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,21 +83,46 @@ label#bgInputLabel,
   z-index: -2;
 }
 
-#preview-area .material-icons {
-  position: relative;
-  bottom: -7px;
+#preview-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 640px;
+  height: 360px;
+  background: #fff;
+  color: #c7e3ff;
+  border-radius: 5px;
+  font-size: 48px;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: -1;
+}
+
+.material-icons {
+  font-size: inherit !important;
+  margin: 0 5px;
 }
 
 #form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  gap: 20px;
+  justify-items: center;
   align-items: center;
-  height: 100%;
-  padding: 10px;
+  align-content: center;
+  padding: 10px 10%;
   box-sizing: border-box;
   overflow: hidden;
-  box-shadow: 30px 0 50px #0005;
+  box-shadow: 10px 0 20px #0005;
+  background: #fff;
+}
+
+#bgArea {
+  display: grid;
+  width: 100%;
+  align-items: center;
+  gap: 5px
 }
 
 .mdc-switch {
@@ -186,7 +159,7 @@ label#bgInputLabel,
 }
 
 .mdc-switch:checked::before {
-  background: #053fff;
+  background: var(--theme-color);
   transform: translateX(12px);
 }
 
@@ -194,17 +167,9 @@ label#bgInputLabel,
   background: #a1a6ff;
 }
 
-.material-icons {
-  position: relative;
-  margin-right: 10px;
-}
-
-.material-icons.md-18 {
-  font-size: 18px;
-}
-
-.material-icons.md-48 {
-  font-size: 48px;
+*:focus {
+  filter: sepia(180%);
+  outline: none;
 }
 
 input:focus::placeholder {
@@ -212,23 +177,11 @@ input:focus::placeholder {
   opacity: 0;
 }
 
-*:focus {
-  outline: none;
+.area:hover {
+  transform: scale(1.05);
 }
 
-label#bgInputLabel:hover,
-#epNumSelector:hover,
-#show-hc-logo:hover,
-#downloader:hover {
-  transform: scale(1.01);
-}
-
-#downloader:active,
-#downloader:focus,
-label#bgInputLabel:focus,
-label#bgInputLabel:active,
-#epNumSelector:active,
-#epNumSelector:focus {
+.area:active {
   text-decoration: none;
   transform: scale(0.99);
 }
@@ -237,7 +190,6 @@ label#bgInputLabel:active,
   background-color: #0032d6;
 }
 
-#downloader:focus,
 #downloader:active {
   background: #053fff;
 }
@@ -257,17 +209,22 @@ screen and (max-width: 920px) {
 
   #preview-text {
     font-size: 40px;
-    line-height: 270px;
-  }
-
-  #preview-text .material-icons {
-    font-size: 40px;
-    line-height: 270px;
-    bottom: -3px;
   }
 
   #form {
-    box-shadow: 0px 30px 50px #0005;
+    box-shadow: 0 10px 20px #0005;
+  }
+}
+
+@media screen and (max-height: 550px) {
+  #preview-text {
+    width: 360px;
+    height: 202.5px;
+  }
+
+  #canvas {
+    width: 360px;
+    height: 202.5px;
   }
 }
 
@@ -286,18 +243,10 @@ screen and (max-width: 480px) {
 
   #preview-text {
     font-size: 30px;
-    line-height: 202.5px;
-  }
-
-  #preview-text .material-icons {
-    font-size: 30px;
-    line-height: 202.5px;
-    bottom: -3px;
   }
 
   #form {
-    box-shadow: 0px 30px 50px #0005;
-    height: max-content;
+    box-shadow: 0 10px 20px #0005;
   }
 }
 
@@ -318,17 +267,25 @@ screen and (max-width: 360px) {
 
   #preview-text {
     font-size: 30px;
-    line-height: 168.75px;
-  }
-
-  #preview-text .material-icons {
-    font-size: 30px;
-    line-height: 168.75px;
-    bottom: -3px;
   }
 
   #form {
-    box-shadow: 0px 30px 50px #0005;
-    height: max-content;
+    box-shadow: 0 10px 20px #0005;
   }
+
+}
+
+.downloadShow {
+  font-weight: normal;
+  letter-spacing: normal;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 20px);
+  background: #222;
+  color: #fff;
+  overflow: hidden;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
 }

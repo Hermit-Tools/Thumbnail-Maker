@@ -84,13 +84,20 @@ function process() {
 }
 
 function finishEditing() {
-  const downloadShow = document.getElementById("downloadShow");
-  downloadShow.style.opacity = "1";
+  let downloadShow = document.createElement('div');
+  downloadShow.className = "downloadShow";
+  downloadShow.textContent = "Your thumbnail will be downloaded."
+  document.body.appendChild(downloadShow);
+  setTimeout(() => {
+    downloadShow.style.opacity = "1"
+  }, 0)
   setTimeout(() => {
     downloadShow.style.opacity = "0";
+    setTimeout(() => {
+      document.body.removeChild(downloadShow)
+    }, 100)
   }, 5000);
-  downloader.download = `Ep${epNumSelector.value} HC7 Cub's Contraption.jpg`;
-  downloader.href = canvas
-    .toDataURL("image/png")
-    .replace("data:image/png", "data:concorp>sahara");
+
+  downloader.download = `Ep${epNumSelector.value} HC7 - Cub's Contraption.jpg`;
+  downloader.href = canvas.toDataURL("image/png")
 }

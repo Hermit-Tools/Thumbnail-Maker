@@ -29,35 +29,39 @@
 <body>
   <div id="preview-area">
     <div id="preview-text">
-      <i class="material-icons md-48">remove_red_eye</i>Preview
+      <i class="material-icons">remove_red_eye</i> Preview
     </div>
-    <canvas width="1920" height="1080" id="canvas">
+
+
+    <canvas width="1920" height="1080" id="canvas" aria-label="A preview area of your thumbnail">
+
       Your browser does not support the canvas element. Consider upgrading to a newer browser.
     </canvas>
   </div>
 
   <main id="form">
-    <hr id="line" />
+    <span id="bgArea">
+      <label id="bgInputLabel" class="area" for="bgInput" role="button" tabindex="0" title="Choose background image">
+        <i class="material-icons">publish</i> Choose Background
+      </label>
+      <input type="file" accept="image/*" id="bgInput" onchange="process()">
+    </span>
 
-    <label id="bgInputLabel" for="bgInput" title="Choose background image or nothing."><i
-        class="material-icons md-18">publish</i> Choose Background Image</label>
-    <input type="file" accept="image/*" onchange="process()" id="bgInput" /><br />
+    <label for="epNumSelector" style="border: none;width: 100%;">
+      <input type="text" id="epNumSelector" class="area" autocomplete="off" oninput="process()"
+        onclick="this.focus();this.select();" title="Enter episode number here. It can accept number, text or nothing."
+        placeholder="Enter Episode Number" aria-label="Enter Episode Number">
+    </label>
 
-    <input type="text" title="Enter episode number here. It can accept number, text or nothing." oninput="process()"
-      onclick="this.focus();this.select();" id="epNumSelector" placeholder="Enter Episode Number"
-      autocomplete="off" /><br />
+    <span class="area" id="show-hc-logo" style="cursor: auto;">
+      <label for="hcLogoToggler" style="cursor: pointer;">Show HC7 Logo:</label>
+      <input type="checkbox" checked id="hcLogoToggler" class="mdc-switch" onchange="process()">
+    </span>
 
-    <div id="show-hc-logo">
-      Show HC7 Logo:
-      <input type="checkbox" checked onchange="process()" id="hcLogoToggler" class="mdc-switch" />
-    </div>
-
-    <a style="text-decoration: none; margin: 20px" href="#" id="downloader" onclick="finishEditing()"
-      download="image.png">
-      <i class="material-icons md-18">get_app</i>Download Thumbnail
+    <a class="area" href="#" id="downloader" onclick="finishEditing()" style="text-decoration: none;">
+      <i class="material-icons">get_app</i>Download Thumbnail
     </a>
   </main>
-  <div id="downloadShow">Thumbnail downloaded successfully.</div>
   <script src="./script.js"></script>
 </body>
 
