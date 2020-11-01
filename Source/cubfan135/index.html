@@ -33,23 +33,39 @@
   </div>
 
   <script>
-    // Set Theme If Exists
-    if (localStorage.getItem("theme")) {
-      if (localStorage.getItem("theme") == "dark") {
-        darken();
-      }
-    } else {
-      // Set Theme To Default
-      localStorage.setItem("theme", "light");
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      darken('dark', false);
     }
 
-    function darken() {
-      document.body.classList.toggle('dark')
-      // Check Theme and Save in Local Storage
-      if (document.body.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark")
+    // Set Theme If Exists
+    if (localStorage.getItem("HTCC-theme")) {
+      if (localStorage.getItem("HTCC-theme") === "dark") {
+        darken();
       } else {
-        localStorage.setItem("theme", "light")
+        darken('light');
+      }
+    } else {
+      // Set Theme To Current theme
+      document.classList.contains('dark') ? darken() : darken('light')
+    }
+
+    function darken(state = "dark", setLocalStorage = true) {
+      if (state === 'dark') {
+        if (!document.body.classList.contains('dark')) {
+          document.body.classList.toggle('dark')
+        }
+      } else {
+        if (document.body.classList.contains('dark')) {
+          document.body.classList.toggle('dark')
+        }
+      }
+      // Check Theme and Save in Local Storage
+      if (setLocalStorage) {
+        if (document.body.classList.contains("dark")) {
+          localStorage.setItem("HTCC-theme", "dark")
+        } else {
+          localStorage.setItem("HTCC-theme", "light")
+        }
       }
     }
   </script>
