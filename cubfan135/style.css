@@ -36,7 +36,7 @@ input[type="file"] {
   padding: 10px 15px;
   box-sizing: border-box;
 
-  background-color: transparent;
+  background-color: #fff;
   color: var(--theme-color);
   border: 1px solid var(--theme-color);
   border-radius: 5px;
@@ -47,6 +47,7 @@ input[type="file"] {
   overflow: hidden;
   cursor: pointer;
   user-select: none;
+  transition: all 50ms linear;
 }
 
 #downloader {
@@ -126,6 +127,7 @@ input[type="file"] {
 
 #bgArea {
   display: grid;
+  grid-template-columns: 10fr 1fr;
   width: 100%;
   align-items: center;
   gap: 5px
