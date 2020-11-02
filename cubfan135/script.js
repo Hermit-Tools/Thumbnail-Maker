@@ -1,22 +1,40 @@
 const bgInput = document.getElementById("bgInput");
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
+const bgInputLabel = document.getElementById("bgInputLabel");
 const epNumSelector = document.getElementById("epNumSelector");
 const hcLogoToggler = document.getElementById("hcLogoToggler");
-const previewText = document.getElementById("preview-text");
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
 const downloader = document.getElementById("downloader");
 
-// Cookies Stuff
-let epNumValueFromCookie;
+const hc7Logo = new Image();
+hc7Logo.src =
+  "https://hermit-tools.github.io/Thumbnail-Maker/Resources/Hermitcraft Logos/HC7 Logo.png";
+hc7Logo.crossOrigin = "Anonymous";
 
+//Focus Choose Background Label
+bgInputLabel.addEventListener("focus", (e) => {
+  e.preventDefault();
+});
+
+//Make Label Interactive
+bgInputLabel.addEventListener("keyup", (e) => {
+  if (e.key === "Enter" || e.key === "Spacebar" || e.key === " ") {
+    bgInput.click();
+  }
+});
+
+
+// Cookies Stuff
 downloader.addEventListener("click", () => {
-  document.cookie = `epNumCookie=${epNumSelector.value}`;
+  document.cookie = `epNumCookie=${epNumSelector.value}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
 });
 
 if (document.cookie.length === 0) {
-  epNumValueFromCookie = "";
+  epNumSelector.value = "";
 } else {
-  epNumValueFromCookie = document.cookie.split("=")[1];
+  let epNumValueFromCookie = document.cookie.split("=")[1];
   epNumSelector.value = Number(epNumValueFromCookie) + 1;
 }
 
@@ -29,15 +47,11 @@ if ("serviceWorker" in navigator) {
 
 function addBgImage() {
   let bgImage = new Image();
-  bgImage.addEventListener(
-    "load",
-    () => {
-      ctx.drawImage(bgImage, 0, 0, 1920, 1080);
-      hcLogo();
-      episodeNum();
-    },
-    false
-  );
+  bgImage.onload = () => {
+    ctx.drawImage(bgImage, 0, 0, 1920, 1080);
+    hcLogoToggler.checked ? hcLogo() : null
+    epNumSelector.value.length === 0 ? null : episodeNum()
+  }
   bgImage.src = URL.createObjectURL(bgInput.files[0]);
 }
 
@@ -55,32 +69,22 @@ function episodeNum() {
   ctx.fillText(epNum, 15, 1120);
   ctx.strokeText(epNum, 15, 1120);
   ctx.restore();
-  
+
   ctx.fill();
   ctx.stroke();
 }
 
 function hcLogo() {
-  if (hcLogoToggler.checked) {
-    let hc7Logo = new Image();
-    hc7Logo.addEventListener("load", () => {
-      ctx.drawImage(hc7Logo, 15.7, 40, 1887.5, 244);
-    });
-    hc7Logo.src =
-      "https://hermit-tools.github.io/Thumbnail-Maker/Resources/Hermitcraft Logos/HC7 Logo.png";
-    hc7Logo.crossOrigin = "Anonymous";
-  }
+  ctx.drawImage(hc7Logo, 15.7, 40, 1887.5, 244);
 }
 
 function process() {
-  ctx.fillStyle = "#fff";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  if (bgInput.files.length != 0) {
-    addBgImage();
-  } else {
-    hcLogo();
-    episodeNum();
-  }
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+  bgInput.files.length === 0 ? (
+    hcLogoToggler.checked ? hcLogo() : null,
+    epNumSelector.value.length === 0 ? null : episodeNum()
+  ) : addBgImage()
 }
 
 function finishEditing() {
@@ -115,6 +119,6 @@ document.onkeydown = (e) => {
     oldTime = newTime;
 
     keyCheat.push(e.key.toLowerCase())
-        keyCheat.join('') === "invert" ? (darken(document.body.classList.contains("dark") ? "light" : "dark"), keyCheat = []) : null
+    keyCheat.join('') === "invert" ? (darken(document.body.classList.contains("dark") ? "light" : "dark"), keyCheat = []) : null
   }
 }
