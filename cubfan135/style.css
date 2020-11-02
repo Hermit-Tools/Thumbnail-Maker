@@ -118,6 +118,12 @@ input[type="file"] {
   background: #fff;
 }
 
+#etc {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+}
+
 #bgArea {
   display: grid;
   width: 100%;
@@ -273,6 +279,12 @@ screen and (max-width: 360px) {
     box-shadow: 0 10px 20px #0005;
   }
 
+}
+
+@media screen and (max-height: 420px) {
+  #etc {
+    display: none !important;
+  }
 }
 
 .downloadShow {
