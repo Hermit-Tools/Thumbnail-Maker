@@ -120,6 +120,6 @@ document.onkeydown = (e) => {
     oldTime = newTime;
 
     keyCheat.push(e.key.toLowerCase())
-    keyCheat.join('') === "invert" ? (darken(), keyCheat = []) : null
+    keyCheat.join('') === "invert" ? (darken(document.body.classList.contains("dark") ? "light" : "dark"), keyCheat = []) : null
   }
 }
