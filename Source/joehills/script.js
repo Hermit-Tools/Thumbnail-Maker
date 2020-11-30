@@ -50,14 +50,26 @@ if ("serviceWorker" in navigator) {
 }
 // End Service Worker*/
 
+//Focus Choose Background Label
+bgInputLabel.addEventListener("focus", (e) => {
+  e.preventDefault();
+});
+
+//Make Label Interactive
+bgInputLabel.addEventListener("keyup", (e) => {
+  if (e.key === "Enter" || e.key === "Spacebar" || e.key === " ") {
+    bgInput.click();
+  }
+});
+
 function addBgImage() {
   let bgImage = new Image();
-  bgImage.src = URL.createObjectURL(bgInput.files[0]);
   bgImage.onload = () => {
     ctx.drawImage(bgImage, 0, 0, 1920, 1080);
     hcLogoToggler.checked ? hcLogo() : null
     epNumSelector.value.length === 0 ? null : episodeNum()
   }
+  bgImage.src = URL.createObjectURL(bgInput.files[0]);
 }
 
 function episodeNum() {
@@ -97,19 +109,22 @@ function process() {
 }
 
 function finishEditing() {
-  downloadShow.style.opacity = "1";
+  let downloadShow = document.createElement('div');
+  downloadShow.className = "downloadShow";
+  downloadShow.textContent = "Your thumbnail will be downloaded."
+  document.body.appendChild(downloadShow);
+  setTimeout(() => {
+    downloadShow.style.opacity = "1"
+  }, 0)
   setTimeout(() => {
     downloadShow.style.opacity = "0";
+    setTimeout(() => {
+      document.body.removeChild(downloadShow)
+    }, 100)
   }, 5000);
 
-  let captionCanvasImage = new Image();
-  captionCanvasImage.src = captionCanvas.toDataURL("image/png");
-  captionCanvasImage.onload = () => {
-    ctx.drawImage(captionCanvasImage, 0, 0, 1920, 1080);
-    downloader.download = `Ep${epNumSelector.value} HC7 Cub's Contraption.jpg`;
-    downloader.href = canvas
-      .toDataURL("image/png")
-  }
+  downloader.download = `Ep${epNumSelector.value} HC7 - Cub's Contraption.jpg`;
+  downloader.href = canvas.toDataURL("image/png")
 }
 
 // Following code makes any element with class containing 'draggable' draggable
@@ -220,3 +235,22 @@ function textAreaToDiv(e) {
   document.getElementsByClassName(`draggable  ${e.target.classList[1]}`)[0].textContent = e.target.value;
 }
 // End multiple caption adder
+
+// Start dark mode saga
+let keyCheat = [];
+let darkText = "invert"
+let oldTime = Date.now();
+
+document.onkeydown = (e) => {
+  if (darkText.indexOf(e.key.toLowerCase()) !== -1) {
+    let newTime = Date.now();
+    if (newTime - oldTime > 1000) {
+      keyCheat = []
+    }
+    oldTime = newTime;
+
+    keyCheat.push(e.key.toLowerCase())
+    keyCheat.join('') === "invert" ? (darken(document.body.classList.contains("dark") ? "light" : "dark"), keyCheat = []) : null
+  }
+}
+//End dark mode saga

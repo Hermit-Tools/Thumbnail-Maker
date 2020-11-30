@@ -61,3 +61,6 @@
 .caption {
   resize: vertical;
 }
+#caption-container, #captionCanvas, #preview-area {
+  z-index: 2
+}
