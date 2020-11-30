@@ -4,7 +4,7 @@
     "start_url": ".",
     "display": "standalone",
     "orientation": "portrait",
-    "background_color": "#037de1",
+    "background_color": "#fff",
     "theme_color": "#037de1",
     "description": "Smart thumbnail maker for cubfan135's HermitCraft videos.",
     "icons": [{
