@@ -4,8 +4,8 @@
 <head>
   <title>Joey by Hermit Tools</title>
 
-  <link rel="stylesheet" type="text/css" href="./style.css">
   <link rel="stylesheet" type="text/css" href="../cubfan135/style.css">
+  <link rel="stylesheet" type="text/css" href="./style.css">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" type="image/png" href="../Resources/Icons/Cub's Head.png">
   <link rel="apple-touch-icon" href="../Resources/Icons/Cub's Head.png">
@@ -26,12 +26,49 @@
 </head>
 
 <body>
+  <script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      darken('dark', false);
+    }
+
+    // Set Theme If Exists
+    if (localStorage.getItem("HTCC-theme")) {
+      if (localStorage.getItem("HTCC-theme") === "dark") {
+        darken();
+      } else {
+        darken('light');
+      }
+    } else {
+      // Set Theme To Current theme
+      document.classList.contains('dark') ? darken() : darken('light')
+    }
+
+    function darken(state = "dark", setLocalStorage = true) {
+      if (state === 'dark') {
+        if (!document.body.classList.contains('dark')) {
+          document.body.classList.toggle('dark')
+        }
+      } else {
+        if (document.body.classList.contains('dark')) {
+          document.body.classList.toggle('dark')
+        }
+      }
+      // Check Theme and Save in Local Storage
+      if (setLocalStorage) {
+        if (document.body.classList.contains("dark")) {
+          localStorage.setItem("HTCC-theme", "dark")
+        } else {
+          localStorage.setItem("HTCC-theme", "light")
+        }
+      }
+    }
+  </script>
   <section id="preview-area">
+    <canvas width="1920" height="1080" id="captionCanvas"></canvas>
+    <div id="caption-container"></div>
     <canvas width="1920" height="1080" id="canvas">
       Your browser does not support the canvas element. Consider upgrading to a newer browser.
     </canvas>
-    <canvas width="1920" height="1080" id="captionCanvas"></canvas>
-    <div id="caption-container"></div>
   </section>
 
   <main id="form">
@@ -70,6 +107,9 @@
       <button class="area" title="Clear canvas and start over"
         onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)">
         <i class="material-icons-round">backspace</i></button>
+      <button class="area" title="Toggle dark theme"
+        onclick="darken(document.body.classList.contains('dark') ? 'light' : 'dark')">
+        <i class="material-icons-round">invert_colors</i></button>
     </span>
   </main>
   <script src="./script.js"></script>
