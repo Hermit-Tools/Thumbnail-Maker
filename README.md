@@ -1,4 +1,4 @@
-<img src="https://repository-images.githubusercontent.com/267630735/303cd280-bd05-11ea-8373-fecde5e8006d">
+<img src="https://repository-images.githubusercontent.com/267630735/f8d3e280-38af-11eb-94c9-6594afc36edc">
 
 # Hermit Tools/Thumbnail Maker
 Minecraft is the best-selling game on Earth. Hermitcraft is one of the most popular Minecraft whitelisted server. 24 famous YouTubers play Minecraft together on the server. They have all sorts of fun. They record their stuff and share it with us on their respective channels.  
