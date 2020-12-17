@@ -93,11 +93,11 @@
         let sP;
 
         function mdcTapAnim(e) {
-            if (sP === 1) {
+            if (e.currentTarget.hold) {
                 return
             }
-            sP = 1;
-            let item = event.currentTarget,
+            e.currentTarget.hold = true;
+            let item = e.currentTarget,
                 i = 0,
                 mpX = e.clientX - item.getBoundingClientRect().left,
                 mpY = e.clientY - item.getBoundingClientRect().top;
@@ -105,9 +105,9 @@
             let theInt = setInterval(() => {
 
                 item.style.background =
-                    `radial-gradient(circle at ${mpX}px ${mpY}px, #0001 0px, #0001 ${i}%, transparent ${i}%)`;
-                i >= 110 ? (clearInterval(theInt), setTimeout(() => {item.style.background = '#fff'; sP = 0}, 1000)) : null
-                i += 2;
+                    `radial-gradient(circle at ${mpX}px ${mpY}px, #b1dbff 0px, #b1dbff ${i}%, transparent ${i}%)`;
+                i >= 100 ? (clearInterval(theInt), setTimeout(() => {item.style.background = '#fff'; item.hold = false}, 500)) : null
+                i += 3;
 
             }, 5);
         }
