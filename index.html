@@ -8,60 +8,125 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hermit-tools.github.io/Thumbnail-Maker/" />
     <meta property="og:image" content="https://hermit-tools.github.io/Thumbnail-Maker/Resources/Icons/htlogo144.png" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:description"
-        content="HermitCraft is one of the most popular Minecraft whitelisted server. This website is aimed for making each and every hermit an automated thumbnail maker." />
     <meta property="og:site_name" content="Thumbnail Maker by Hermit Tools" />
-    <meta name="theme-color" content="#FFD500" />
+    <meta property="og:description"
+        content="Hermitcraft is one of the most popular Minecraft whitelisted server. This website is aimed for making each and every hermit an automated thumbnail maker." />
+    <meta name="description"
+        content="Hermitcraft is one of the most popular Minecraft whitelisted server. This website is aimed for making each and every hermit an automated thumbnail maker." />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#FFD500" />
+
     <link rel="canonical" href="https://hermit-tools.github.io/Thumbnail-Maker/" />
     <link rel="stylesheet" href="./style.css">
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="icon" type="image/png" href="Resources/Icons/htlogo144.png">
     <link rel="apple-touch-icon" href="Resources/Icons/htlogo180.png">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Lato&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <main id="main">
-        <header>
-            <h1>Thumbnail-Maker</h1>
-            <h2>By Hermit-Tools</h2>
-            <p class="desc">HermitCraft is one of the most popular Minecraft whitelisted server. This website is aimed
-                for making every hermit an automated thumbnail maker.</p>
-            <p class="on-phone"><a href="https://github.com/Hermit-Tools/Thumbnail-Maker">View the Project on GitHub</a>
-            </p>
-            <a href="https://github.com/hermit-tools/Thumbnail-Maker"><button type="button" id="see-on-gh">View on <strong>GitHub</strong></button></a>
-        </header>
+    <header>
+        <h1>Thumbnail Maker</h1>
+    </header>
 
-        <section>
-            <table>
-                <tr class="header">
-                    <td>Tool Name</td>
-                    <td>Description</td>
-                    <td>Note</td>
-                </tr>
-                <tr>
-                    <td><a href="./cubfan135/">Cub's Contraption</td>
-                    <td>Thumbnail-Maker for cubfan135.</td>
-                    <td>Completed</td>
-                </tr>
-                <tr>
-                    <td>TFC's Tool</td>
-                    <td>Thumbnail-Maker for TFC's Gaming Channel.</td>
-                    <td>Coming Soon...</td>
-                </tr>
-                <tr>
-                    <td>Joey</td>
-                    <td>Thumbnail-Maker for JoeHillsTSD.</td>
-                    <td>Coming Soon...</td>
-                </tr>
-            </table>
-        </section>
+    <nav>
+        <a href="../">By Hermit Tools</a>
+        <a id="show-on-scroll">Thumbnail Maker</a>
+        <a href="https://github.com/hermit-tools/Thumbnail-Maker/">View Code On GitHub</a>
+    </nav>
+
+    <main>
+        <ol id="main-list">
+            <a href="./cubfan135/">
+                <li class="main-list-item">
+                    <img class="icon" alt="Icon for Cub's Contraption" loading="lazy"
+                        src="Resources/Icons/Cub's Head.png">
+                    <div class="title">Cub's Contraption</div>
+                    <div class="person">cubfan135</div>
+                </li>
+            </a>
+            <a onclick="javascript: notYetMade()">
+                <li class="main-list-item">
+                    <img class="icon" alt="Icon for TFC's Tool" loading="lazy" src="Resources/Icons/TFC's Icon.svg">
+                    <div class="title">TFC's Tool</div>
+                    <div class="person">TFC's Gaming Channel</div>
+                </li>
+            </a>
+            <a href="./Source/joehills">
+                <li class="main-list-item">
+                    <img class="icon" alt="Icon for Joey" loading="lazy" src="Resources/Icons/Joe's at.svg">
+                    <div class="title">Joey</div>
+                    <div class="person">JoeHillsTSD</div>
+                </li>
+            </a>
+        </ol>
     </main>
+
     <footer>
-        <p>Project maintained by <a href="https://github.com/Hermit-Tools">Hermit-Tools</a></p>
+        <a href="../">By Hermit Tools</a>
+        <a href="https://github.com/hermit-tools/Thumbnail-Maker/">View Code On GitHub</a>
     </footer>
+
+    <script>
+        window.onscroll = () => {
+            const soscroll = document.getElementById('show-on-scroll');
+            if (soscroll.getBoundingClientRect().top === 10) {
+                soscroll.style.opacity = 1;
+                soscroll.parentElement.style.borderBottomWidth = '1px';
+                let fontSize = getComputedStyle(document.getElementById('show-on-scroll')).getPropertyValue(
+                    'font-size').split('px')[0] * 1;
+
+                fontSize > 16 ? soscroll.style.fontSize = `${fontSize - 1}px` : null;
+            } else {
+                soscroll.style.opacity = 0;
+                soscroll.parentElement.style.borderBottomWidth = '0px';
+            }
+        }
+
+        const mainListItems = document.getElementsByClassName('main-list-item');
+        for (let i = 0; i < mainListItems.length; i++) {
+            mainListItems[i].addEventListener('mousedown', mdcTapAnim);
+            mainListItems[i].addEventListener('touchstart', mdcTapAnim);
+        }
+
+        let sP;
+
+        function mdcTapAnim(e) {
+            if (e.currentTarget.hold) {
+                return
+            }
+            e.currentTarget.hold = true;
+            let item = e.currentTarget,
+                i = 0,
+                mpX = e.clientX - item.getBoundingClientRect().left,
+                mpY = e.clientY - item.getBoundingClientRect().top;
+
+            let theInt = setInterval(() => {
+
+                item.style.background =
+                    `radial-gradient(circle at ${mpX}px ${mpY}px, #b1dbff 0px, #b1dbff ${i}%, transparent ${i}%)`;
+                i >= 100 ? (clearInterval(theInt), setTimeout(() => {item.style.background = '#fff'; item.hold = false}, 500)) : null
+                i += 3;
+
+            }, 5);
+        }
+
+        function notYetMade() {
+            let theBar = document.createElement('div');
+            theBar.textContent = 'We have not yet made this tool, but we will soon.';
+            theBar.classList = "not-yet-made"
+            document.body.appendChild(theBar);
+            
+            setTimeout(() => {theBar.style.opacity = '1'}, 1)
+
+            setTimeout(() => {
+                theBar.style.opacity = '0';
+                setTimeout(() => {document.body.removeChild(theBar)}, 200)
+            }, 5000)
+        }
+    </script>
+
 </body>
 
 </html>
