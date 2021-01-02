@@ -74,8 +74,10 @@ input[type="file"] {
   width: 640px;
   height: 360px;
   border-radius: 5px;
+  background-position: 0px 0px, 10px 10px;
+  background-size: 20px 20px;
   box-shadow: 0 0 14.4px 0 #0002, 0 2.2px 3.6px 0 #0000001c;
-}
+  background-image: linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%),linear-gradient(45deg, #eee 25%, #fff 25%, #fff 75%, #eee 75%, #eee 100%);}
 
 #preview-area {
   background-color: #f7fbff;
@@ -85,24 +87,6 @@ input[type="file"] {
   height: 100%;
   overflow: hidden;
   z-index: -2;
-  transition: background-color 500ms ease-out;
-}
-
-#preview-text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  width: 640px;
-  height: 360px;
-  background: #fff;
-  color: #c7e3ff;
-  border-radius: 5px;
-  font-size: 48px;
-  font-weight: 900;
-  text-align: center;
-  text-transform: uppercase;
-  z-index: -1;
   transition: background-color 500ms ease-out;
 }
 
@@ -195,6 +179,11 @@ body.dark .area {
 
 body.dark #preview-area {
   background-color: #222;
+}
+
+body.dark #canvas {
+  box-shadow: 0 0 14.4px 0 #151515, 0 2.2px 3.6px 0 #191919;
+  background-image: linear-gradient(45deg, #3a3a3a 25%, transparent 25%, transparent 75%, #3a3a3a 75%, #3a3a3a 100%),linear-gradient(45deg, #3a3a3a 25%, #2b2b2b 25%, #2b2b2b 75%, #3a3a3a 75%, #3a3a3a 100%);
 }
 
 *:focus {
