@@ -31,14 +31,11 @@ downloader.addEventListener("click", () => {
   document.cookie = `epNumCookie=${epNumSelector.value}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
 });
 
-if (document.cookie.length !== 0) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; epNumCookie=`);
-  if (parts[1]) {
-    epNumSelector.value = parts[1].split(';')[0];
-  } else {
-    epNumSelector.value = 'm';
-  }
+if (document.cookie.length === 0) {
+  epNumSelector.value = "";
+} else {
+  let epNumValueFromCookie = document.cookie.split("=")[1];
+  epNumSelector.value = Number(epNumValueFromCookie) + 1;
 }
 
 // Service Worker
@@ -50,12 +47,12 @@ if ("serviceWorker" in navigator) {
 
 function addBgImage() {
   let bgImage = new Image();
-  bgImage.src = URL.createObjectURL(bgInput.files[0]);
   bgImage.onload = () => {
     ctx.drawImage(bgImage, 0, 0, 1920, 1080);
     hcLogoToggler.checked ? hcLogo() : null
     epNumSelector.value.length === 0 ? null : episodeNum()
   }
+  bgImage.src = URL.createObjectURL(bgInput.files[0]);
 }
 
 function episodeNum() {
@@ -105,7 +102,7 @@ function finishEditing() {
     }, 100)
   }, 5000);
 
-  downloader.download = `Ep${epNumSelector.value} HC7 Cub's Contraption.jpg`;
+  downloader.download = `Ep${epNumSelector.value} HC7 - Cub's Contraption.jpg`;
   downloader.href = canvas.toDataURL("image/png")
 }
 
@@ -116,7 +113,9 @@ let oldTime = Date.now();
 document.onkeydown = (e) => {
   if (darkText.indexOf(e.key.toLowerCase()) !== -1) {
     let newTime = Date.now();
-    if (newTime - oldTime > 1000) { keyCheat = [] }
+    if (newTime - oldTime > 1000) {
+      keyCheat = []
+    }
     oldTime = newTime;
 
     keyCheat.push(e.key.toLowerCase())
