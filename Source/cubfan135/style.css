@@ -78,7 +78,8 @@ input[type="file"] {
   background-position: 0px 0px, 10px 10px;
   background-size: 20px 20px;
   box-shadow: 0 0 14.4px 0 #0002, 0 2.2px 3.6px 0 #0000001c;
-  background-image: linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%),linear-gradient(45deg, #eee 25%, #fff 25%, #fff 75%, #eee 75%, #eee 100%);
+  background-image: linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%), 
+    linear-gradient(45deg, #eee 25%, #fff 25%, #fff 75%, #eee 75%, #eee 100%);
 }
 
 #preview-area {
@@ -191,7 +192,8 @@ body.dark .area::placeholder {
 }
 
 body.dark #canvas {
-  background-image: linear-gradient(45deg, #3a3a3a 25%, transparent 25%, transparent 75%, #3a3a3a 75%, #3a3a3a 100%),linear-gradient(45deg, #3a3a3a 25%, #2b2b2b 25%, #2b2b2b 75%, #3a3a3a 75%, #3a3a3a 100%);
+  background-image: linear-gradient(45deg, #3a3a3a 25%, transparent 25%, transparent 75%, #3a3a3a 75%, #3a3a3a 100%), 
+    linear-gradient(45deg, #3a3a3a 25%, #2b2b2b 25%, #2b2b2b 75%, #3a3a3a 75%, #3a3a3a 100%);
 }
 
 *:focus {
@@ -311,12 +313,12 @@ screen and (max-width: 360px) {
   position: fixed;
   top: 0;
   left: 0;
-  right:0;
+  right: 0;
   bottom: 0;
   visibility: hidden;
   opacity: 0;
   background: #191919;
-  background: rgba(25,25,25,0.95);
+  background: rgba(25, 25, 25, 0.95);
   transition: visibility 175ms, opacity 175ms;
   outline: 0.275em dashed #c7e3ff;
   outline-offset: -1em;
@@ -337,11 +339,11 @@ screen and (max-width: 360px) {
 }
 
 .dropInput {
-  display: block!important;
+  display: block !important;
   position: absolute;
   top: 0;
   left: 0;
-  right:0;
+  right: 0;
   bottom: 0;
   width: 100%;
   opacity: 0;
