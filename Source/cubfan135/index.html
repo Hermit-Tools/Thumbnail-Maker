@@ -12,13 +12,13 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:site_name" content="Cub's Contraption">
   <meta property="og:title" content="Cub's Contraption by Hermit Tools | Make thumbnails like cubfan135 in 3 steps">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://hermit-tools.github.io/Thumbnail-Maker/cubfan135">
-  <meta property="og:image" content="https://hermit-tools.github.io/Thumbnail-Maker/Resources/Icons/Cub's Head.png">
+  <meta property="og:image" content="https://hermit-tools.github.io/Thumbnail-Maker/Resources/Icons/Cub's%20Head.png">
   <meta name="description"
     content="An automated and smart thumbnail maker for cubfan135's Hermitcraft videos. Create and download YouTube thumbnails like cubfan135 in just three steps with this PWA which can be installed and even runs offline. Crafted with love from Hermit Tools.">
   <meta name="og:description"
@@ -73,7 +73,6 @@
   <section id="preview-area">
 
     <canvas width="1920" height="1080" id="canvas" aria-label="A preview area of your thumbnail">
-
       Your browser does not support the canvas element. Consider upgrading to a newer browser.
     </canvas>
   </section>
@@ -84,7 +83,6 @@
         <i class="material-icons">publish</i> Choose Background
       </label>
       <input type="file" accept="image/*" id="bgInput" onchange="process()">
-
       <button class="area" onclick="javascript: bgInput.value = ''; process()" title="Remove background image">
         <i class="material-icons">close</i>
       </button>
@@ -114,6 +112,9 @@
       </button>
       <button class="area" onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)" title="Clear canvas and start over">
         <i class="material-icons">backspace</i>
+      </button>
+      <button class="area" onclick="darken(document.body.classList.contains('dark') ? 'light' : 'dark')" title="Toggle dark theme">
+        <i class="material-icons">invert_colors</i>
       </button>
     </span>
   </main>

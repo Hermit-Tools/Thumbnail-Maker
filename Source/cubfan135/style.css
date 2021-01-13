@@ -1,6 +1,6 @@
 html {
   height: 100%;
-  --themeColor: #037de1;
+  --theme-color: #037de1;
 }
 
 body {
@@ -37,9 +37,9 @@ input[type="file"] {
   padding: 10px 15px;
   box-sizing: border-box;
 
-  background-color: transparent;
-  color: var(--themeColor);
-  border: 1px solid var(--themeColor);
+  background-color: #fff;
+  color: var(--theme-color);
+  border: 1px solid var(--theme-color);
   border-radius: 5px;
 
   text-transform: uppercase;
@@ -48,7 +48,7 @@ input[type="file"] {
   overflow: hidden;
   cursor: pointer;
   user-select: none;
-  transition: all 0.1s ease,
+  transition: all 50ms linear,
     background-color 500ms ease-out,
     color 500ms ease-out;
 }
@@ -56,7 +56,7 @@ input[type="file"] {
 #downloader {
   padding: 10px 0;
   box-sizing: content-box;
-  background: var(--themeColor);
+  background: var(--theme-color);
   color: #fff;
   border: 0;
   border-radius: 28px;
@@ -102,7 +102,6 @@ input[type="file"] {
   justify-items: center;
   align-items: center;
   align-content: center;
-  height: 100%;
   padding: 10px 10%;
   box-sizing: border-box;
   overflow: hidden;
@@ -113,7 +112,7 @@ input[type="file"] {
 
 #etc {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 5px;
 }
 
@@ -159,27 +158,12 @@ input[type="file"] {
 }
 
 .mdc-switch:checked::before {
-  background: var(--themeColor);
+  background: var(--theme-color);
   transform: translateX(12px);
 }
 
 .mdc-switch:checked::after {
   background: #a1a6ff;
-}
-
-.downloadShow {
-  font-weight: normal;
-  letter-spacing: normal;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: calc(100% - 20px);
-  background: #222;
-  color: #fff;
-  overflow: hidden;
-  padding: 10px;
-  opacity: 0;
-  transition: opacity 0.1s ease-in;
 }
 
 body.dark .area,
@@ -251,12 +235,6 @@ screen and (max-width: 920px) {
   }
 }
 
-@media screen and (max-height: 420px) {
-  #etc {
-    display: none !important;
-  }
-}
-
 @media print,
 screen and (max-width: 480px) {
   body {
@@ -294,6 +272,12 @@ screen and (max-width: 360px) {
 
 }
 
+@media screen and (max-height: 420px) {
+  #etc {
+    display: none !important;
+  }
+}
+
 .downloadShow {
   font-weight: normal;
   letter-spacing: normal;
@@ -308,21 +292,6 @@ screen and (max-width: 360px) {
   opacity: 0;
   transition: opacity 0.1s ease-in;
 }
-
-body.dark .area,
-body.dark #form,
-body.dark #preview-area,
-body.dark .area::placeholder {
-  background-color: #2b2b2b;
-  color: #eee;
-}
-
-*:focus {
-  filter: sepia(180%);
-  outline: none;
-}
-
-
 /* DRAG AND DROP component */
 body {
   position: relative;
