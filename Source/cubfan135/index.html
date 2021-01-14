@@ -80,11 +80,11 @@
   <main id="form">
     <span id="bgArea">
       <label id="bgInputLabel" class="area" for="bgInput" role="button" tabindex="0" title="Choose background image">
-        <i class="material-icons">publish</i> Choose Background
+        <img src="assets/publish-24px.svg" alt='publish'/> Choose Background
       </label>
       <input type="file" accept="image/*" id="bgInput" onchange="process()">
       <button class="area" onclick="javascript: bgInput.value = ''; process()" title="Remove background image">
-        <i class="material-icons">close</i>
+        <img src="assets/close-24px.svg" alt="close"/>
       </button>
     </span>
 
@@ -100,25 +100,25 @@
     </span>
 
     <a class="area" href="#" id="downloader" onclick="finishEditing()" style="text-decoration: none;">
-      <i class="material-icons">get_app</i>Download Thumbnail
+      <img src="assets/get_app-24px.svg" alt='get_app'/>Download Thumbnail
     </a>
 
     <span id="etc">
       <button class="area" onclick="javascript: window.location = 'https\:\/\/github.com/hermit-tools/Thumbnail-Maker'"
         title="Check out the repository">
-        <i class="material-icons">info</i>
+        <img src="assets/info-24px.svg" alt="info"/>
       </button>
       <button class="area" onclick="javascript: navigator.share({title: `Cub's Contraption by Hermit Tools`, url: ''})"
         title="Share Cub's Contraption">
-        <i class="material-icons">share</i>
+        <img src="assets/share-24px.svg" alt="share"/>
       </button>
       <button class="area" onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)"
         title="Clear canvas and start over">
-        <i class="material-icons">backspace</i>
+        <img src="assets/backspace-24px.svg" alt="backspace"/>
       </button>
       <button class="area" onclick="darken(document.body.classList.contains('dark') ? 'light' : 'dark')"
         title="Toggle dark theme">
-        <i class="material-icons">invert_colors</i>
+        <img src="assets/invert_colors-24px.svg" alt="invert_colors"/>
       </button>
     </span>
   </main>
