@@ -289,3 +289,16 @@ document.onkeydown = (e) => {
 	}
 };
 //End dark mode saga
+
+//Overlay canvas code
+function addOverlayImage() {
+	ctxOverlayCanvas.fillStyle = "rgba(255, 0, 0, 0.4)";
+	ctxOverlayCanvas.fillRect(
+		overlayCanvas.scrollLeft,
+		overlayCanvas.scrollTop,
+		overlayCanvas.width,
+		overlayCanvas.height
+	);
+}
+
+addOverlayImage();
