@@ -19,6 +19,7 @@ const form = document.getElementById("form");
 const captionContainer = document.getElementById("caption-container");
 const downloadShow = document.getElementById("downloadShow");
 const addOverlayImageBtn = document.getElementById("addOverlayImage");
+const previewArea = document.getElementById("preview-area");
 
 let captions = document.getElementsByClassName("caption");
 let cpNo = 0;
