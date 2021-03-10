@@ -11,9 +11,6 @@ theGradient.addColorStop(1, "#e9cd07");
 const captionCanvas = document.getElementById("captionCanvas");
 const ctxCaption = captionCanvas.getContext("2d");
 
-const overlayCanvas = document.getElementById("overlayCanvas");
-const ctxOverlayCanvas = overlayCanvas.getContext("2d");
-
 const epNumSelector = document.getElementById("epNumSelector");
 const hcLogoToggler = document.getElementById("hcLogoToggler");
 const downloader = document.getElementById("downloader");
@@ -296,6 +293,9 @@ function addOverlayImage() {
 	//create a canvas element for the overlay image
 	const overlayCanvas = document.createElement("canvas");
 	overlayCanvas.id = "overlayCanvas";
+
+	const ctxOverlayCanvas = overlayCanvas.getContext("2d");
+
 	ctxOverlayCanvas.fillStyle = "rgba(255, 0, 0, 0.4)";
 	ctxOverlayCanvas.fillRect(
 		overlayCanvas.scrollLeft,
