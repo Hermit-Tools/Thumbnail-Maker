@@ -301,5 +301,3 @@ function addOverlayImage() {
 		overlayCanvas.height
 	);
 }
-
-addOverlayImage();
