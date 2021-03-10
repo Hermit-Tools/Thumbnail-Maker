@@ -12,6 +12,7 @@ const captionCanvas = document.getElementById("captionCanvas");
 const ctxCaption = captionCanvas.getContext("2d");
 
 const overlayCanvas = document.getElementById("overlayCanvas");
+const ctxOverlayCanvas = overlayCanvas.getContext("2d");
 
 const epNumSelector = document.getElementById("epNumSelector");
 const hcLogoToggler = document.getElementById("hcLogoToggler");
