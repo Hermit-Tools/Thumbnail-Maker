@@ -301,3 +301,5 @@ function addOverlayImage() {
 		overlayCanvas.height
 	);
 }
+
+addOverlayImageBtn.addEventListener("click", addOverlayImage);
