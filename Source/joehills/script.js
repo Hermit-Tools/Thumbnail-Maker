@@ -293,6 +293,9 @@ document.onkeydown = (e) => {
 
 //Overlay canvas code
 function addOverlayImage() {
+	//create a canvas element for the overlay image
+	const overlayCanvas = document.createElement("canvas");
+	overlayCanvas.id = "overlayCanvas";
 	ctxOverlayCanvas.fillStyle = "rgba(255, 0, 0, 0.4)";
 	ctxOverlayCanvas.fillRect(
 		overlayCanvas.scrollLeft,
