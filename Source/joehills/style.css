@@ -1,66 +1,76 @@
 @font-face {
-  font-family: 'EdGothic';
-  font-style: normal;
-  font-weight: 400;
-  src: url(EdGothic.otf);
+	font-family: "EdGothic";
+	font-style: normal;
+	font-weight: 400;
+	src: url(EdGothic.otf);
 }
 
-#canvas, #captionCanvas {
-  position: absolute;
-  width: 640px;
-  height: 360px;
-  border-radius: 5px;
-  box-shadow: 0 0 14.4px 0 #00000022, 0 2.2px 3.6px 0 #0000001c;
+#canvas,
+#captionCanvas,
+#overlayCanvas {
+	position: absolute;
+	width: 640px;
+	height: 360px;
+	border-radius: 5px;
+	box-shadow: 0 0 14.4px 0 #00000022, 0 2.2px 3.6px 0 #0000001c;
 }
 
 @media print, screen and (max-width: 920px) {
-  #canvas, #captionCanvas {
-    width: 480px;
-    height: 270px;
-  }
+	#canvas,
+	#captionCanvas,
+	#overlayCanvas {
+		width: 480px;
+		height: 270px;
+	}
 }
 @media print, screen and (max-width: 480px) {
-  #canvas, #captionCanvas {
-    width: 360px;
-    height: 202.5px;
-  }
+	#canvas,
+	#captionCanvas,
+	#overlayCanvas {
+		width: 360px;
+		height: 202.5px;
+	}
 }
 
 @media print, screen and (max-width: 360px) {
-  #canvas, #captionCanvas {
-    width: 300px;
-    height: 168.75px;
-    box-shadow: none;
-    border: 0.1px solid #ccf;
-  }
+	#canvas,
+	#captionCanvas,
+	#overlayCanvas {
+		width: 300px;
+		height: 168.75px;
+		box-shadow: none;
+		border: 0.1px solid #ccf;
+	}
 }
 
 .draggable {
-  position: absolute;
-  border: 1px dashed gray;
-  min-width: 50px;
-  min-height: 50px;
-  top: 0;
-  left: 0;
-  width: fit-content;
-  height: fit-content;
-  font: normal 55px EdGothic;
-  cursor: move;
-  user-select: none;
-  line-height: 52px;
-  color: transparent;
+	position: absolute;
+	border: 1px dashed gray;
+	min-width: 50px;
+	min-height: 50px;
+	top: 0;
+	left: 0;
+	width: fit-content;
+	height: fit-content;
+	font: normal 55px EdGothic;
+	cursor: move;
+	user-select: none;
+	line-height: 52px;
+	color: transparent;
 }
 #caption-container {
-  position: absolute;
-  width: 640px;
-  height: 360px;
-  border: 1px solid green;
-  border-radius: 5px;
-  overflow: hidden;
+	position: absolute;
+	width: 640px;
+	height: 360px;
+	border: 1px solid green;
+	border-radius: 5px;
+	overflow: hidden;
 }
 .caption {
-  resize: vertical;
+	resize: vertical;
 }
-#caption-container, #captionCanvas, #preview-area {
-  z-index: 2
+#caption-container,
+#captionCanvas,
+#preview-area {
+	z-index: 2;
 }
