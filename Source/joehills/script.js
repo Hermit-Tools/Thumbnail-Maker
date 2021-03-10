@@ -304,6 +304,8 @@ function addOverlayImage() {
 		overlayCanvas.width,
 		overlayCanvas.height
 	);
+
+	previewArea.appendChild(overlayCanvas);
 }
 
 addOverlayImageBtn.addEventListener("click", addOverlayImage);
