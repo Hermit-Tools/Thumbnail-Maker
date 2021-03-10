@@ -21,6 +21,7 @@ const addCaption = document.getElementById("addCaption");
 const form = document.getElementById("form");
 const captionContainer = document.getElementById("caption-container");
 const downloadShow = document.getElementById("downloadShow");
+const addOverlayImageBtn = document.getElementById("addOverlayImage");
 
 let captions = document.getElementsByClassName("caption");
 let cpNo = 0;
