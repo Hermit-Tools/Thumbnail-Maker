@@ -294,6 +294,7 @@ function addOverlayImage() {
 	//create a canvas element for the overlay image
 	const overlayCanvas = document.createElement("canvas");
 	overlayCanvas.id = "overlayCanvas";
+	overlayCanvas.classList.add("draggable");
 
 	const ctxOverlayCanvas = overlayCanvas.getContext("2d");
 
