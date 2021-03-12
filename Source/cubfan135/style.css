@@ -113,8 +113,7 @@ input[type="file"] {
 }
 
 #etc {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: flex;
   gap: 5px;
 }
 
@@ -173,10 +172,6 @@ body.dark .area::placeholder {
   color: #eee;
 }
 
-body.dark #form {
-  background-color: #2b2b2b;
-}
-
 body.dark #preview-area {
   background-color: #222;
 }
@@ -184,11 +179,6 @@ body.dark #preview-area {
 body.dark #form,
 body.dark .area {
   background-color: #2b2b2b;
-}
-
-body.dark .area,
-body.dark .area::placeholder {
-  color: #eee;
 }
 
 body.dark #canvas {
@@ -242,7 +232,6 @@ screen and (max-width: 920px) {
 }
 
 @media screen and (max-height: 550px) {
-
   #canvas {
     width: 360px;
     height: 202.5px;
@@ -277,19 +266,12 @@ screen and (max-width: 360px) {
     width: 300px;
     height: 168.75px;
     box-shadow: none;
-    border: 0.1px solid #ccf;
   }
 
   #form {
     box-shadow: 0 10px 20px #0005;
   }
 
-}
-
-@media screen and (max-height: 420px) {
-  #etc {
-    display: none !important;
-  }
 }
 
 .downloadShow {
