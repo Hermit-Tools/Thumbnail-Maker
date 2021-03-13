@@ -125,8 +125,20 @@ function finishEditing() {
     }, 100)
   }, 5000);
 
-  downloader.download = `Ep${epNumSelector.value} HC7 - Cub's Contraption.jpg`;
-  downloader.href = canvas.toDataURL("image/png")
+  downloader.download = `Ep${epNumSelector.value} HC7 - Joey.png`;
+
+  let tempCnv = document.createElement('canvas')
+  let tempCtx = tempCnv.getContext('2d')
+  tempCnv.width = canvas.width;
+  tempCnv.height = canvas.height;
+
+  tempCtx.drawImage(captionCanvas, 0, 0, tempCnv.width, tempCnv.height)
+  
+  Array.from(document.getElementsByClassName('overlayCanvas')).forEach(cnv => {
+    tempCtx.drawImage(cnv, cnv.offsetLeft * cnv.width / cnv.offsetWidth, cnv.offsetTop * cnv.height / cnv.offsetHeight, tempCnv.width, tempCnv.height)
+  });
+
+  downloader.href = tempCnv.toDataURL("image/png")
 }
 
 // Following code makes any element with class containing 'draggable' draggable
