@@ -18,6 +18,8 @@ const addCaption = document.getElementById("addCaption");
 const form = document.getElementById("form");
 const captionContainer = document.getElementById("caption-container");
 const downloadShow = document.getElementById("downloadShow");
+const addOverlayImageBtn = document.getElementById("addOverlayImage");
+const previewArea = document.getElementById("preview-area");
 
 let captions = document.getElementsByClassName('caption');
 let cpNo = 0;
@@ -252,5 +254,28 @@ document.onkeydown = (e) => {
     keyCheat.push(e.key.toLowerCase())
     keyCheat.join('') === "invert" ? (darken(document.body.classList.contains("dark") ? "light" : "dark"), keyCheat = []) : null
   }
-}
+};
 //End dark mode saga
+
+//Overlay canvas code
+function addOverlayImage() {
+  //create a canvas element for the overlay image
+  const overlayCanvas = document.createElement("canvas");
+  overlayCanvas.classList.add("overlayCanvas");
+  overlayCanvas.classList.add("draggable");
+  overlayCanvas.width = canvas.width;
+  overlayCanvas.height = canvas.height;
+
+  const ctxOverlayCanvas = overlayCanvas.getContext("2d");
+
+  ctxOverlayCanvas.fillStyle = "hsla(" + Math.random() * 360 + ", 100%, 50%, 0.2)";
+  ctxOverlayCanvas.fillRect(
+    0, 0,
+    overlayCanvas.width,
+    overlayCanvas.height
+  );
+
+  document.getElementById('canvas-holder').appendChild(overlayCanvas);
+}
+
+addOverlayImageBtn.addEventListener("click", addOverlayImage);

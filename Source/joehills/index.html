@@ -64,11 +64,13 @@
     }
   </script>
   <section id="preview-area">
-    <canvas width="1920" height="1080" id="captionCanvas"></canvas>
-    <div id="caption-container"></div>
-    <canvas width="1920" height="1080" id="canvas">
-      Your browser does not support the canvas element. Consider upgrading to a newer browser.
-    </canvas>
+    <div id="canvas-holder">
+      <canvas width="1920" height="1080" id="captionCanvas"></canvas>
+      <div id="caption-container"></div>
+      <canvas width="1920" height="1080" id="canvas">
+        Your browser does not support the canvas element. Consider upgrading to a newer browser.
+      </canvas>
+    </div>
   </section>
 
   <main id="form">
@@ -90,7 +92,8 @@
       <input type="checkbox" checked onchange="process()" id="hcLogoToggler" class="mdc-switch">
     </span>
 
-    <button id="addCaption">+</button>
+    <button id="addCaption">+ Add caption</button>
+    <button id="addOverlayImage">&square; Add overlay canvas</button>
 
     <a class="area" style="text-decoration: none;" href="#" id="downloader" onclick="finishEditing()"
       download="image.png">
