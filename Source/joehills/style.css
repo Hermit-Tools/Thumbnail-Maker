@@ -7,7 +7,7 @@
 
 #canvas,
 #captionCanvas,
-#overlayCanvas {
+.overlayCanvas {
 	position: absolute;
 	width: 640px;
 	height: 360px;
@@ -18,15 +18,16 @@
 @media print, screen and (max-width: 920px) {
 	#canvas,
 	#captionCanvas,
-	#overlayCanvas {
+	.overlayCanvas {
 		width: 480px;
 		height: 270px;
 	}
 }
+
 @media print, screen and (max-width: 480px) {
 	#canvas,
 	#captionCanvas,
-	#overlayCanvas {
+	.overlayCanvas {
 		width: 360px;
 		height: 202.5px;
 	}
@@ -35,7 +36,7 @@
 @media print, screen and (max-width: 360px) {
 	#canvas,
 	#captionCanvas,
-	#overlayCanvas {
+	.overlayCanvas {
 		width: 300px;
 		height: 168.75px;
 		box-shadow: none;
@@ -45,27 +46,26 @@
 
 .draggable {
 	position: absolute;
-	border: 1px dashed gray;
+	outline: 1px dashed gray;
 	min-width: 50px;
 	min-height: 50px;
 	top: 0;
 	left: 0;
-	width: fit-content;
-	height: fit-content;
 	font: normal 55px EdGothic;
 	cursor: move;
 	user-select: none;
 	line-height: 52px;
 	color: transparent;
 }
+
 #caption-container {
 	position: absolute;
 	width: 640px;
 	height: 360px;
-	border: 1px solid green;
 	border-radius: 5px;
 	overflow: hidden;
 }
+
 .caption {
 	resize: vertical;
 }
@@ -73,4 +73,21 @@
 #captionCanvas,
 #preview-area {
 	z-index: 2;
+}
+
+#caption-container,
+#captionCanvas,
+#preview-area {
+	z-index: 2;
+}
+
+.overlayCanvas {
+	z-index: 3;
+}
+
+#canvas-holder {
+	overflow: hidden;
+	width: 640px;
+	height: 360px;
+	position: relative;
 }

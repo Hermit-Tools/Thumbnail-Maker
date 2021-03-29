@@ -126,8 +126,28 @@ function finishEditing() {
 		}, 100);
 	}, 5000);
 
-	downloader.download = `Ep${epNumSelector.value} HC7 - Cub's Contraption.jpg`;
-	downloader.href = canvas.toDataURL("image/png");
+	downloader.download = `Ep${epNumSelector.value} HC7 - Joey.png`;
+
+	let tempCnv = document.createElement("canvas");
+	let tempCtx = tempCnv.getContext("2d");
+	tempCnv.width = canvas.width;
+	tempCnv.height = canvas.height;
+
+	tempCtx.drawImage(captionCanvas, 0, 0, tempCnv.width, tempCnv.height);
+
+	Array.from(document.getElementsByClassName("overlayCanvas")).forEach(
+		(cnv) => {
+			tempCtx.drawImage(
+				cnv,
+				(cnv.offsetLeft * cnv.width) / cnv.offsetWidth,
+				(cnv.offsetTop * cnv.height) / cnv.offsetHeight,
+				tempCnv.width,
+				tempCnv.height
+			);
+		}
+	);
+
+	downloader.href = tempCnv.toDataURL("image/png");
 }
 
 // Following code makes any element with class containing 'draggable' draggable
@@ -293,20 +313,18 @@ document.onkeydown = (e) => {
 function addOverlayImage() {
 	//create a canvas element for the overlay image
 	const overlayCanvas = document.createElement("canvas");
-	overlayCanvas.id = "overlayCanvas";
+	overlayCanvas.classList.add("overlayCanvas");
 	overlayCanvas.classList.add("draggable");
+	overlayCanvas.width = canvas.width;
+	overlayCanvas.height = canvas.height;
 
 	const ctxOverlayCanvas = overlayCanvas.getContext("2d");
 
-	ctxOverlayCanvas.fillStyle = "rgba(255, 0, 0, 0.4)";
-	ctxOverlayCanvas.fillRect(
-		overlayCanvas.scrollLeft,
-		overlayCanvas.scrollTop,
-		overlayCanvas.width,
-		overlayCanvas.height
-	);
+	ctxOverlayCanvas.fillStyle =
+		"hsla(" + Math.random() * 360 + ", 100%, 50%, 0.2)";
+	ctxOverlayCanvas.fillRect(0, 0, overlayCanvas.width, overlayCanvas.height);
 
-	previewArea.appendChild(overlayCanvas);
+	document.getElementById("canvas-holder").appendChild(overlayCanvas);
 }
 
 addOverlayImageBtn.addEventListener("click", addOverlayImage);
