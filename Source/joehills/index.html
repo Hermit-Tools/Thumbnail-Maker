@@ -56,7 +56,7 @@
 				}
 			} else {
 				// Set Theme To Current theme
-				document.classList.contains("dark") ? darken() : darken("light");
+				document.body.classList.contains("dark") ? darken() : darken("light");
 			}
 
 			function darken(state = "dark", setLocalStorage = true) {
