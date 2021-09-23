@@ -92,7 +92,7 @@
 	position: relative;
 }
 
-div[class*="canvas"] {
+div[class^="canvas"] {
 	background-color: #037de1;
 	border-radius: 5px;
 	color: #fffffffc;
