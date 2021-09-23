@@ -320,6 +320,8 @@ function addOverlayImage() {
 	overlayCanvas.classList.add("draggable");
 	overlayCanvas.width = canvas.width;
 	overlayCanvas.height = canvas.height;
+	overlayCanvas.id = `canvas${overlayCanvasId}`;
+	overlayCanvasId++;
 
 	const ctxOverlayCanvas = overlayCanvas.getContext("2d");
 
