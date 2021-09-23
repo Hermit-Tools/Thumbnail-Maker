@@ -335,13 +335,11 @@ function addOverlayImage() {
 	const overlayCanvasDiv = document.createElement("div");
 	overlayCanvasDiv.classList.add(overlayCanvas.id);
 	overlayCanvasDiv.textContent = overlayCanvas.id;
-	form.appendChild(overlayCanvasDiv);
 
 	//addEventListeners to overlayCanvasDiv Element
-	const overlayCanvasDivEl = document.querySelector(
-		`canvas${overlayCanvas.id}`
-	);
-	overlayCanvasDivEl.addEventListener("click", removeOverlayAndDiv);
+	overlayCanvasDiv.addEventListener("click", removeOverlayAndDiv);
+
+	form.appendChild(overlayCanvasDiv);
 }
 
 addOverlayImageBtn.addEventListener("click", addOverlayImage);
