@@ -56,7 +56,9 @@
 				}
 			} else {
 				// Set Theme To Current theme
-				document.body.classList.contains("dark") ? darken() : darken("light");
+				document.body.classList.contains("dark")
+					? darken()
+					: darken("light");
 			}
 
 			function darken(state = "dark", setLocalStorage = true) {
@@ -79,54 +81,42 @@
 				}
 			}
 		</script>
+
 		<section id="preview-area">
-			<canvas width="1920" height="1080" id="captionCanvas"></canvas>
-			<div id="caption-container"></div>
-			<canvas width="1920" height="1080" id="canvas">
-				Your browser does not support the canvas element. Consider upgrading
-				to a newer browser.
-			</canvas>
+			<div id="canvas-holder">
+				<canvas width="1920" height="1080" id="captionCanvas"></canvas>
+				<div id="caption-container"></div>
+				<canvas width="1920" height="1080" id="canvas">
+					Your browser does not support the canvas element. Consider
+					upgrading to a newer browser.
+				</canvas>
+			</div>
 		</section>
 
-    function darken(state = "dark", setLocalStorage = true) {
-      if (state === 'dark') {
-        if (!document.body.classList.contains('dark')) {
-          document.body.classList.toggle('dark')
-        }
-      } else {
-        if (document.body.classList.contains('dark')) {
-          document.body.classList.toggle('dark')
-        }
-      }
-      // Check Theme and Save in Local Storage
-      if (setLocalStorage) {
-        if (document.body.classList.contains("dark")) {
-          localStorage.setItem("HTCC-theme", "dark")
-        } else {
-          localStorage.setItem("HTCC-theme", "light")
-        }
-      }
-    }
-  </script>
-  <section id="preview-area">
-    <div id="canvas-holder">
-      <canvas width="1920" height="1080" id="captionCanvas"></canvas>
-      <div id="caption-container"></div>
-      <canvas width="1920" height="1080" id="canvas">
-        Your browser does not support the canvas element. Consider upgrading to a newer browser.
-      </canvas>
-    </div>
-  </section>
-
-  <main id="form">
-
-    <span id="bgArea">
-      <label class="area" id="bgInputLabel" for="bgInput" title="Choose background image or nothing."><i
-          class="material-icons-round">publish</i> Choose Background</label>
-      <button class="area" title="Removed background image" onclick="javascript: bgInput.value = ''; process()"><i
-          class="material-icons-round">close</i></button>
-      <input type="file" accept="image/*" onchange="process()" id="bgInput">
-    </span>
+		<main id="form">
+			<span id="bgArea">
+				<label
+					class="area"
+					id="bgInputLabel"
+					for="bgInput"
+					title="Choose background image or nothing."
+					><i class="material-icons-round">publish</i> Choose
+					Background</label
+				>
+				<button
+					class="area"
+					title="Removed background image"
+					onclick="javascript: bgInput.value = ''; process()"
+				>
+					<i class="material-icons-round">close</i>
+				</button>
+				<input
+					type="file"
+					accept="image/*"
+					onchange="process()"
+					id="bgInput"
+				/>
+			</span>
 
 			<input
 				class="area"
@@ -166,30 +156,51 @@
 				<i class="material-icons-round">get_app</i>Download Thumbnail
 			</a>
 
-    <button id="addCaption">+ Add caption</button>
-    <button id="addOverlayImage">&square; Add overlay canvas</button>
+			<button id="addCaption">+ Add caption</button>
+			<button id="addOverlayImage">&square; Add overlay canvas</button>
 
-    <a class="area" style="text-decoration: none;" href="#" id="downloader" onclick="finishEditing()"
-      download="image.png">
-      <i class="material-icons-round">get_app</i>Download Thumbnail
-    </a>
+			<a
+				class="area"
+				style="text-decoration: none"
+				href="#"
+				id="downloader"
+				onclick="finishEditing()"
+				download="image.png"
+			>
+				<i class="material-icons-round">get_app</i>Download Thumbnail
+			</a>
 
-    <span id="etc">
-      <button class="area" title="Check out the repository"
-        onclick="javascript: window.location = 'https://github.com/hermit-tools/Thumbnail-Maker'">
-        <i class="material-icons-round">info</i></button>
-      <button class="area" title="Share Cub's Contraption"
-        onclick="javascript: navigator.share({title: `Cub's Contraption by Hermit Tools`, url: ''})">
-        <i class="material-icons-round">share</i></button>
-      <button class="area" title="Clear canvas and start over"
-        onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)">
-        <i class="material-icons-round">backspace</i></button>
-      <button class="area" title="Toggle dark theme"
-        onclick="darken(document.body.classList.contains('dark') ? 'light' : 'dark')">
-        <i class="material-icons-round">invert_colors</i></button>
-    </span>
-  </main>
-  <script src="./script.js"></script>
-</body>
-
+			<span id="etc">
+				<button
+					class="area"
+					title="Check out the repository"
+					onclick="javascript: window.location = 'https://github.com/hermit-tools/Thumbnail-Maker'"
+				>
+					<i class="material-icons-round">info</i>
+				</button>
+				<button
+					class="area"
+					title="Share Cub's Contraption"
+					onclick="javascript: navigator.share({title: `Cub's Contraption by Hermit Tools`, url: ''})"
+				>
+					<i class="material-icons-round">share</i>
+				</button>
+				<button
+					class="area"
+					title="Clear canvas and start over"
+					onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)"
+				>
+					<i class="material-icons-round">backspace</i>
+				</button>
+				<button
+					class="area"
+					title="Toggle dark theme"
+					onclick="darken(document.body.classList.contains('dark') ? 'light' : 'dark')"
+				>
+					<i class="material-icons-round">invert_colors</i>
+				</button>
+			</span>
+		</main>
+		<script src="./script.js"></script>
+	</body>
 </html>
