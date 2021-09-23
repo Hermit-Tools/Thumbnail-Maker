@@ -330,6 +330,10 @@ function addOverlayImage() {
 	ctxOverlayCanvas.fillRect(0, 0, overlayCanvas.width, overlayCanvas.height);
 
 	document.getElementById("canvas-holder").appendChild(overlayCanvas);
+
+	//create a div element
+	const overlayCanvasDiv = document.createElement("div");
+	overlayCanvasDiv.classList.add(`canvas${overlayCanvasId}`);
 }
 
 addOverlayImageBtn.addEventListener("click", addOverlayImage);
