@@ -331,7 +331,7 @@ function addOverlayImage() {
 
 	document.getElementById("canvas-holder").appendChild(overlayCanvas);
 
-	//create a div element
+	//create a div element every time overlayCanvas is added and insert it into the DOM
 	const overlayCanvasDiv = document.createElement("div");
 	overlayCanvasDiv.classList.add(overlayCanvas.id);
 	overlayCanvasDiv.textContent = overlayCanvas.id;
