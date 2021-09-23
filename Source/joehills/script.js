@@ -333,7 +333,7 @@ function addOverlayImage() {
 
 	//create a div element
 	const overlayCanvasDiv = document.createElement("div");
-	overlayCanvasDiv.classList.add(`canvas${overlayCanvasId}`);
+	overlayCanvasDiv.classList.add(overlayCanvas.id);
 }
 
 addOverlayImageBtn.addEventListener("click", addOverlayImage);
