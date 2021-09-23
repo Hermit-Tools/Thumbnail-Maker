@@ -96,6 +96,7 @@ div[class^="canvas"] {
 	background-color: #037de1;
 	border-radius: 5px;
 	color: #fffffffc;
+	cursor: pointer;
 	font-size: 17px;
 	letter-spacing: 2px;
 	padding: 10px;
