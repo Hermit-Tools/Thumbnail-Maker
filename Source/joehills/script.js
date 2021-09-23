@@ -309,6 +309,9 @@ document.onkeydown = (e) => {
 };
 //End dark mode saga
 
+//Variable to set overlay canvas id dynamically
+let overlayCanvasId = 1;
+
 //Overlay canvas code
 function addOverlayImage() {
 	//create a canvas element for the overlay image
