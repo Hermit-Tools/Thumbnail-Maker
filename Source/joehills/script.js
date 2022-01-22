@@ -345,6 +345,9 @@ function addOverlayImage() {
 		canvasToRemove.parentElement.removeChild(canvasToRemove);
 		this.parentElement.removeChild(this);
 	}
+
+	//addEventListeners to overlayCanvasDiv Element
+	overlayCanvasDiv.addEventListener("click", removeOverlayAndDiv);
 }
 
 addOverlayImageBtn.addEventListener("click", addOverlayImage);
