@@ -321,6 +321,7 @@ function addOverlayImage() {
 	overlayCanvas.width = canvas.width;
 	overlayCanvas.height = canvas.height;
 	overlayCanvas.id = `canvas${overlayCanvasId}`;
+	overlayCanvasId++;
 
 	const ctxOverlayCanvas = overlayCanvas.getContext("2d");
 
