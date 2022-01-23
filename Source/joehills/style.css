@@ -1,94 +1,100 @@
 @font-face {
-  font-family: 'EdGothic';
-  font-style: normal;
-  font-weight: 400;
-  src: url(EdGothic.otf);
+	font-family: "EdGothic";
+	font-style: normal;
+	font-weight: 400;
+	src: url(EdGothic.otf);
 }
 
 #canvas,
 #captionCanvas,
 .overlayCanvas {
-  position: absolute;
-  width: 640px;
-  height: 360px;
-  border-radius: 5px;
-  box-shadow: 0 0 14.4px 0 #00000022, 0 2.2px 3.6px 0 #0000001c;
+	position: absolute;
+	width: 640px;
+	height: 360px;
+	border-radius: 5px;
+	box-shadow: 0 0 14.4px 0 #00000022, 0 2.2px 3.6px 0 #0000001c;
 }
 
-@media print,
-screen and (max-width: 920px) {
-
-  #canvas,
-  #captionCanvas,
-  .overlayCanvas {
-    width: 480px;
-    height: 270px;
-  }
+@media print, screen and (max-width: 920px) {
+	#canvas,
+	#captionCanvas,
+	.overlayCanvas {
+		width: 480px;
+		height: 270px;
+	}
 }
 
-@media print,
-screen and (max-width: 480px) {
-
-  #canvas,
-  #captionCanvas,
-  .overlayCanvas {
-    width: 360px;
-    height: 202.5px;
-  }
+@media print, screen and (max-width: 480px) {
+	#canvas,
+	#captionCanvas,
+	.overlayCanvas {
+		width: 360px;
+		height: 202.5px;
+	}
 }
 
-@media print,
-screen and (max-width: 360px) {
-
-  #canvas,
-  #captionCanvas,
-  .overlayCanvas {
-    width: 300px;
-    height: 168.75px;
-    box-shadow: none;
-    border: 0.1px solid #ccf;
-  }
+@media print, screen and (max-width: 360px) {
+	#canvas,
+	#captionCanvas,
+	.overlayCanvas {
+		width: 300px;
+		height: 168.75px;
+		box-shadow: none;
+		border: 0.1px solid #ccf;
+	}
 }
 
 .draggable {
-  position: absolute;
-  outline: 1px dashed gray;
-  min-width: 50px;
-  min-height: 50px;
-  top: 0;
-  left: 0;
-  font: normal 55px EdGothic;
-  cursor: move;
-  user-select: none;
-  line-height: 52px;
-  color: transparent;
+	position: absolute;
+	outline: 1px dashed gray;
+	min-width: 50px;
+	min-height: 50px;
+	top: 0;
+	left: 0;
+	font: normal 55px EdGothic;
+	cursor: move;
+	user-select: none;
+	line-height: 52px;
+	color: transparent;
 }
 
 #caption-container {
-  position: absolute;
-  width: 640px;
-  height: 360px;
-  border-radius: 5px;
-  overflow: hidden;
+	position: absolute;
+	width: 640px;
+	height: 360px;
+	border-radius: 5px;
+	overflow: hidden;
 }
 
 .caption {
-  resize: vertical;
+	resize: vertical;
 }
 
 #caption-container,
 #captionCanvas,
 #preview-area {
-  z-index: 2;
+	z-index: 2;
 }
 
 .overlayCanvas {
-  z-index: 3;
+	z-index: 3;
 }
 
 #canvas-holder {
-  overflow: hidden;
-  width: 640px;
-  height: 360px;
-  position: relative;
+	overflow: hidden;
+	width: 640px;
+	height: 360px;
+	position: relative;
+}
+
+div[class^="canvas"] {
+	background-color: #037de1;
+	border-radius: 5px;
+	color: #fffffffc;
+	cursor: pointer;
+	font-size: 17px;
+	letter-spacing: 2px;
+	padding: 10px;
+	text-align: center;
+	width: 150px;
 }
